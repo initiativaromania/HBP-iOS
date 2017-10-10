@@ -1,0 +1,727 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="AvenirNext.ttc">
+            <string>AvenirNext-DemiBold</string>
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="yl2-sM-qoP">
+            <objects>
+                <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
+                        <rect key="frame" x="0.0" y="975" width="768" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="selectedImageTintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="xtV-Pc-eaH" kind="relationship" relationship="viewControllers" id="mRB-pD-aAK"/>
+                        <segue destination="V7S-Ob-cJm" kind="relationship" relationship="viewControllers" id="mPN-dz-491"/>
+                        <segue destination="f9w-X5-AHf" kind="relationship" relationship="viewControllers" id="IwF-Fc-YvJ"/>
+                        <segue destination="DAk-OI-E1T" kind="relationship" relationship="viewControllers" id="6L5-SY-PwZ"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="0.0" y="0.0"/>
+        </scene>
+        <!--Harta  Banilor  Publici-->
+        <scene sceneID="JqB-Ne-V6P">
+            <objects>
+                <viewController id="BBv-7C-nqp" customClass="MapViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eYJ-od-qxG"/>
+                        <viewControllerLayoutGuide type="bottom" id="dD5-Ob-nHv"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qpj-K0-Jq2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FUf-w5-32E" customClass="GMSMapView">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Harta  Banilor  Publici" id="LCx-IY-aRy">
+                        <barButtonItem key="backBarButtonItem" title=" " id="gu1-D2-wjd"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="FUf-w5-32E" id="hYv-eT-vtW"/>
+                        <segue destination="mwM-rY-90A" kind="show" id="qxZ-MU-Jch"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zYe-90-X0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863.2" y="-714.69265367316348"/>
+        </scene>
+        <!--Instituție-->
+        <scene sceneID="mVQ-mf-VWH">
+            <objects>
+                <viewController storyboardIdentifier="InstitutionViewController" id="mwM-rY-90A" customClass="InstitutionViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G2E-bG-KgH"/>
+                        <viewControllerLayoutGuide type="bottom" id="jrd-6s-Zj0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SXf-MG-dRU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XR-Qk-RlX">
+                                <rect key="frame" x="65" y="72" width="294" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-UU-Q5q">
+                                <rect key="frame" x="0.0" y="205" width="375" height="413"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="QKu-Ma-ycD" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKu-Ma-ycD" id="CBs-gi-FUC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-KU-fnw" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="229" height="49"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrR-Qu-n2p" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="245" y="8" width="67" height="49"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="DGl-td-Hmo" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="320" y="0.0" width="55" height="65"/>
+                                                    <color key="backgroundColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="DGl-td-Hmo" firstAttribute="leading" secondItem="xrR-Qu-n2p" secondAttribute="trailing" constant="8" id="4ld-CZ-wMb"/>
+                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="leading" secondItem="CBs-gi-FUC" secondAttribute="leading" constant="8" id="Ihl-9p-Qe1"/>
+                                                <constraint firstItem="xrR-Qu-n2p" firstAttribute="leading" secondItem="UIb-KU-fnw" secondAttribute="trailing" constant="8" id="J2n-Qp-uzl"/>
+                                                <constraint firstItem="DGl-td-Hmo" firstAttribute="bottom" secondItem="xrR-Qu-n2p" secondAttribute="bottom" id="Usr-85-4O7"/>
+                                                <constraint firstAttribute="bottom" secondItem="UIb-KU-fnw" secondAttribute="bottom" constant="7.5" id="diC-Wu-485"/>
+                                                <constraint firstItem="xrR-Qu-n2p" firstAttribute="bottom" secondItem="UIb-KU-fnw" secondAttribute="bottom" id="i06-gw-BcW"/>
+                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="top" secondItem="CBs-gi-FUC" secondAttribute="top" constant="8" id="jL9-6b-0CG"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="DGl-td-Hmo" id="Gy2-mI-njB"/>
+                                            <outlet property="priceLabel" destination="xrR-Qu-n2p" id="CEB-ox-8vG"/>
+                                            <outlet property="titleLabel" destination="UIb-KU-fnw" id="JDE-i6-Gax"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="city-hall" translatesAutoresizingMaskIntoConstraints="NO" id="7XH-5c-b3K">
+                                <rect key="frame" x="16" y="72" width="41" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Pq-APZ">
+                                <rect key="frame" x="-3" y="176" width="381" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Achiziții directe"/>
+                                    <segment title="Licitații"/>
+                                    <segment title="Companii"/>
+                                </segments>
+                                <color key="tintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="mwM-rY-90A" eventType="valueChanged" id="41N-Aw-Kr2"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adresă:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-Lb-BA8">
+                                <rect key="frame" x="16" y="124" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mCd-C2-S79">
+                                <rect key="frame" x="65" y="119" width="294" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Achizitii directe:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jc8-Ky-YZ9">
+                                <rect key="frame" x="16" y="154" width="83" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yzy-b2-Dpa">
+                                <rect key="frame" x="101" y="154" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Licitații:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IYe-Io-0Gy">
+                                <rect key="frame" x="163" y="154" width="39" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdL-8C-xWa">
+                                <rect key="frame" x="204" y="154" width="48" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CUI:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFf-zb-13o">
+                                <rect key="frame" x="270" y="154" width="23" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huF-2g-TeY">
+                                <rect key="frame" x="295" y="154" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Instituție" id="vKJ-8K-xNR">
+                        <barButtonItem key="backBarButtonItem" title=" " id="eXj-Jb-w90"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="LWK-qg-1B5"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="achizitiiCountLabel" destination="Yzy-b2-Dpa" id="op2-EI-Lvb"/>
+                        <outlet property="adresaLabel" destination="mCd-C2-S79" id="j64-0h-51r"/>
+                        <outlet property="cuiLabel" destination="huF-2g-TeY" id="cMx-ux-pbL"/>
+                        <outlet property="institutionNameLabel" destination="3XR-Qk-RlX" id="SUz-Gx-ecx"/>
+                        <outlet property="licitatiiCountLabel" destination="vdL-8C-xWa" id="a0U-bT-Z3D"/>
+                        <outlet property="tabBar" destination="R8s-Pq-APZ" id="81B-hJ-SuI"/>
+                        <outlet property="tableView" destination="cyO-UU-Q5q" id="htq-FN-f1S"/>
+                        <segue destination="Iwr-51-Xaf" kind="show" identifier="companieSegue" id="fUa-g3-xJn"/>
+                        <segue destination="y7W-47-BTu" kind="show" identifier="contractSegue" id="9oq-zI-RxO"/>
+                        <segue destination="UNO-tS-fE3" kind="show" id="mHV-I0-o3g"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arT-gK-Hgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2885.5999999999999" y="-715.59220389805103"/>
+        </scene>
+        <!--Contract-->
+        <scene sceneID="tLJ-FU-7au">
+            <objects>
+                <viewController storyboardIdentifier="ContractViewController" id="y7W-47-BTu" customClass="ContractViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Gv4-0x-gq1"/>
+                        <viewControllerLayoutGuide type="bottom" id="GjO-vz-Xce"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uqe-Fc-3N4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28j-WF-HEz">
+                                <rect key="frame" x="16" y="72" width="343" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RON: 435476" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e6l-nW-ObY">
+                                <rect key="frame" x="16" y="147" width="166" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="€: 45345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46Z-zf-UCa">
+                                <rect key="frame" x="190" y="147" width="169" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="handshake" translatesAutoresizingMaskIntoConstraints="NO" id="Oqa-Uy-abI">
+                                <rect key="frame" x="16" y="190" width="36" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Achizitie Directa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MT-wh-Xva">
+                                <rect key="frame" x="69" y="198" width="253" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Contract" id="Gai-ul-7CO">
+                        <barButtonItem key="backBarButtonItem" title=" " id="pdR-u8-dJ5"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="ifA-Sb-SkV"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IVV-c1-6AO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3660" y="-1318"/>
+        </scene>
+        <!--Companie-->
+        <scene sceneID="XtI-ma-P0p">
+            <objects>
+                <viewController storyboardIdentifier="CompanieViewController" id="Iwr-51-Xaf" customClass="CompanieViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="B72-tw-L89"/>
+                        <viewControllerLayoutGuide type="bottom" id="Si3-dC-zzc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bDt-bn-Osv">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MNX-Xx-gyh">
+                                <rect key="frame" x="64" y="72" width="294" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-46-gEu">
+                                <rect key="frame" x="-1" y="205" width="375" height="413"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="OZd-v0-pqd" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZd-v0-pqd" id="Me1-xX-G43">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByB-am-v61" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="229" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6g-Bx-3we" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="245" y="8" width="67" height="49"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="PgK-OW-UZs" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="320" y="0.0" width="55" height="65"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="PgK-OW-UZs" id="J68-Ew-c3x"/>
+                                            <outlet property="priceLabel" destination="S6g-Bx-3we" id="PUa-qK-Bmu"/>
+                                            <outlet property="titleLabel" destination="ByB-am-v61" id="lL1-bC-dk3"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="city-hall" translatesAutoresizingMaskIntoConstraints="NO" id="ZdS-Qz-ges">
+                                <rect key="frame" x="15" y="72" width="41" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VV7-yK-Qck">
+                                <rect key="frame" x="-3" y="176" width="381" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Instituții"/>
+                                    <segment title="Contracte"/>
+                                    <segment title="Licitații"/>
+                                </segments>
+                                <color key="tintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="Iwr-51-Xaf" eventType="valueChanged" id="fLg-0b-Mu7"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adresă:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78n-Eh-qia">
+                                <rect key="frame" x="14" y="134" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvU-hx-VLK">
+                                <rect key="frame" x="64" y="119" width="197" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRF-UA-mk3">
+                                <rect key="frame" x="294" y="134" width="64" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CUI:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GGu-Xx-cnw">
+                                <rect key="frame" x="269" y="134" width="23" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="11"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Companie" id="2Ie-O6-R3L">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="owz-Wd-ILG"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="adresaLabel" destination="jvU-hx-VLK" id="eJd-X8-GjT"/>
+                        <outlet property="companyNameLabel" destination="MNX-Xx-gyh" id="UcJ-fL-w7r"/>
+                        <outlet property="cuiLabel" destination="VRF-UA-mk3" id="yC7-XB-Kb0"/>
+                        <outlet property="tabBar" destination="VV7-yK-Qck" id="DZ9-8g-ra0"/>
+                        <outlet property="tableView" destination="AKw-46-gEu" id="DIw-K5-cwd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tge-rg-p6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3660" y="157"/>
+        </scene>
+        <!--Căutare-->
+        <scene sceneID="BJy-L9-aVE">
+            <objects>
+                <viewController id="SXr-eX-9GQ" customClass="SearchViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ecw-yM-UZr"/>
+                        <viewControllerLayoutGuide type="bottom" id="rud-mV-Y7w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ga1-vx-PhA">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5TG-Y1-jLW">
+                                <rect key="frame" x="0.0" y="64" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="awh-aE-41W" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awh-aE-41W" id="Lgo-4W-8bg">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1S-bx-hRw" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="229" height="49"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqO-eT-s85" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="245" y="8" width="67" height="49"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="cf3-zH-FQg" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="320" y="0.0" width="55" height="65"/>
+                                                    <color key="backgroundColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cf3-zH-FQg" firstAttribute="leading" secondItem="cqO-eT-s85" secondAttribute="trailing" constant="8" id="TJH-P9-1PE"/>
+                                                <constraint firstAttribute="bottom" secondItem="N1S-bx-hRw" secondAttribute="bottom" constant="7.5" id="ULs-fX-tNc"/>
+                                                <constraint firstItem="N1S-bx-hRw" firstAttribute="leading" secondItem="Lgo-4W-8bg" secondAttribute="leading" constant="8" id="pKZ-Pc-K0v"/>
+                                                <constraint firstItem="N1S-bx-hRw" firstAttribute="top" secondItem="Lgo-4W-8bg" secondAttribute="top" constant="8" id="rTA-fv-fKn"/>
+                                                <constraint firstItem="cf3-zH-FQg" firstAttribute="bottom" secondItem="cqO-eT-s85" secondAttribute="bottom" id="rwj-eD-5ji"/>
+                                                <constraint firstItem="cqO-eT-s85" firstAttribute="leading" secondItem="N1S-bx-hRw" secondAttribute="trailing" constant="8" id="yWm-fe-Gkx"/>
+                                                <constraint firstItem="cqO-eT-s85" firstAttribute="bottom" secondItem="N1S-bx-hRw" secondAttribute="bottom" id="zb0-Id-HBX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="cf3-zH-FQg" id="DaJ-bA-Mzh"/>
+                                            <outlet property="priceLabel" destination="cqO-eT-s85" id="bTI-EK-BCf"/>
+                                            <outlet property="titleLabel" destination="N1S-bx-hRw" id="zUe-Ku-i9F"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Căutare" id="EPV-JP-8aq"/>
+                    <connections>
+                        <outlet property="searchDisplayController" destination="PrW-rf-jk3" id="dfg-gP-KtD"/>
+                        <outlet property="tableView" destination="5TG-Y1-jLW" id="FfO-jn-dzj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqi-PJ-0ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="9Tw-wp-9gQ">
+                    <connections>
+                        <outlet property="delegate" destination="SXr-eX-9GQ" id="6Ef-lq-bTG"/>
+                        <outlet property="searchContentsController" destination="SXr-eX-9GQ" id="vmG-PL-Oho"/>
+                        <outlet property="searchResultsDataSource" destination="SXr-eX-9GQ" id="5cW-0Z-kRu"/>
+                        <outlet property="searchResultsDelegate" destination="SXr-eX-9GQ" id="nJG-s3-3LF"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="B8d-9i-qnR">
+                    <connections>
+                        <outlet property="delegate" destination="SXr-eX-9GQ" id="9D0-z3-FEI"/>
+                        <outlet property="searchContentsController" destination="SXr-eX-9GQ" id="LFd-ed-pny"/>
+                        <outlet property="searchResultsDataSource" destination="SXr-eX-9GQ" id="Osf-IK-5F8"/>
+                        <outlet property="searchResultsDelegate" destination="SXr-eX-9GQ" id="DDu-ec-S1g"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="PrW-rf-jk3">
+                    <connections>
+                        <outlet property="delegate" destination="SXr-eX-9GQ" id="r58-Zd-wiS"/>
+                        <outlet property="searchContentsController" destination="SXr-eX-9GQ" id="yv8-2U-KMX"/>
+                        <outlet property="searchResultsDataSource" destination="SXr-eX-9GQ" id="Yk2-qx-5DD"/>
+                        <outlet property="searchResultsDelegate" destination="SXr-eX-9GQ" id="43Z-16-4ah"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="1863.2" y="-0.44977511244377816"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="4xH-KQ-V1i">
+            <objects>
+                <viewController id="wEb-5u-5kv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mkm-52-jvU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Sha-0I-Snw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mYA-P7-VIH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="7bG-HG-ofE"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a2v-SA-NFx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863.2" y="715.59220389805103"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="JSi-ac-n1m">
+            <objects>
+                <viewController id="d2c-hC-6PK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xfv-XM-aF2"/>
+                        <viewControllerLayoutGuide type="bottom" id="LO2-GC-H3i"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sBi-F7-2Qx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stats" translatesAutoresizingMaskIntoConstraints="NO" id="WXj-ey-dSf">
+                                <rect key="frame" x="16" y="72" width="343" height="279"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmV-VH-c1O">
+                                <rect key="frame" x="16" y="359" width="343" height="251"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Inițiativa România consideră că cetățenii au dreptul să beneficieze de informații de interes public, în mod gratuit, în timp real, într-un format accesibil, lesne de ințeles și de utilizat, prelucrabil, care să permită cetățenilor să aibă o cunoaștere corectă și să poată participa la luarea de decizii informate în interesul comunității din care fac parte. 
+</string>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ghm-Fb-m3m"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4JV-hD-5eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1863.2" y="1421.7391304347827"/>
+        </scene>
+        <!--Hartă-->
+        <scene sceneID="o15-B0-DF4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xtV-Pc-eaH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Hartă" image="placeholder" selectedImage="placeholder" id="64D-uo-1RU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="txu-tI-nbJ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BBv-7C-nqp" kind="relationship" relationship="rootViewController" id="cxW-6X-3Yt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zWJ-60-JQQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="-714.69265367316348"/>
+        </scene>
+        <!--Căutare-->
+        <scene sceneID="rgF-2o-nEX">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V7S-Ob-cJm" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Căutare" image="search" selectedImage="search" id="Ofu-Cp-9uF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="qBy-1y-pQ1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SXr-eX-9GQ" kind="relationship" relationship="rootViewController" id="s1A-e2-sZH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zvm-s5-2p9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="-0.44977511244377816"/>
+        </scene>
+        <!--Top-->
+        <scene sceneID="Isi-VX-aqn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f9w-X5-AHf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Top" image="barchart" selectedImage="barchart" id="N4W-NC-fj0"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="Z0x-DG-h9E">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wEb-5u-5kv" kind="relationship" relationship="rootViewController" id="oT2-iU-wDj"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="djy-Hb-AHr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="715.59220389805103"/>
+        </scene>
+        <!--Info-->
+        <scene sceneID="fCu-Pf-2bh">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DAk-OI-E1T" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Info" image="info" selectedImage="info" id="IDp-pn-Wg1"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" id="ywq-y7-udB">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="d2c-hC-6PK" kind="relationship" relationship="rootViewController" id="xhn-bQ-iIi"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ggY-uN-Yer" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="924" y="1422.6386806596702"/>
+        </scene>
+        <!--Licitație-->
+        <scene sceneID="HCU-Hf-eEB">
+            <objects>
+                <viewController storyboardIdentifier="LicitatieViewController" id="UNO-tS-fE3" customClass="LicitatieViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Dh5-vF-SS8"/>
+                        <viewControllerLayoutGuide type="bottom" id="k5b-hc-EWO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uKl-p4-4nx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fW-Vw-5dU">
+                                <rect key="frame" x="16" y="72" width="343" height="67"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RON: 435476" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MaX-3b-80d">
+                                <rect key="frame" x="16" y="147" width="166" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="€: 45345" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qk-4j-z00">
+                                <rect key="frame" x="190" y="147" width="169" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.94999999999999996" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="handshake" translatesAutoresizingMaskIntoConstraints="NO" id="0Ay-jH-D3H">
+                                <rect key="frame" x="16" y="190" width="36" height="36"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Licitație" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pdk-cN-Dcj">
+                                <rect key="frame" x="69" y="198" width="253" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Licitație" id="SfR-1v-aJF">
+                        <barButtonItem key="backBarButtonItem" title=" " id="28x-vf-jEK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Rqa-zi-DZM"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="prN-yA-r3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3660" y="-585"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="barchart" width="25" height="25"/>
+        <image name="city-hall" width="32" height="32"/>
+        <image name="handshake" width="128" height="128"/>
+        <image name="info" width="25" height="25"/>
+        <image name="placeholder" width="25" height="25"/>
+        <image name="search" width="25" height="25"/>
+        <image name="stats" width="886" height="786"/>
+    </resources>
+</document>

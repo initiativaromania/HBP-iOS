@@ -1,0 +1,727 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3A1EF52E1F52CE51005D1CE9 /* AvenirNextLTPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1EF52B1F52CE51005D1CE9 /* AvenirNextLTPro-Bold.otf */; };
+		3A1EF52F1F52CE51005D1CE9 /* AvenirNextLTPro-It.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1EF52C1F52CE51005D1CE9 /* AvenirNextLTPro-It.otf */; };
+		3A1EF5301F52CE51005D1CE9 /* AvenirNextLTPro-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 3A1EF52D1F52CE51005D1CE9 /* AvenirNextLTPro-Regular.otf */; };
+		3A5580DA1F594178009661D9 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5580D91F594178009661D9 /* ApiHelper.swift */; };
+		3A6925511F836BF300EABAC7 /* CompanieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6925501F836BF300EABAC7 /* CompanieViewController.swift */; };
+		3A6925531F836E1900EABAC7 /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6925521F836E1900EABAC7 /* ContractViewController.swift */; };
+		3A6925551F8374B800EABAC7 /* LicitatieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6925541F8374B800EABAC7 /* LicitatieViewController.swift */; };
+		3A87A6141F7BF5D400F79F1B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A87A6131F7BF5D400F79F1B /* SearchViewController.swift */; };
+		3A882FAB1F44A1D40040811D /* InstitutionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A882FAA1F44A1D40040811D /* InstitutionViewController.swift */; };
+		3AA402E51F447CDD009490EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA402E41F447CDD009490EB /* AppDelegate.swift */; };
+		3AA402E71F447CDD009490EB /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA402E61F447CDD009490EB /* MapViewController.swift */; };
+		3AA402EC1F447CDD009490EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA402EA1F447CDD009490EB /* Main.storyboard */; };
+		3AA402EE1F447CDD009490EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AA402ED1F447CDD009490EB /* Assets.xcassets */; };
+		3AA402F11F447CDD009490EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA402EF1F447CDD009490EB /* LaunchScreen.storyboard */; };
+		3AA402FC1F447CDE009490EB /* harta_banilor_publiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA402FB1F447CDE009490EB /* harta_banilor_publiciTests.swift */; };
+		3AA403071F447CDE009490EB /* harta_banilor_publiciUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA403061F447CDE009490EB /* harta_banilor_publiciUITests.swift */; };
+		3AA403161F447F84009490EB /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA403151F447F84009490EB /* CustomInfoWindow.swift */; };
+		3AA403181F447FEA009490EB /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403171F447FEA009490EB /* CustomInfoWindow.xib */; };
+		3AA403221F448110009490EB /* CrimsonText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031C1F448110009490EB /* CrimsonText-Bold.ttf */; };
+		3AA403231F448110009490EB /* CrimsonText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031D1F448110009490EB /* CrimsonText-BoldItalic.ttf */; };
+		3AA403241F448110009490EB /* CrimsonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031E1F448110009490EB /* CrimsonText-Italic.ttf */; };
+		3AA403251F448110009490EB /* CrimsonText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031F1F448110009490EB /* CrimsonText-Regular.ttf */; };
+		3AA403261F448110009490EB /* CrimsonText-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403201F448110009490EB /* CrimsonText-SemiBold.ttf */; };
+		3AA403271F448110009490EB /* CrimsonText-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403211F448110009490EB /* CrimsonText-SemiBoldItalic.ttf */; };
+		3ADB634A1F6E4DAA00700200 /* institutii_publice_pins_v0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */; };
+		F3FEA5272921380B6787CDE8 /* libPods-harta-banilor-publici.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39349E64E96C127385D2AA19 /* libPods-harta-banilor-publici.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3AA402F81F447CDD009490EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AA402D91F447CDD009490EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AA402E01F447CDD009490EB;
+			remoteInfo = "harta-banilor-publici";
+		};
+		3AA403031F447CDE009490EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3AA402D91F447CDD009490EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3AA402E01F447CDD009490EB;
+			remoteInfo = "harta-banilor-publici";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		39349E64E96C127385D2AA19 /* libPods-harta-banilor-publici.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-harta-banilor-publici.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A1EF52B1F52CE51005D1CE9 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AvenirNextLTPro-Bold.otf"; path = "../../../Downloads/New folder (10)/AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
+		3A1EF52C1F52CE51005D1CE9 /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AvenirNextLTPro-It.otf"; path = "../../../Downloads/New folder (10)/AvenirNextLTPro-It.otf"; sourceTree = "<group>"; };
+		3A1EF52D1F52CE51005D1CE9 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AvenirNextLTPro-Regular.otf"; path = "../../../Downloads/New folder (10)/AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
+		3A3ADB071F739B8D00356210 /* harta-banilor-publici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "harta-banilor-publici.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A3ADB081F739B8D00356210 /* harta-banilor-publiciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "harta-banilor-publiciTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A3ADB091F739B8D00356210 /* harta-banilor-publiciUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "harta-banilor-publiciUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A5580D91F594178009661D9 /* ApiHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiHelper.swift; sourceTree = "<group>"; };
+		3A6925501F836BF300EABAC7 /* CompanieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompanieViewController.swift; sourceTree = "<group>"; };
+		3A6925521F836E1900EABAC7 /* ContractViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContractViewController.swift; sourceTree = "<group>"; };
+		3A6925541F8374B800EABAC7 /* LicitatieViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicitatieViewController.swift; sourceTree = "<group>"; };
+		3A87A6131F7BF5D400F79F1B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		3A882FAA1F44A1D40040811D /* InstitutionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstitutionViewController.swift; sourceTree = "<group>"; };
+		3AA402E41F447CDD009490EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3AA402E61F447CDD009490EB /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		3AA402EB1F447CDD009490EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3AA402ED1F447CDD009490EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3AA402F01F447CDD009490EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3AA402F21F447CDD009490EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AA402FB1F447CDE009490EB /* harta_banilor_publiciTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harta_banilor_publiciTests.swift; sourceTree = "<group>"; };
+		3AA402FD1F447CDE009490EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AA403061F447CDE009490EB /* harta_banilor_publiciUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harta_banilor_publiciUITests.swift; sourceTree = "<group>"; };
+		3AA403081F447CDE009490EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AA403141F447DF7009490EB /* harta-banilor-publici-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "harta-banilor-publici-Bridging-Header.h"; sourceTree = "<group>"; };
+		3AA403151F447F84009490EB /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomInfoWindow.swift; path = "../../../workspace/ios/harta-banilor-publici/harta-banilor-publici/CustomInfoWindow.swift"; sourceTree = "<group>"; };
+		3AA403171F447FEA009490EB /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomInfoWindow.xib; path = "../../../workspace/ios/harta-banilor-publici/harta-banilor-publici/CustomInfoWindow.xib"; sourceTree = "<group>"; };
+		3AA4031C1F448110009490EB /* CrimsonText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-Bold.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-Bold.ttf"; sourceTree = "<group>"; };
+		3AA4031D1F448110009490EB /* CrimsonText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-BoldItalic.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-BoldItalic.ttf"; sourceTree = "<group>"; };
+		3AA4031E1F448110009490EB /* CrimsonText-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-Italic.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-Italic.ttf"; sourceTree = "<group>"; };
+		3AA4031F1F448110009490EB /* CrimsonText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-Regular.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-Regular.ttf"; sourceTree = "<group>"; };
+		3AA403201F448110009490EB /* CrimsonText-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-SemiBold.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-SemiBold.ttf"; sourceTree = "<group>"; };
+		3AA403211F448110009490EB /* CrimsonText-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-SemiBoldItalic.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = institutii_publice_pins_v0.csv; path = ../../../Downloads/institutii_publice_pins_v0.csv; sourceTree = "<group>"; };
+		3CD957435C76157D936104F4 /* Pods-harta-banilor-publici.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.release.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.release.xcconfig"; sourceTree = "<group>"; };
+		F15980CF94420178A3E5FD29 /* Pods-harta-banilor-publici.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3AA402DE1F447CDD009490EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F3FEA5272921380B6787CDE8 /* libPods-harta-banilor-publici.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AA402F41F447CDD009490EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AA402FF1F447CDE009490EB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3AA402D81F447CDD009490EB = {
+			isa = PBXGroup;
+			children = (
+				3AA402E31F447CDD009490EB /* harta-banilor-publici */,
+				3AA402FA1F447CDD009490EB /* harta-banilor-publiciTests */,
+				3AA403051F447CDE009490EB /* harta-banilor-publiciUITests */,
+				E3478005C5B2414C0402EFE3 /* Pods */,
+				F17AB30EFCBCCC078DC00DA5 /* Frameworks */,
+				3A3ADB071F739B8D00356210 /* harta-banilor-publici.app */,
+				3A3ADB081F739B8D00356210 /* harta-banilor-publiciTests.xctest */,
+				3A3ADB091F739B8D00356210 /* harta-banilor-publiciUITests.xctest */,
+			);
+			sourceTree = "<group>";
+		};
+		3AA402E31F447CDD009490EB /* harta-banilor-publici */ = {
+			isa = PBXGroup;
+			children = (
+				3AA402E41F447CDD009490EB /* AppDelegate.swift */,
+				3AA402E61F447CDD009490EB /* MapViewController.swift */,
+				3A882FAA1F44A1D40040811D /* InstitutionViewController.swift */,
+				3A6925501F836BF300EABAC7 /* CompanieViewController.swift */,
+				3A6925521F836E1900EABAC7 /* ContractViewController.swift */,
+				3A6925541F8374B800EABAC7 /* LicitatieViewController.swift */,
+				3A87A6131F7BF5D400F79F1B /* SearchViewController.swift */,
+				3AA403151F447F84009490EB /* CustomInfoWindow.swift */,
+				3AA403171F447FEA009490EB /* CustomInfoWindow.xib */,
+				3AA402EA1F447CDD009490EB /* Main.storyboard */,
+				3AA402EF1F447CDD009490EB /* LaunchScreen.storyboard */,
+				3A5580D91F594178009661D9 /* ApiHelper.swift */,
+				3AA402F21F447CDD009490EB /* Info.plist */,
+				3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */,
+				3AA403141F447DF7009490EB /* harta-banilor-publici-Bridging-Header.h */,
+				3AA402ED1F447CDD009490EB /* Assets.xcassets */,
+				3AA403191F44809F009490EB /* fonts */,
+			);
+			path = "harta-banilor-publici";
+			sourceTree = "<group>";
+		};
+		3AA402FA1F447CDD009490EB /* harta-banilor-publiciTests */ = {
+			isa = PBXGroup;
+			children = (
+				3AA402FB1F447CDE009490EB /* harta_banilor_publiciTests.swift */,
+				3AA402FD1F447CDE009490EB /* Info.plist */,
+			);
+			path = "harta-banilor-publiciTests";
+			sourceTree = "<group>";
+		};
+		3AA403051F447CDE009490EB /* harta-banilor-publiciUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3AA403061F447CDE009490EB /* harta_banilor_publiciUITests.swift */,
+				3AA403081F447CDE009490EB /* Info.plist */,
+			);
+			path = "harta-banilor-publiciUITests";
+			sourceTree = "<group>";
+		};
+		3AA403191F44809F009490EB /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				3A1EF52B1F52CE51005D1CE9 /* AvenirNextLTPro-Bold.otf */,
+				3A1EF52C1F52CE51005D1CE9 /* AvenirNextLTPro-It.otf */,
+				3A1EF52D1F52CE51005D1CE9 /* AvenirNextLTPro-Regular.otf */,
+				3AA4031C1F448110009490EB /* CrimsonText-Bold.ttf */,
+				3AA4031D1F448110009490EB /* CrimsonText-BoldItalic.ttf */,
+				3AA4031E1F448110009490EB /* CrimsonText-Italic.ttf */,
+				3AA4031F1F448110009490EB /* CrimsonText-Regular.ttf */,
+				3AA403201F448110009490EB /* CrimsonText-SemiBold.ttf */,
+				3AA403211F448110009490EB /* CrimsonText-SemiBoldItalic.ttf */,
+			);
+			name = fonts;
+			sourceTree = "<group>";
+		};
+		E3478005C5B2414C0402EFE3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F15980CF94420178A3E5FD29 /* Pods-harta-banilor-publici.debug.xcconfig */,
+				3CD957435C76157D936104F4 /* Pods-harta-banilor-publici.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F17AB30EFCBCCC078DC00DA5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				39349E64E96C127385D2AA19 /* libPods-harta-banilor-publici.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3AA402E01F447CDD009490EB /* harta-banilor-publici */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AA4030B1F447CDE009490EB /* Build configuration list for PBXNativeTarget "harta-banilor-publici" */;
+			buildPhases = (
+				568C45B302FA53E4F73FFC51 /* [CP] Check Pods Manifest.lock */,
+				3AA402DD1F447CDD009490EB /* Sources */,
+				3AA402DE1F447CDD009490EB /* Frameworks */,
+				3AA402DF1F447CDD009490EB /* Resources */,
+				CB5DE67E215E67283F8D3426 /* [CP] Embed Pods Frameworks */,
+				C9786782CCF9A021E8060E1D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "harta-banilor-publici";
+			productName = "harta-banilor-publici";
+			productReference = 3A3ADB071F739B8D00356210 /* harta-banilor-publici.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3AA402F61F447CDD009490EB /* harta-banilor-publiciTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AA4030E1F447CDE009490EB /* Build configuration list for PBXNativeTarget "harta-banilor-publiciTests" */;
+			buildPhases = (
+				3AA402F31F447CDD009490EB /* Sources */,
+				3AA402F41F447CDD009490EB /* Frameworks */,
+				3AA402F51F447CDD009490EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AA402F91F447CDD009490EB /* PBXTargetDependency */,
+			);
+			name = "harta-banilor-publiciTests";
+			productName = "harta-banilor-publiciTests";
+			productReference = 3A3ADB081F739B8D00356210 /* harta-banilor-publiciTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3AA403011F447CDE009490EB /* harta-banilor-publiciUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3AA403111F447CDE009490EB /* Build configuration list for PBXNativeTarget "harta-banilor-publiciUITests" */;
+			buildPhases = (
+				3AA402FE1F447CDE009490EB /* Sources */,
+				3AA402FF1F447CDE009490EB /* Frameworks */,
+				3AA403001F447CDE009490EB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3AA403041F447CDE009490EB /* PBXTargetDependency */,
+			);
+			name = "harta-banilor-publiciUITests";
+			productName = "harta-banilor-publiciUITests";
+			productReference = 3A3ADB091F739B8D00356210 /* harta-banilor-publiciUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3AA402D91F447CDD009490EB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = grijincu;
+				TargetAttributes = {
+					3AA402E01F447CDD009490EB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 56RHDVP96M;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+					};
+					3AA402F61F447CDD009490EB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 56RHDVP96M;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3AA402E01F447CDD009490EB;
+					};
+					3AA403011F447CDE009490EB = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 56RHDVP96M;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 3AA402E01F447CDD009490EB;
+					};
+				};
+			};
+			buildConfigurationList = 3AA402DC1F447CDD009490EB /* Build configuration list for PBXProject "harta-banilor-publici" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3AA402D81F447CDD009490EB;
+			productRefGroup = 3AA402D81F447CDD009490EB;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3AA402E01F447CDD009490EB /* harta-banilor-publici */,
+				3AA402F61F447CDD009490EB /* harta-banilor-publiciTests */,
+				3AA403011F447CDE009490EB /* harta-banilor-publiciUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3AA402DF1F447CDD009490EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A1EF52E1F52CE51005D1CE9 /* AvenirNextLTPro-Bold.otf in Resources */,
+				3AA403261F448110009490EB /* CrimsonText-SemiBold.ttf in Resources */,
+				3AA403251F448110009490EB /* CrimsonText-Regular.ttf in Resources */,
+				3ADB634A1F6E4DAA00700200 /* institutii_publice_pins_v0.csv in Resources */,
+				3AA403221F448110009490EB /* CrimsonText-Bold.ttf in Resources */,
+				3AA403181F447FEA009490EB /* CustomInfoWindow.xib in Resources */,
+				3AA402F11F447CDD009490EB /* LaunchScreen.storyboard in Resources */,
+				3AA403231F448110009490EB /* CrimsonText-BoldItalic.ttf in Resources */,
+				3AA403241F448110009490EB /* CrimsonText-Italic.ttf in Resources */,
+				3A1EF5301F52CE51005D1CE9 /* AvenirNextLTPro-Regular.otf in Resources */,
+				3A1EF52F1F52CE51005D1CE9 /* AvenirNextLTPro-It.otf in Resources */,
+				3AA402EE1F447CDD009490EB /* Assets.xcassets in Resources */,
+				3AA403271F448110009490EB /* CrimsonText-SemiBoldItalic.ttf in Resources */,
+				3AA402EC1F447CDD009490EB /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AA402F51F447CDD009490EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AA403001F447CDE009490EB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		568C45B302FA53E4F73FFC51 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-harta-banilor-publici-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C9786782CCF9A021E8060E1D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici-resources.sh",
+				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CB5DE67E215E67283F8D3426 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/XLPagerTabStrip/XLPagerTabStrip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XLPagerTabStrip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3AA402DD1F447CDD009490EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A6925511F836BF300EABAC7 /* CompanieViewController.swift in Sources */,
+				3A6925531F836E1900EABAC7 /* ContractViewController.swift in Sources */,
+				3AA402E51F447CDD009490EB /* AppDelegate.swift in Sources */,
+				3AA403161F447F84009490EB /* CustomInfoWindow.swift in Sources */,
+				3A87A6141F7BF5D400F79F1B /* SearchViewController.swift in Sources */,
+				3A6925551F8374B800EABAC7 /* LicitatieViewController.swift in Sources */,
+				3AA402E71F447CDD009490EB /* MapViewController.swift in Sources */,
+				3A882FAB1F44A1D40040811D /* InstitutionViewController.swift in Sources */,
+				3A5580DA1F594178009661D9 /* ApiHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AA402F31F447CDD009490EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AA402FC1F447CDE009490EB /* harta_banilor_publiciTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3AA402FE1F447CDE009490EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3AA403071F447CDE009490EB /* harta_banilor_publiciUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3AA402F91F447CDD009490EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AA402E01F447CDD009490EB /* harta-banilor-publici */;
+			targetProxy = 3AA402F81F447CDD009490EB /* PBXContainerItemProxy */;
+		};
+		3AA403041F447CDE009490EB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3AA402E01F447CDD009490EB /* harta-banilor-publici */;
+			targetProxy = 3AA403031F447CDE009490EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		3AA402EA1F447CDD009490EB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AA402EB1F447CDD009490EB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		3AA402EF1F447CDD009490EB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3AA402F01F447CDD009490EB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3AA403091F447CDE009490EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3AA4030A1F447CDE009490EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3AA4030C1F447CDE009490EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F15980CF94420178A3E5FD29 /* Pods-harta-banilor-publici.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 56RHDVP96M;
+				INFOPLIST_FILE = "harta-banilor-publici/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silviu.harta-banilor-publici";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "harta-banilor-publici/harta-banilor-publici-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		3AA4030D1F447CDE009490EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CD957435C76157D936104F4 /* Pods-harta-banilor-publici.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 56RHDVP96M;
+				INFOPLIST_FILE = "harta-banilor-publici/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silviu.harta-banilor-publici";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "harta-banilor-publici/harta-banilor-publici-Bridging-Header.h";
+				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+		3AA4030F1F447CDE009490EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 56RHDVP96M;
+				INFOPLIST_FILE = "harta-banilor-publiciTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silviu.harta-banilor-publiciTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harta-banilor-publici.app/harta-banilor-publici";
+			};
+			name = Debug;
+		};
+		3AA403101F447CDE009490EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 56RHDVP96M;
+				INFOPLIST_FILE = "harta-banilor-publiciTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silviu.harta-banilor-publiciTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/harta-banilor-publici.app/harta-banilor-publici";
+			};
+			name = Release;
+		};
+		3AA403121F447CDE009490EB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 56RHDVP96M;
+				INFOPLIST_FILE = "harta-banilor-publiciUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silviu.harta-banilor-publiciUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "harta-banilor-publici";
+			};
+			name = Debug;
+		};
+		3AA403131F447CDE009490EB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 56RHDVP96M;
+				INFOPLIST_FILE = "harta-banilor-publiciUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.silviu.harta-banilor-publiciUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
+				TEST_TARGET_NAME = "harta-banilor-publici";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3AA402DC1F447CDD009490EB /* Build configuration list for PBXProject "harta-banilor-publici" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA403091F447CDE009490EB /* Debug */,
+				3AA4030A1F447CDE009490EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AA4030B1F447CDE009490EB /* Build configuration list for PBXNativeTarget "harta-banilor-publici" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA4030C1F447CDE009490EB /* Debug */,
+				3AA4030D1F447CDE009490EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AA4030E1F447CDE009490EB /* Build configuration list for PBXNativeTarget "harta-banilor-publiciTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA4030F1F447CDE009490EB /* Debug */,
+				3AA403101F447CDE009490EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3AA403111F447CDE009490EB /* Build configuration list for PBXNativeTarget "harta-banilor-publiciUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3AA403121F447CDE009490EB /* Debug */,
+				3AA403131F447CDE009490EB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3AA402D91F447CDD009490EB /* Project object */;
+}
