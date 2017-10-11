@@ -12,10 +12,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var searchBar: UISearchBar!
     let searchController = UISearchController(searchResultsController: nil)
     var isSearching: Bool = false
+    
+    var api: ApiHelper!
 
     //@IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        api = ApiHelper()
+        
         searchController.searchBar.scopeButtonTitles = ["Instituții", "Companii", "Contracte", "Licitații"]
         searchController.searchBar.placeholder = "Caută..."
         searchController.hidesNavigationBarDuringPresentation = false
@@ -79,15 +84,58 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        isSearching = true
+        self.tableView.reloadData()
+
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
-            searchInstitustion(pattern: searchBar.text!)
+            api.searchInstitution(pattern: searchBar.text!) { (institutionResults) -> () in
+                self.institutionResults = institutionResults
+                self.isSearching = false
+                
+                DispatchQueue.main.async{
+                    NSLog("DONE Fetching Institutions")
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
+            }
         case 1:
-            searchCompanies(pattern: searchBar.text!)
+            api.searchCompanies(pattern: searchBar.text!) { (companieResults) -> () in
+                self.companieResults = companieResults
+                self.isSearching = false
+
+                DispatchQueue.main.async{
+                    NSLog("DONE Fetching Companies")
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
+            }
         case 2:
-            searchContracts(pattern: searchBar.text!)
+            api.searchContracts(pattern: searchBar.text!) { (contractResults) -> () in
+                self.contractResults = contractResults
+                self.isSearching = false
+
+                DispatchQueue.main.async{
+                    NSLog("DONE Fetching Contracts")
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
+            }
         case 3:
-            searchLicitatii(pattern: searchBar.text!)
+            api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults) -> () in
+                self.licitatieResults = licitatieResults
+                self.isSearching = false
+
+                DispatchQueue.main.async{
+                    NSLog("DONE Fetching Licitatii")
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
+            }
         default:
             break
         }
@@ -104,12 +152,24 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        isSearching = true
+        self.tableView.reloadData()
+
         switch selectedScope {
         case 0:
             if institutionResults.count == 0 {
                 self.tableView.allowsSelection = false
                 self.tableView.isScrollEnabled = false
-                searchInstitustion(pattern: searchBar.text!)
+                api.searchInstitution(pattern: searchBar.text!) { (institutionResults) -> () in
+                    self.institutionResults = institutionResults
+                    self.isSearching = false
+                    DispatchQueue.main.async{
+                        NSLog("DONE Fetching Institutions")
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
+                }
             }
             else {
                 self.tableView.allowsSelection = true
@@ -120,7 +180,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             if companieResults.count == 0 {
                 self.tableView.allowsSelection = false
                 self.tableView.isScrollEnabled = false
-                searchCompanies(pattern: searchBar.text!)
+                api.searchCompanies(pattern: searchBar.text!) { (companieResults) -> () in
+                    self.companieResults = companieResults
+                    self.isSearching = false
+                    
+                    DispatchQueue.main.async{
+                        NSLog("DONE Fetching Companies")
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
+                }
+
             }
             else {
                 self.tableView.allowsSelection = true
@@ -131,7 +202,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             if contractResults.count == 0 {
                 self.tableView.allowsSelection = false
                 self.tableView.isScrollEnabled = false
-                searchContracts(pattern: searchBar.text!)
+                api.searchContracts(pattern: searchBar.text!) { (contractResults) -> () in
+                    self.contractResults = contractResults
+                    self.isSearching = false
+                    
+                    DispatchQueue.main.async{
+                        NSLog("DONE Fetching Contracts")
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
+                }
             }
             else {
                 self.tableView.allowsSelection = true
@@ -142,7 +223,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             if licitatieResults.count == 0 {
                 self.tableView.allowsSelection = false
                 self.tableView.isScrollEnabled = false
-                searchLicitatii(pattern: searchBar.text!)
+                api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults) -> () in
+                    self.licitatieResults = licitatieResults
+                    self.isSearching = false
+                    
+                    DispatchQueue.main.async{
+                        NSLog("DONE Fetching Licitatii")
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
+                }
             }
             else {
                 self.tableView.allowsSelection = true
@@ -277,181 +368,5 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         default:
             break;
         }
-    }
-    
-    func searchInstitustion(pattern: String) {
-        if pattern.isEmpty {
-            return
-        }
-        NSLog("Fetching Institutions for " + pattern)
-        self.institutionResults = []
-        isSearching = true
-        self.tableView.reloadData()
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
-        let url_str = "https://hbp-api.azurewebsites.net/api/SearchInstitution/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.institutionResults = []
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            self.institutionResults = try! JSONDecoder().decode([Institution].self, from: data)
-
-            DispatchQueue.main.async{
-                NSLog("DONE Fetching Institutions")
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.isSearching = false
-                self.tableView.reloadData()
-            }
-        }
-        task.resume()
-    }
-    
-    func searchCompanies(pattern: String) {
-        guard !pattern.isEmpty else {
-            return
-        }
-        NSLog("Fetching Companies for " + pattern)
-        self.companieResults = []
-        isSearching = true
-        self.tableView.reloadData()
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
-        let url_str = "https://hbp-api.azurewebsites.net/api/SearchCompany/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.companieResults = []
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            self.companieResults = try! JSONDecoder().decode([CompanyByInstitution].self, from: data)
-
-            DispatchQueue.main.async{
-                NSLog("DONE Fetching Companies")
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.isSearching = false
-                self.tableView.reloadData()
-            }
-        }
-        task.resume()
-    }
-    
-    func searchContracts(pattern: String) {
-        if pattern.isEmpty {
-            return
-        }
-        NSLog("Fetching Contracts for " + pattern)
-        self.contractResults = []
-        isSearching = true
-        self.tableView.reloadData()
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
-        let url_str = "https://hbp-api.azurewebsites.net/api/SearchContract/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.contractResults = []
-                    self.tableView.reloadData()
-                    
-                }
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-
-            self.contractResults = try! JSONDecoder().decode([InstitutionContract].self, from: data)
-
-            DispatchQueue.main.async{
-                NSLog("DONE Fetching Contracts")
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.isSearching = false
-                self.tableView.reloadData()
-            }
-        }
-        task.resume()
-    }
-    
-    func searchLicitatii(pattern: String) {
-        if pattern.isEmpty {
-            return
-        }
-        NSLog("Fetching Licitatii for " + pattern)
-        self.licitatieResults = []
-        isSearching = true
-        self.tableView.reloadData()
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
-        let url_str = "https://hbp-api.azurewebsites.net/api/SearchTenters/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.licitatieResults = []
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            self.licitatieResults = try! JSONDecoder().decode([InstitutionLicitatie].self, from: data)
-            
-            DispatchQueue.main.async{
-                NSLog("DONE Fetching Licitatii")
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.isSearching = false
-                self.tableView.reloadData()
-            }
-        }
-        task.resume()
     }
 }

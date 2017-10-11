@@ -67,27 +67,6 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var institutionNameLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     
-    @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        tableView.setContentOffset(.zero, animated: false)
-        tableView.reloadData()
-        switch tabBar.selectedSegmentIndex {
-        case 0:
-            if contracte.count == 0 && !fetchedContracts {
-                fetchInstitutionContracts()
-            }
-        case 1:
-            if licitatii.count == 0 && !fetchedLicitatii {
-                fetchLicitatii()
-            }
-        case 2:
-            if companii.count == 0 && !fetchedCompanii {
-                fetchCompanii()
-            }
-        default:
-            break;
-        }
-    }
-    
     let cellReuseIdentifier = "cell"
     
     var contracte: [InstitutionContract] = []
@@ -98,9 +77,61 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     var fetchedContracts: Bool = false
     var fetchedLicitatii: Bool = false
     var fetchedCompanii: Bool = false
+    
+    var api: ApiHelper!
+    
+    @IBAction func indexChanged(_ sender: UISegmentedControl) {
+        self.tableView.setContentOffset(.zero, animated: false)
+        self.tableView.reloadData()
+        switch tabBar.selectedSegmentIndex {
+        case 0:
+            if contracte.count == 0 && !fetchedContracts {
+                api.getInstitutionContracts(id: id) { (contracte) -> () in
+                    self.contracte = contracte
+                    DispatchQueue.main.async {
+                        NSLog("DONE Fetching contracts")
+                        self.fetchedContracts = true
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        case 1:
+            if licitatii.count == 0 && !fetchedLicitatii {
+                api.getInstitutionTenders(id: id) { (licitatii) -> () in
+                    self.licitatii = licitatii
+                    DispatchQueue.main.async {
+                        NSLog("DONE Fetching Licitatii")
+                        self.fetchedLicitatii = true
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        case 2:
+            if companii.count == 0 && !fetchedCompanii {
+                api.getCompaniesByInstitution(id: id) { (companii) -> () in
+                    self.companii = companii
+                    DispatchQueue.main.async {
+                        NSLog("DONE Fetching companii")
+                        self.fetchedCompanii = true
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        default:
+            break;
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        api = ApiHelper()
         
         self.customizeNavBar()
         
@@ -111,13 +142,27 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         self.achizitiiCountLabel.text = achizitiiCount
         self.licitatiiCountLabel.text = licitatiiCount
 
-        fetchInstitution(id: id)
-
+        api.getInstitutionByID(id: id) { (institution) -> () in
+            self.institution = institution
+            DispatchQueue.main.async {
+                NSLog("DONE fetching institution")
+                self.setLabels()
+            }
+        }
         setTableHeaderSeparator()
         
         tableView.delegate = self
         tableView.dataSource = self
-        fetchInstitutionContracts()
+        api.getInstitutionContracts(id: id) { (contracte) -> () in
+            self.contracte = contracte
+            DispatchQueue.main.async {
+                NSLog("DONE Fetching contracts")
+                self.fetchedContracts = true
+                self.tableView.allowsSelection = true
+                self.tableView.isScrollEnabled = true
+                self.tableView.reloadData()
+            }
+        }
     }
     
     private func customizeNavBar() {
@@ -144,129 +189,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     
-    func fetchInstitution(id: String!) {
-        let url_str = "https://hbp-api.azurewebsites.net/api/InstitutionByID/" + id!
-        NSLog("Fetching Institution: " + url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            self.institution = try! JSONDecoder().decode([Institution].self, from: data)[0]
-            DispatchQueue.main.async {
-                NSLog("DONE fetching institution")
-                self.setLabels()
-            }
-        }
-        task.resume()
-    }
-    
-    func fetchInstitutionContracts() {
-        NSLog("Fetching Contracts")
-        let url_str = "https://hbp-api.azurewebsites.net/api/InstitutionContracts/" + id
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                DispatchQueue.main.async {
-                    self.fetchedContracts = true
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            self.contracte = try! JSONDecoder().decode([InstitutionContract].self, from: data)
-            
-            self.contracte.sort(by: { $0.valoareRON > $1.valoareRON})
-            DispatchQueue.main.async {
-                NSLog("DONE Fetching contracts")
-                self.fetchedContracts = true
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.tableView.reloadData()
-            }
-        }
-        task.resume()
-    }
-    
-    func fetchLicitatii() {
-        NSLog("Fetching Licitatii")
 
-        let url_str = "https://hbp-api.azurewebsites.net/api/InstitutionTenders/" + id
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                DispatchQueue.main.async {
-                    self.fetchedLicitatii = true
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            self.licitatii = try! JSONDecoder().decode([InstitutionLicitatie].self, from: data)
-            self.licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
-            
-            DispatchQueue.main.async {
-                NSLog("DONE Fetching Licitatii")
-                self.fetchedLicitatii = true
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.tableView.reloadData()
-            }
-        }
-        task.resume()
-    }
-    
-    func fetchCompanii() {
-        NSLog("Fetching Companii")
-        let url_str = "https://hbp-api.azurewebsites.net/api/CompaniesByInstitution/" + id
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
-            guard error == nil else {
-                print(error!)
-                DispatchQueue.main.async {
-                    self.fetchedCompanii = true
-                    self.tableView.reloadData()
-                }
-                return
-            }
-            guard let data = data else {
-                print("Data is empty")
-                return
-            }
-            
-            self.companii = try! JSONDecoder().decode([CompanyByInstitution].self, from: data)
-            
-            DispatchQueue.main.async {
-                NSLog("DONE Fetching companii")
-                self.fetchedCompanii = true
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.tableView.reloadData()
-            }
-        }
-        task.resume()
-    }
-    
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tabBar.selectedSegmentIndex {
