@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -88,57 +89,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-UU-Q5q">
-                                <rect key="frame" x="0.0" y="205" width="375" height="413"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="QKu-Ma-ycD" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKu-Ma-ycD" id="CBs-gi-FUC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-KU-fnw" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
-                                                    <rect key="frame" x="8" y="8" width="229" height="49"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrR-Qu-n2p" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
-                                                    <rect key="frame" x="245" y="8" width="67" height="49"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="DGl-td-Hmo" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
-                                                    <rect key="frame" x="320" y="0.0" width="55" height="65"/>
-                                                    <color key="backgroundColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="DGl-td-Hmo" firstAttribute="leading" secondItem="xrR-Qu-n2p" secondAttribute="trailing" constant="8" id="4ld-CZ-wMb"/>
-                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="leading" secondItem="CBs-gi-FUC" secondAttribute="leading" constant="8" id="Ihl-9p-Qe1"/>
-                                                <constraint firstItem="xrR-Qu-n2p" firstAttribute="leading" secondItem="UIb-KU-fnw" secondAttribute="trailing" constant="8" id="J2n-Qp-uzl"/>
-                                                <constraint firstItem="DGl-td-Hmo" firstAttribute="bottom" secondItem="xrR-Qu-n2p" secondAttribute="bottom" id="Usr-85-4O7"/>
-                                                <constraint firstAttribute="bottom" secondItem="UIb-KU-fnw" secondAttribute="bottom" constant="7.5" id="diC-Wu-485"/>
-                                                <constraint firstItem="xrR-Qu-n2p" firstAttribute="bottom" secondItem="UIb-KU-fnw" secondAttribute="bottom" id="i06-gw-BcW"/>
-                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="top" secondItem="CBs-gi-FUC" secondAttribute="top" constant="8" id="jL9-6b-0CG"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="button" destination="DGl-td-Hmo" id="Gy2-mI-njB"/>
-                                            <outlet property="priceLabel" destination="xrR-Qu-n2p" id="CEB-ox-8vG"/>
-                                            <outlet property="titleLabel" destination="UIb-KU-fnw" id="JDE-i6-Gax"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="city-hall" translatesAutoresizingMaskIntoConstraints="NO" id="7XH-5c-b3K">
                                 <rect key="frame" x="16" y="72" width="41" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -157,6 +107,66 @@
                                     <action selector="indexChanged:" destination="mwM-rY-90A" eventType="valueChanged" id="41N-Aw-Kr2"/>
                                 </connections>
                             </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-UU-Q5q">
+                                <rect key="frame" x="0.0" y="205" width="375" height="413"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="QKu-Ma-ycD" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="65"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKu-Ma-ycD" id="CBs-gi-FUC">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIb-KU-fnw" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="229" height="49"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xrR-Qu-n2p" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="245" y="8" width="67" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="67" id="dOn-YG-wfZ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="DGl-td-Hmo" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="320" y="-1" width="55" height="65"/>
+                                                    <color key="backgroundColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="yFG-cX-hnF"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="leading" secondItem="CBs-gi-FUC" secondAttribute="leadingMargin" id="1We-Pf-HCO"/>
+                                                <constraint firstItem="xrR-Qu-n2p" firstAttribute="leading" secondItem="UIb-KU-fnw" secondAttribute="trailing" constant="8" symbolic="YES" id="5An-q5-YeX"/>
+                                                <constraint firstAttribute="trailing" secondItem="DGl-td-Hmo" secondAttribute="trailing" id="DnR-kj-ywT"/>
+                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="top" secondItem="CBs-gi-FUC" secondAttribute="topMargin" id="J8v-Xd-gHM"/>
+                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="top" secondItem="xrR-Qu-n2p" secondAttribute="top" id="LB0-zK-iul"/>
+                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="baseline" secondItem="xrR-Qu-n2p" secondAttribute="baseline" id="M3u-jC-FVN"/>
+                                                <constraint firstItem="DGl-td-Hmo" firstAttribute="top" secondItem="CBs-gi-FUC" secondAttribute="topMargin" constant="-9" id="MTj-gQ-mfy"/>
+                                                <constraint firstItem="UIb-KU-fnw" firstAttribute="centerY" secondItem="CBs-gi-FUC" secondAttribute="centerY" id="sMv-Ms-arw"/>
+                                                <constraint firstItem="DGl-td-Hmo" firstAttribute="leading" secondItem="xrR-Qu-n2p" secondAttribute="trailing" constant="8" symbolic="YES" id="vaS-pc-lIX"/>
+                                                <constraint firstItem="DGl-td-Hmo" firstAttribute="centerY" secondItem="CBs-gi-FUC" secondAttribute="centerY" id="zXA-CN-qqP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="button" destination="DGl-td-Hmo" id="Gy2-mI-njB"/>
+                                            <outlet property="priceLabel" destination="xrR-Qu-n2p" id="CEB-ox-8vG"/>
+                                            <outlet property="titleLabel" destination="UIb-KU-fnw" id="JDE-i6-Gax"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adresă:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZG-Lb-BA8">
                                 <rect key="frame" x="16" y="124" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -314,6 +324,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="city-hall" translatesAutoresizingMaskIntoConstraints="NO" id="ZdS-Qz-ges">
+                                <rect key="frame" x="15" y="72" width="41" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VV7-yK-Qck">
+                                <rect key="frame" x="-3" y="176" width="381" height="29"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                <segments>
+                                    <segment title="Instituții"/>
+                                    <segment title="Contracte"/>
+                                    <segment title="Licitații"/>
+                                </segments>
+                                <color key="tintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <connections>
+                                    <action selector="indexChanged:" destination="Iwr-51-Xaf" eventType="valueChanged" id="fLg-0b-Mu7"/>
+                                </connections>
+                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-46-gEu">
                                 <rect key="frame" x="-1" y="205" width="375" height="413"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -359,24 +387,6 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="city-hall" translatesAutoresizingMaskIntoConstraints="NO" id="ZdS-Qz-ges">
-                                <rect key="frame" x="15" y="72" width="41" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="VV7-yK-Qck">
-                                <rect key="frame" x="-3" y="176" width="381" height="29"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <segments>
-                                    <segment title="Instituții"/>
-                                    <segment title="Contracte"/>
-                                    <segment title="Licitații"/>
-                                </segments>
-                                <color key="tintColor" red="0.4549019608" green="0.7725490196" blue="0.78823529410000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <connections>
-                                    <action selector="indexChanged:" destination="Iwr-51-Xaf" eventType="valueChanged" id="fLg-0b-Mu7"/>
-                                </connections>
-                            </segmentedControl>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Adresă:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="78n-Eh-qia">
                                 <rect key="frame" x="14" y="134" width="42" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>

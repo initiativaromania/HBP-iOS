@@ -13,20 +13,31 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         switch tabBar.selectedSegmentIndex {
         case 0:
-            populateInstitutii()
+            if institutii.count == 0 && !fetchedInstitutii {
+                fetchInstitutii()
+            }
         case 1:
-            populateContracte()
+            if contracte.count == 0 && !fetchedContracts {
+                fetchContracte()
+            }
         case 2:
-            populateLicitatii()
+            if licitatii.count == 0 && !fetchedLicitatii {
+                fetchLicitatii()
+            }
         default:
             break;
         }
     }
+    
     let cellReuseIdentifier = "cell"
     
     var institutii: [InstitutionByCompany] = []
     var contracte: [CompanyContract] = []
     var licitatii: [CompanyLicitatie] = []
+    
+    var fetchedInstitutii: Bool = false
+    var fetchedContracts: Bool = false
+    var fetchedLicitatii: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,40 +67,16 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         let line = UIView(frame: frame)
         self.tableView.tableHeaderView = line
         line.backgroundColor = self.tableView.separatorColor
+    }
+    
+    private func setLabels() {
+        self.adresaLabel.text = companieSummary?.adresa
+        self.adresaLabel.adjustsFontSizeToFitWidth = true
+        self.adresaLabel.minimumScaleFactor = 0.2
         
-    }
-    
-    func populateInstitutii() {
-        tableView.reloadData()
-
-        if institutii.count == 0 {
-            self.tableView.allowsSelection = false
-            self.tableView.isScrollEnabled = false
-
-            fetchInstitutii()
-        }
-    }
-    
-    func populateContracte() {
-        tableView.reloadData()
-
-        if contracte.count == 0 {
-            self.tableView.allowsSelection = false
-            self.tableView.isScrollEnabled = false
-
-            fetchContracte()
-        }
-    }
-    
-    func populateLicitatii() {
-        tableView.reloadData()
-
-        if licitatii.count == 0 {
-            self.tableView.allowsSelection = false
-            self.tableView.isScrollEnabled = false
-
-            fetchLicitatii()
-        }
+        self.cuiLabel.text = companieSummary?.cui
+        self.cuiLabel.adjustsFontSizeToFitWidth = true
+        self.cuiLabel.minimumScaleFactor = 0.2
     }
     
     func fetchInstitutii() {
@@ -100,6 +87,10 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
                 print(error!)
+                DispatchQueue.main.async {
+                    self.fetchedInstitutii = true
+                    self.tableView.reloadData()
+                }
                 return
             }
             guard let data = data else {
@@ -110,11 +101,11 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             self.institutii = try! JSONDecoder().decode([InstitutionByCompany].self, from: data)
             
             DispatchQueue.main.async {
+                NSLog("DONE Fetching Institutions")
                 self.tableView.allowsSelection = true
                 self.tableView.isScrollEnabled = true
                 self.tableView.reloadData()
             }
-
         }
         task.resume()
     }
@@ -127,6 +118,10 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
                 print(error!)
+                DispatchQueue.main.async {
+                    self.fetchedContracts = true
+                    self.tableView.reloadData()
+                }
                 return
             }
             guard let data = data else {
@@ -139,6 +134,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             self.contracte.sort(by: { $0.valoareRON > $1.valoareRON})
             
             DispatchQueue.main.async {
+                NSLog("DONE Fetching Contracts")
                 self.tableView.allowsSelection = true
                 self.tableView.isScrollEnabled = true
                 self.tableView.reloadData()
@@ -156,6 +152,10 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
                 print(error!)
+                DispatchQueue.main.async {
+                    self.fetchedLicitatii = true
+                    self.tableView.reloadData()
+                }
                 return
             }
             guard let data = data else {
@@ -167,6 +167,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             self.licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
             
             DispatchQueue.main.async {
+                NSLog("DONE Fetching Licitatii")
                 self.tableView.allowsSelection = true
                 self.tableView.isScrollEnabled = true
                 self.tableView.reloadData()
@@ -177,22 +178,15 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         switch tabBar.selectedSegmentIndex {
         case 0:
-            guard institutii.count > 0 else {
-                return 15
-            }
+            if institutii.count == 0 && !fetchedInstitutii { return 15 }
             return institutii.count
         case 1:
-            guard contracte.count > 0 else {
-                return 15
-            }
+            if contracte.count == 0 && !fetchedContracts { return 15 }
             return contracte.count
         case 2:
-            guard licitatii.count > 0 else {
-                return 15
-            }
+            if licitatii.count == 0 && !fetchedLicitatii { return 15 }
             return licitatii.count
         default:
             break;
@@ -205,31 +199,49 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         let cell:TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
         switch tabBar.selectedSegmentIndex {
         case 0:
-            guard institutii.count > 0 else {
-                cell.startShimmer()
-                break
+            if institutii.count == 0 {
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
+                if !fetchedInstitutii {
+                    cell.startShimmer()
+                }
+                return cell
             }
             cell.stopShimmer()
             cell.titleLabel.text = institutii[indexPath.row].nume
             cell.button.text = ">"
+            self.tableView.allowsSelection = true
+            self.tableView.isScrollEnabled = true
         case 1:
-            guard contracte.count > 0 else {
-                cell.startShimmer()
-                break
+            if contracte.count == 0 {
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
+                if !fetchedContracts {
+                    cell.startShimmer()
+                }
+                return cell
             }
             cell.stopShimmer()
             cell.titleLabel.text = contracte[indexPath.row].titluContract.capitalized(with: Locale(identifier: "ro"))
             cell.priceLabel.text = String(contracte[indexPath.row].valoareRON) + "\nRON"
             cell.button.text = ">"
+            self.tableView.allowsSelection = true
+            self.tableView.isScrollEnabled = true
         case 2:
-            guard licitatii.count > 0 else {
-                cell.startShimmer()
-                break
+            if licitatii.count == 0 {
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
+                if !fetchedLicitatii {
+                    cell.startShimmer()
+                }
+                return cell
             }
             cell.stopShimmer()
             cell.titleLabel.text = licitatii[indexPath.row].titluContract
             cell.priceLabel.text = String(licitatii[indexPath.row].valoareRON) + "\nRON"
             cell.button.text = ">"
+            self.tableView.allowsSelection = true
+            self.tableView.isScrollEnabled = true
         default:
             break;
         }
@@ -248,15 +260,4 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             break;
         }
     }
-    
-    private func setLabels() {
-        self.adresaLabel.text = companieSummary?.adresa
-        self.adresaLabel.adjustsFontSizeToFitWidth = true
-        self.adresaLabel.minimumScaleFactor = 0.2
-        
-        self.cuiLabel.text = companieSummary?.cui
-        self.cuiLabel.adjustsFontSizeToFitWidth = true
-        self.cuiLabel.minimumScaleFactor = 0.2
-    }
 }
-
