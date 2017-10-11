@@ -85,7 +85,7 @@ struct CompanyLicitatie: Codable {
 class ApiHelper {
     let api_url = "https://hbp-api.azurewebsites.net/api/"
     
-    func getInstitutionByID(id: String, handler: @escaping (Institution) -> ()) {
+    func getInstitutionByID(id: String, handler: @escaping (Institution, URLResponse?, Error?) -> ()) {
         let url_str = self.api_url + "InstitutionByID/" + id
         NSLog("Fetching Institution: " + url_str)
         let url = URL(string: url_str)
@@ -102,12 +102,12 @@ class ApiHelper {
             }
             
             institution = try! JSONDecoder().decode([Institution].self, from: data)[0]
-            handler(institution)
+            handler(institution, response, error)
         }
         task.resume()
     }
     
-    func getInstitutionContracts(id: String, handler: @escaping ([InstitutionContract]) -> ()) {
+    func getInstitutionContracts(id: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> ()) {
         NSLog("Fetching Contracts")
         let url_str = self.api_url + "InstitutionContracts/" + id
         let url = URL(string: url_str)
@@ -126,12 +126,12 @@ class ApiHelper {
             contracte = try! JSONDecoder().decode([InstitutionContract].self, from: data)
             
             contracte.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(contracte)
+            handler(contracte, response, error)
         }
         task.resume()
     }
     
-    func getInstitutionTenders(id: String, handler: @escaping ([InstitutionLicitatie]) -> ()) {
+    func getInstitutionTenders(id: String, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> ()) {
         NSLog("Fetching Licitatii")
         
         let url_str = self.api_url + "InstitutionTenders/" + id
@@ -150,12 +150,12 @@ class ApiHelper {
             
             licitatii = try! JSONDecoder().decode([InstitutionLicitatie].self, from: data)
             licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(licitatii)
+            handler(licitatii, response, error)
         }
         task.resume()
     }
     
-    func getCompaniesByInstitution(id: String, handler: @escaping ([CompanyByInstitution]) -> ()) {
+    func getCompaniesByInstitution(id: String, handler: @escaping ([CompanyByInstitution], URLResponse?, Error?) -> ()) {
         NSLog("Fetching Companii")
         let url_str = self.api_url + "CompaniesByInstitution/" + id
         let url = URL(string: url_str)
@@ -172,14 +172,14 @@ class ApiHelper {
             }
             
             companii = try! JSONDecoder().decode([CompanyByInstitution].self, from: data)
-            handler(companii)
+            handler(companii, response, error)
         }
         task.resume()
     }
 
     // Company API calls
 
-    func getCompanyContracts(cui: String, handler: @escaping ([CompanyContract]) -> ()) {
+    func getCompanyContracts(cui: String, handler: @escaping ([CompanyContract], URLResponse?, Error?) -> ()) {
         NSLog("Fetching Company Contracts")
         let url_str = self.api_url + "CompanyContracts/" + cui
         let url = URL(string: url_str)
@@ -197,12 +197,12 @@ class ApiHelper {
             
             contracte = try! JSONDecoder().decode([CompanyContract].self, from: data)
             contracte.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(contracte)
+            handler(contracte, response, error)
         }
         task.resume()
     }
     
-    func getInstitutionsByCompany(cui: String, handler: @escaping ([InstitutionByCompany]) -> ()) {
+    func getInstitutionsByCompany(cui: String, handler: @escaping ([InstitutionByCompany], URLResponse?, Error?) -> ()) {
         let url_str = self.api_url + "InstitutionsByCompany/" + cui
         NSLog("Fetching Institutions: " + url_str)
         let url = URL(string: url_str)
@@ -219,12 +219,12 @@ class ApiHelper {
             }
             
             institutii = try! JSONDecoder().decode([InstitutionByCompany].self, from: data)
-            handler(institutii)
+            handler(institutii, response, error)
         }
         task.resume()
     }
     
-    func getCompanyTenders(cui: String, handler: @escaping ([CompanyLicitatie]) -> ()) {
+    func getCompanyTenders(cui: String, handler: @escaping ([CompanyLicitatie], URLResponse?, Error?) -> ()) {
         NSLog("Fetching Licitatii")
         
         let url_str = self.api_url + "CompanyTenders/" + cui
@@ -243,14 +243,14 @@ class ApiHelper {
             
             licitatii = try! JSONDecoder().decode([CompanyLicitatie].self, from: data)
             licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(licitatii)            
+            handler(licitatii, response, error)
         }
         task.resume()
     }
 
 // Search API calls
 
-    func searchInstitution(pattern: String, handler: @escaping ([Institution]) -> ()) {
+    func searchInstitution(pattern: String, handler: @escaping ([Institution], URLResponse?, Error?) -> ()) {
         if pattern.isEmpty {
             return
         }
@@ -268,13 +268,6 @@ class ApiHelper {
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
                 print(error!)
-                /*DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.institutionResults = []
-                    self.tableView.reloadData()
-                }*/
                 return
             }
             guard let data = data else {
@@ -282,12 +275,12 @@ class ApiHelper {
                 return
             }
             institutionResults = try! JSONDecoder().decode([Institution].self, from: data)
-            handler(institutionResults)
+            handler(institutionResults, response, error)
         }
         task.resume()
     }
     
-    func searchCompanies(pattern: String, handler: @escaping ([CompanyByInstitution]) -> ()) {
+    func searchCompanies(pattern: String, handler: @escaping ([CompanyByInstitution], URLResponse?, Error?) -> ()) {
         if pattern.isEmpty {
             return
         }
@@ -319,12 +312,12 @@ class ApiHelper {
             }
             
             companieResults = try! JSONDecoder().decode([CompanyByInstitution].self, from: data)
-            handler(companieResults)
+            handler(companieResults, response, error)
         }
         task.resume()
     }
     
-    func searchContracts(pattern: String, handler: @escaping ([InstitutionContract]) -> ()) {
+    func searchContracts(pattern: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> ()) {
         if pattern.isEmpty {
             return
         }
@@ -357,12 +350,12 @@ class ApiHelper {
             }
             
             contractResults = try! JSONDecoder().decode([InstitutionContract].self, from: data)
-            handler(contractResults)
+            handler(contractResults, response, error)
         }
         task.resume()
     }
     
-    func searchLicitatii(pattern: String, handler: @escaping ([InstitutionLicitatie]) -> ()) {
+    func searchLicitatii(pattern: String, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> ()) {
         if pattern.isEmpty {
             return
         }
@@ -394,7 +387,7 @@ class ApiHelper {
             }
             
             licitatieResults = try! JSONDecoder().decode([InstitutionLicitatie].self, from: data)
-            handler(licitatieResults)
+            handler(licitatieResults, response, error)
         }
         task.resume()
     }

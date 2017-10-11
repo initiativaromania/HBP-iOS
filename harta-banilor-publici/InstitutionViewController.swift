@@ -10,20 +10,20 @@ class ShimmerLabel: UILabel {
         shimmer = FBShimmeringView(frame: self.frame)
         self.adjustsFontSizeToFitWidth = true
         self.minimumScaleFactor = 0.2
+        self.initialColor = self.backgroundColor
     }
     
     func startShimmer() {
         shimmer.contentView = self
         self.text = ""
-        self.initialColor = self.backgroundColor
         self.backgroundColor = UIColor(red: (238.0/255.0), green: (238.0/255.0), blue: (238.0/255.0), alpha: 1.0)
         shimmer.isShimmering = true
     }
     
     func stopShimmer() {
+        self.backgroundColor = initialColor
         guard let _ = shimmer else { return }
         shimmer.isShimmering = false
-        self.backgroundColor = initialColor
     }
 }
 
@@ -85,12 +85,20 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.reloadData()
         switch tabBar.selectedSegmentIndex {
         case 0:
-            if contracte.count == 0 && !fetchedContracts {
-                api.getInstitutionContracts(id: id) { (contracte) -> () in
+            if contracte.count == 0 && !fetchedContracts{
+                api.getInstitutionContracts(id: id) { (contracte, response, error) -> () in
+                    guard error == nil else {
+                        self.fetchedContracts = true
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.contracte = contracte
+                    self.fetchedContracts = true
+
                     DispatchQueue.main.async {
                         NSLog("DONE Fetching contracts")
-                        self.fetchedContracts = true
                         self.tableView.allowsSelection = true
                         self.tableView.isScrollEnabled = true
                         self.tableView.reloadData()
@@ -99,11 +107,19 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         case 1:
             if licitatii.count == 0 && !fetchedLicitatii {
-                api.getInstitutionTenders(id: id) { (licitatii) -> () in
+                api.getInstitutionTenders(id: id) { (licitatii, response, error) -> () in
+                    guard error == nil else {
+                        self.fetchedLicitatii = true
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.licitatii = licitatii
+                    self.fetchedLicitatii = true
+
                     DispatchQueue.main.async {
                         NSLog("DONE Fetching Licitatii")
-                        self.fetchedLicitatii = true
                         self.tableView.allowsSelection = true
                         self.tableView.isScrollEnabled = true
                         self.tableView.reloadData()
@@ -112,11 +128,19 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         case 2:
             if companii.count == 0 && !fetchedCompanii {
-                api.getCompaniesByInstitution(id: id) { (companii) -> () in
+                api.getCompaniesByInstitution(id: id) { (companii, response, error) -> () in
+                    guard error == nil else {
+                        self.fetchedCompanii = true
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.companii = companii
+                    self.fetchedCompanii = true
+
                     DispatchQueue.main.async {
                         NSLog("DONE Fetching companii")
-                        self.fetchedCompanii = true
                         self.tableView.allowsSelection = true
                         self.tableView.isScrollEnabled = true
                         self.tableView.reloadData()
@@ -142,7 +166,11 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         self.achizitiiCountLabel.text = achizitiiCount
         self.licitatiiCountLabel.text = licitatiiCount
 
-        api.getInstitutionByID(id: id) { (institution) -> () in
+        api.getInstitutionByID(id: id) { (institution, response, error) -> () in
+            guard error == nil else {
+                print("ERROR getting institution")
+                return
+            }
             self.institution = institution
             DispatchQueue.main.async {
                 NSLog("DONE fetching institution")
@@ -153,7 +181,14 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.delegate = self
         tableView.dataSource = self
-        api.getInstitutionContracts(id: id) { (contracte) -> () in
+        api.getInstitutionContracts(id: id) { (contracte, response, error) -> () in
+            guard error == nil else {
+                self.fetchedContracts = true
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                return
+            }
             self.contracte = contracte
             DispatchQueue.main.async {
                 NSLog("DONE Fetching contracts")
@@ -194,13 +229,13 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tabBar.selectedSegmentIndex {
         case 0:
-            if contracte.count == 0 && !fetchedContracts { return 15 }
+            if contracte.count == 0 && !fetchedContracts { return 20 }
             return contracte.count
         case 1:
-            if licitatii.count == 0 && !fetchedLicitatii { return 15 }
+            if licitatii.count == 0 && !fetchedLicitatii { return 20 }
             return licitatii.count
         case 2:
-            if companii.count == 0 && !fetchedCompanii { return 15 }
+            if companii.count == 0 && !fetchedCompanii { return 20 }
             return companii.count
         default:
             break;

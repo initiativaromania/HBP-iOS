@@ -11,7 +11,10 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     let searchController = UISearchController(searchResultsController: nil)
-    var isSearching: Bool = false
+    var isSearchingInstitutions: Bool = false
+    var isSearchingCompanies: Bool = false
+    var isSearchingContracts: Bool = false
+    var isSearchingLicitatii: Bool = false
     
     var api: ApiHelper!
 
@@ -84,14 +87,25 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        isSearching = true
-        self.tableView.reloadData()
 
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
-            api.searchInstitution(pattern: searchBar.text!) { (institutionResults) -> () in
+            isSearchingInstitutions = true
+            self.tableView.reloadData()
+
+            api.searchInstitution(pattern: searchBar.text!) { (institutionResults, response, error) -> () in
+                guard error == nil else {
+                    self.isSearchingInstitutions = false
+                    self.institutionResults = []
+                    DispatchQueue.main.async {
+                     self.tableView.allowsSelection = false
+                     self.tableView.isScrollEnabled = false
+                     self.tableView.reloadData()
+                    }
+                    return
+                }
                 self.institutionResults = institutionResults
-                self.isSearching = false
+                self.isSearchingInstitutions = false
                 
                 DispatchQueue.main.async{
                     NSLog("DONE Fetching Institutions")
@@ -101,9 +115,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         case 1:
-            api.searchCompanies(pattern: searchBar.text!) { (companieResults) -> () in
+            isSearchingCompanies = true
+            self.tableView.reloadData()
+
+            api.searchCompanies(pattern: searchBar.text!) { (companieResults, response, error) -> () in
+                guard error == nil else {
+                    self.isSearchingCompanies = false
+                    self.companieResults = []
+                    DispatchQueue.main.async {
+                        self.tableView.allowsSelection = false
+                        self.tableView.isScrollEnabled = false
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
                 self.companieResults = companieResults
-                self.isSearching = false
+                self.isSearchingCompanies = false
 
                 DispatchQueue.main.async{
                     NSLog("DONE Fetching Companies")
@@ -113,9 +140,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         case 2:
-            api.searchContracts(pattern: searchBar.text!) { (contractResults) -> () in
+            isSearchingContracts = true
+            self.tableView.reloadData()
+
+            api.searchContracts(pattern: searchBar.text!) { (contractResults, response, error) -> () in
+                guard error == nil else {
+                    self.isSearchingContracts = false
+                    self.contractResults = []
+                    DispatchQueue.main.async {
+                        self.tableView.allowsSelection = false
+                        self.tableView.isScrollEnabled = false
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
                 self.contractResults = contractResults
-                self.isSearching = false
+                self.isSearchingContracts = false
 
                 DispatchQueue.main.async{
                     NSLog("DONE Fetching Contracts")
@@ -125,9 +165,22 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         case 3:
-            api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults) -> () in
+            isSearchingLicitatii = true
+            self.tableView.reloadData()
+
+            api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, response, error) -> () in
+                guard error == nil else {
+                    self.isSearchingLicitatii = false
+                    self.licitatieResults = []
+                    DispatchQueue.main.async {
+                        self.tableView.allowsSelection = false
+                        self.tableView.isScrollEnabled = false
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
                 self.licitatieResults = licitatieResults
-                self.isSearching = false
+                self.isSearchingLicitatii = false
 
                 DispatchQueue.main.async{
                     NSLog("DONE Fetching Licitatii")
@@ -152,17 +205,25 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
-        isSearching = true
-        self.tableView.reloadData()
-
         switch selectedScope {
         case 0:
             if institutionResults.count == 0 {
-                self.tableView.allowsSelection = false
-                self.tableView.isScrollEnabled = false
-                api.searchInstitution(pattern: searchBar.text!) { (institutionResults) -> () in
+                self.isSearchingInstitutions = true
+                self.tableView.reloadData()
+
+                api.searchInstitution(pattern: searchBar.text!) { (institutionResults, response, error) -> () in
+                    guard error == nil else {
+                        self.isSearchingInstitutions = false
+                        self.institutionResults = []
+                        DispatchQueue.main.async {
+                            self.tableView.allowsSelection = false
+                            self.tableView.isScrollEnabled = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.institutionResults = institutionResults
-                    self.isSearching = false
+                    self.isSearchingInstitutions = false
                     DispatchQueue.main.async{
                         NSLog("DONE Fetching Institutions")
                         self.tableView.allowsSelection = true
@@ -172,17 +233,30 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
             else {
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                tableView.reloadData()
+                if isSearchingCompanies || isSearchingContracts || isSearchingLicitatii {
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
             }
         case 1:
             if companieResults.count == 0 {
-                self.tableView.allowsSelection = false
-                self.tableView.isScrollEnabled = false
-                api.searchCompanies(pattern: searchBar.text!) { (companieResults) -> () in
+                self.isSearchingCompanies = true
+                self.tableView.reloadData()
+                
+                api.searchCompanies(pattern: searchBar.text!) { (companieResults, response, error) -> () in
+                    guard error == nil else {
+                        self.isSearchingCompanies = false
+                        self.companieResults = []
+                        DispatchQueue.main.async {
+                            self.tableView.allowsSelection = false
+                            self.tableView.isScrollEnabled = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.companieResults = companieResults
-                    self.isSearching = false
+                    self.isSearchingCompanies = false
                     
                     DispatchQueue.main.async{
                         NSLog("DONE Fetching Companies")
@@ -191,20 +265,32 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                         self.tableView.reloadData()
                     }
                 }
-
             }
             else {
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                tableView.reloadData()
+                if isSearchingInstitutions || isSearchingContracts || isSearchingLicitatii {
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
             }
         case 2:
             if contractResults.count == 0 {
-                self.tableView.allowsSelection = false
-                self.tableView.isScrollEnabled = false
-                api.searchContracts(pattern: searchBar.text!) { (contractResults) -> () in
+                self.isSearchingContracts = true
+                self.tableView.reloadData()
+                
+                api.searchContracts(pattern: searchBar.text!) { (contractResults, response, error) -> () in
+                    guard error == nil else {
+                        self.isSearchingContracts = false
+                        self.contractResults = []
+                        DispatchQueue.main.async {
+                            self.tableView.allowsSelection = false
+                            self.tableView.isScrollEnabled = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.contractResults = contractResults
-                    self.isSearching = false
+                    self.isSearchingContracts = false
                     
                     DispatchQueue.main.async{
                         NSLog("DONE Fetching Contracts")
@@ -215,17 +301,29 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
             else {
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                tableView.reloadData()
+                if isSearchingInstitutions || isSearchingCompanies || isSearchingLicitatii {
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
             }
         case 3:
             if licitatieResults.count == 0 {
-                self.tableView.allowsSelection = false
-                self.tableView.isScrollEnabled = false
-                api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults) -> () in
+                self.isSearchingLicitatii = true
+                self.tableView.reloadData()
+                api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, response, error) -> () in
+                    guard error == nil else {
+                        self.isSearchingLicitatii = false
+                        self.licitatieResults = []
+                        DispatchQueue.main.async {
+                            self.tableView.allowsSelection = false
+                            self.tableView.isScrollEnabled = false
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.licitatieResults = licitatieResults
-                    self.isSearching = false
+                    self.isSearchingLicitatii = false
                     
                     DispatchQueue.main.async{
                         NSLog("DONE Fetching Licitatii")
@@ -236,9 +334,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
             else {
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                tableView.reloadData()
+                if isSearchingInstitutions || isSearchingCompanies || isSearchingContracts {
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
             }
         default:
             break;
@@ -248,16 +348,16 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
-            if institutionResults.count == 0 && isSearching { return 15 }
+            if institutionResults.count == 0 && isSearchingInstitutions { return 15 }
             return institutionResults.count
         case 1:
-            if companieResults.count == 0 && isSearching { return 15 }
+            if companieResults.count == 0 && isSearchingCompanies { return 15 }
             return companieResults.count
         case 2:
-            if contractResults.count == 0 && isSearching { return 15 }
+            if contractResults.count == 0 && isSearchingContracts { return 15 }
             return contractResults.count
         case 3:
-            if licitatieResults.count == 0 && isSearching { return 15 }
+            if licitatieResults.count == 0 && isSearchingLicitatii { return 15 }
             return licitatieResults.count
         default:
             break;
@@ -270,7 +370,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
             if institutionResults.count == 0 {
-                if isSearching {
+                if isSearchingInstitutions {
                     cell.button.isHidden = false
                     cell.startShimmer()
                 }
@@ -278,6 +378,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
                 return cell
             }
             cell.button.isHidden = false
@@ -288,7 +390,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.button.text = ">"
         case 1:
             if companieResults.count == 0 {
-                if isSearching {
+                if isSearchingCompanies {
                     cell.button.isHidden = false
                     cell.startShimmer()
                 }
@@ -296,6 +398,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
                 return cell
             }
             cell.button.isHidden = false
@@ -306,7 +410,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.button.text = ">"
         case 2:
             if contractResults.count == 0 {
-                if isSearching {
+                if isSearchingContracts {
                     cell.button.isHidden = false
                     cell.startShimmer()
                 }
@@ -314,6 +418,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
                 return cell
             }
             cell.button.isHidden = false
@@ -324,7 +430,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.button.text = ">"
         case 3:
             if licitatieResults.count == 0 {
-                if isSearching {
+                if isSearchingLicitatii {
                     cell.button.isHidden = false
                     cell.startShimmer()
                 }
@@ -332,6 +438,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
                 return cell
             }
             cell.button.isHidden = false

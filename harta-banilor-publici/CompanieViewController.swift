@@ -26,7 +26,14 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         switch tabBar.selectedSegmentIndex {
         case 0:
             if institutii.count == 0 && !fetchedInstitutii {
-                api.getInstitutionsByCompany(cui: (companieSummary?.cui)!) { (institutii) -> () in
+                api.getInstitutionsByCompany(cui: (companieSummary?.cui)!) { (institutii, response, error) -> () in
+                    guard error == nil else {
+                        self.fetchedInstitutii = true
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.institutii = institutii
                     DispatchQueue.main.async {
                         NSLog("DONE Fetching Institutions")
@@ -38,7 +45,14 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
         case 1:
             if contracte.count == 0 && !fetchedContracts {
-                api.getCompanyContracts(cui: (companieSummary?.cui)!) { (contracte) -> () in
+                api.getCompanyContracts(cui: (companieSummary?.cui)!) { (contracte, response, error) -> () in
+                    guard error == nil else {
+                        self.fetchedContracts = true
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.contracte = contracte
                     DispatchQueue.main.async {
                         NSLog("DONE Fetching Contracts")
@@ -50,7 +64,14 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
         case 2:
             if licitatii.count == 0 && !fetchedLicitatii {
-                api.getCompanyTenders(cui: (companieSummary?.cui)!) { (licitatii) -> () in
+                api.getCompanyTenders(cui: (companieSummary?.cui)!) { (licitatii, response, error) -> () in
+                    guard error == nil else {
+                        self.fetchedLicitatii = true
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                        return
+                    }
                     self.licitatii = licitatii
                     DispatchQueue.main.async {
                         NSLog("DONE Fetching Licitatii")
@@ -81,7 +102,14 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         tableView.delegate = self
         tableView.dataSource = self
         
-        api.getInstitutionsByCompany(cui: (companieSummary?.cui)!) { (institutii) -> () in
+        api.getInstitutionsByCompany(cui: (companieSummary?.cui)!) { (institutii, response, error) -> () in
+            guard error == nil else {
+                self.fetchedInstitutii = true
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                return
+            }
             self.institutii = institutii
             DispatchQueue.main.async {
                 NSLog("DONE Fetching Institutions")
