@@ -41,8 +41,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             self.navigationItem.searchController = searchController
             self.navigationItem.hidesSearchBarWhenScrolling = false
             if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-                textfield.textColor = .gray
-                textfield.tintColor = .gray
+                textfield.textColor = .lightGray
+                textfield.tintColor = .lightGray
                 if let backgroundview = textfield.subviews.first {
                     
                     // Background color
@@ -74,7 +74,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             // call sizeToFit.. this will set the frame of the searchBar to exactly the same as the size of the allowable frame of the navigationBar
             searchBar.sizeToFit()
 
-            searchBar.barTintColor = UIColor(red: 116/255, green: 197/255, blue: 201/255, alpha: 1)
+            //searchBar.barTintColor = UIColor(red: 116/255, green: 197/255, blue: 201/255, alpha: 1)
             searchBar.tintColor = .white
             searchBar.isTranslucent = true
             searchBar.layer.borderWidth = 0;
@@ -471,7 +471,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             show(controller, sender: self)
         case 3:
             let controller = storyboard?.instantiateViewController(withIdentifier: "LicitatieViewController") as! LicitatieViewController
-            controller.licitatieSummary = self.licitatieResults[indexPath.row]
+            controller.id = self.licitatieResults[indexPath.row].id
             show(controller, sender: self)
         default:
             break;

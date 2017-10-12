@@ -1,8 +1,9 @@
 import Foundation
 
 class LicitatieViewController: UIViewController {
-    var licitatieSummary: InstitutionLicitatie?
-    
+    var id: Int!
+    var senderId: String!
+
     override func viewDidLoad() {
         super.viewDidLoad()
     }

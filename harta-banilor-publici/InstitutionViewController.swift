@@ -1,6 +1,8 @@
 import UIKit
 import Foundation
 
+let hbpBlue = UIColor(red: 133/255, green: 205/255, blue: 208/255, alpha: 1)
+
 class ShimmerLabel: UILabel {
     var shimmer: FBShimmeringView!
     var initialColor: UIColor!
@@ -32,7 +34,48 @@ class TableCell: UITableViewCell {
     @IBOutlet weak var priceLabel: ShimmerLabel!
     @IBOutlet weak var button: ShimmerLabel!
     var addedShimmerViews: Bool = false
-
+    var bgview: UIView!
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)!
+        self.bgview = UIView()
+    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        if selected {
+            self.titleLabel.textColor = .white
+            self.priceLabel.textColor = .white
+            self.button.backgroundColor = .white
+            self.button.textColor = hbpBlue
+            bgview.backgroundColor = hbpBlue
+            self.selectedBackgroundView = bgview
+        }
+        else {
+            self.titleLabel.textColor = .black
+            self.priceLabel.textColor = .black
+            self.button.backgroundColor = hbpBlue
+            self.button.textColor = .white
+            bgview.backgroundColor = .white
+            self.selectedBackgroundView = bgview
+        }
+    }
+    
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(highlighted, animated: animated)
+        
+        if highlighted {
+            self.titleLabel.textColor = .white
+            self.titleLabel.textColor = .white
+            self.priceLabel.textColor = .white
+            self.button.backgroundColor = .white
+            self.button.textColor = hbpBlue
+            bgview.backgroundColor = hbpBlue
+            self.selectedBackgroundView = bgview
+        }
+    }
+    
     func startShimmer() {
         if !addedShimmerViews {
             self.contentView.addSubview(titleLabel.shimmer)
@@ -82,6 +125,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
         self.tableView.setContentOffset(.zero, animated: false)
+        
         self.tableView.reloadData()
         switch tabBar.selectedSegmentIndex {
         case 0:
@@ -246,6 +290,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
+        
         switch tabBar.selectedSegmentIndex {
         case 0:
             if contracte.count == 0 {
@@ -308,7 +353,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             show(controller, sender: self)
         case 1:
             let controller = storyboard?.instantiateViewController(withIdentifier: "LicitatieViewController") as! LicitatieViewController
-            controller.licitatieSummary = self.licitatii[indexPath.row]
+            controller.id = self.licitatii[indexPath.row].id
             show(controller, sender: self)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "CompanieViewController") as! CompanieViewController

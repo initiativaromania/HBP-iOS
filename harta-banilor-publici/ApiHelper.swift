@@ -59,6 +59,28 @@ struct Contract: Codable {
     }
 }
 
+struct Licitatie: Codable {
+    let id, institutiePublicaID: Int
+    let companieCUI, tip, tipContract, tipProcedura, institutiePublicaCUI, tipActivitateAC, numarAnuntAtribuire: String
+    let dataAnuntAtribuire, tipIncheiereContract, tipCriteriiAtribuire, CUILicitatieElectronica, numarOfertePrimite: String
+    let subcontractat, numarContract, dataContract: String
+    let titluContract, cpvCodeID, cpvCode, numarAnuntParticipare, dataAnuntParticipare: String
+    let valoareEstimataParticipare, monedaValoareEstimataParticipare, depoziteGarantii, modalitatiFinantare: String
+    let valoareRON, valoareEUR: Double
+    
+    private enum CodingKeys : String, CodingKey {
+        case id = "LicitatiiId", institutiePublicaID = "InstitutiePublicaID"
+        case companieCUI = "CompanieCUI", tip = "Tip", tipContract = "TipContract", tipProcedura = "TipProcedura"
+        case institutiePublicaCUI = "InstitutiePublicaCUI", tipActivitateAC = "TipActivitateAC", numarAnuntAtribuire = "NumarAnuntAtribuire"
+        case dataAnuntAtribuire = "DataAnuntAtribuire", tipIncheiereContract = "TipIncheiereContract", tipCriteriiAtribuire = "TipCriteriiAtribuire"
+        case CUILicitatieElectronica = "CUILicitatieElectronica", numarOfertePrimite = "NumarOfertePrimite", subcontractat = "Subcontractat"
+        case numarContract = "NumarContract", dataContract = "DataContract", titluContract = "TitluContract", valoareRON = "ValoareRON"
+        case valoareEUR = "ValoareEUR", cpvCodeID = "CPVCodeID", cpvCode = "CPVCode", numarAnuntParticipare = "NumarAnuntParticipare"
+        case dataAnuntParticipare = "DataAnuntParticipare", valoareEstimataParticipare = "ValoareEstimataParticipare"
+        case monedaValoareEstimataParticipare = "MonedaValoareEstimataParticipare", depoziteGarantii = "DepoziteGarantii", modalitatiFinantare = "ModalitatiFinantare"
+    }
+}
+
 struct CompanyByInstitution: Codable {
     let id: Int
     let nume, cui, tara, localitate, adresa: String
@@ -151,6 +173,28 @@ class ApiHelper {
             
             contract = try! JSONDecoder().decode([Contract].self, from: data)[0]
             handler(contract, response, error)
+        }
+        task.resume()
+    }
+    
+    func getLicitatieByID(id: String, handler: @escaping (Licitatie, URLResponse?, Error?) -> ()) {
+        let url_str = self.api_url + "Tender/" + id
+        print("Fetching Licitatie: " + url_str)
+        let url = URL(string: url_str)
+        var licitatie: Licitatie!
+        
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            guard error == nil else {
+                handler(licitatie, response, error!)
+                return
+            }
+            guard let data = data else {
+                handler(licitatie, response, error)
+                return
+            }
+            
+            licitatie = try! JSONDecoder().decode([Licitatie].self, from: data)[0]
+            handler(licitatie, response, error)
         }
         task.resume()
     }
