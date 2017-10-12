@@ -467,7 +467,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             show(controller, sender: self)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
-            controller.contractSummary = self.contractResults[indexPath.row]
+            controller.id = self.contractResults[indexPath.row].id
             show(controller, sender: self)
         case 3:
             let controller = storyboard?.instantiateViewController(withIdentifier: "LicitatieViewController") as! LicitatieViewController

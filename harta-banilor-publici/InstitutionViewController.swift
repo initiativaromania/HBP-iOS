@@ -303,7 +303,8 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         switch tabBar.selectedSegmentIndex {
         case 0:
             let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
-            controller.contractSummary = self.contracte[indexPath.row]
+            controller.id = self.contracte[indexPath.row].id
+            controller.senderId = self.id
             show(controller, sender: self)
         case 1:
             let controller = storyboard?.instantiateViewController(withIdentifier: "LicitatieViewController") as! LicitatieViewController

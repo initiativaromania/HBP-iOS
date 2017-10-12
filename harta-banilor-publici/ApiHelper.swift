@@ -43,6 +43,22 @@ struct InstitutionLicitatie: Codable {
     }
 }
 
+struct Contract: Codable {
+    let id, institutiePublicaID: Int
+    let companieCUI, tipProcedura, institutiePublicaCUI, numarAnuntParticipare: String
+    let dataAnuntParticipare, tipIncheiereContract, numarContract, dataContract: String
+    let titluContract, cpvCode: String
+    let valoareRON, valoareEUR: Double
+    
+    private enum CodingKeys : String, CodingKey {
+        case id = "ContracteId", institutiePublicaID = "InstitutiePublicaID"
+        case companieCUI = "CompanieCUI", tipProcedura = "TipProcedura", institutiePublicaCUI = "InstitutiePublicaCUI"
+        case numarAnuntParticipare = "NumarAnuntParticipare", dataAnuntParticipare = "DataAnuntParticipare"
+        case tipIncheiereContract = "TipIncheiereContract", numarContract = "NumarContract", dataContract = "DataContract"
+        case titluContract = "TitluContract", cpvCode = "CPVCode", valoareRON = "ValoareRON", valoareEUR = "ValoareEUR"
+    }
+}
+
 struct CompanyByInstitution: Codable {
     let id: Int
     let nume, cui, tara, localitate, adresa: String
@@ -55,8 +71,18 @@ struct CompanyByInstitution: Codable {
 struct InstitutionByCompany: Codable {
     let cui, nume: String
     
-    private enum CodingKeys : String, CodingKey {
+    private enum CodingKeys: String, CodingKey {
         case cui = "CUI", nume = "Nume"
+    }
+}
+
+struct Companie: Codable {
+    let id: Int
+    let nume, cui, tara, localitate, adresa: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "CompanieId", nume = "Nume", cui = "CUI"
+        case tara = "Tara", localitate = "Localitate", adresa = "Adresa"
     }
 }
 
@@ -93,11 +119,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(institution, response, error!)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(institution, response, error)
                 return
             }
             
@@ -107,6 +133,29 @@ class ApiHelper {
         task.resume()
     }
     
+    func getContractByID(id: String, handler: @escaping (Contract, URLResponse?, Error?) -> ()) {
+        let url_str = self.api_url + "Contract/" + id
+        print("Fetching Contract: " + url_str)
+        let url = URL(string: url_str)
+        var contract: Contract!
+        
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            guard error == nil else {
+                handler(contract, response, error!)
+                return
+            }
+            guard let data = data else {
+                handler(contract, response, error)
+                return
+            }
+            
+            contract = try! JSONDecoder().decode([Contract].self, from: data)[0]
+            handler(contract, response, error)
+        }
+        task.resume()
+    }
+
+    
     func getInstitutionContracts(id: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> ()) {
         NSLog("Fetching Contracts")
         let url_str = self.api_url + "InstitutionContracts/" + id
@@ -115,11 +164,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(contracte, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(contracte, response, error)
                 return
             }
             
@@ -140,11 +189,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(licitatii, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(licitatii, response, error)
                 return
             }
             
@@ -163,11 +212,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(companii, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(companii, response, error)
                 return
             }
             
@@ -178,6 +227,28 @@ class ApiHelper {
     }
 
     // Company API calls
+    
+    func getCompanyByCUI(cui: String, handler: @escaping (Companie, URLResponse?, Error?) -> ()) {
+        let url_str = self.api_url + "Company/" + cui
+        NSLog("Fetching Companie: " + url_str)
+        let url = URL(string: url_str)
+        var companie: Companie!
+        
+        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+            guard error == nil else {
+                handler(companie, response, error!)
+                return
+            }
+            guard let data = data else {
+                handler(companie, response, error)
+                return
+            }
+            
+            companie = try! JSONDecoder().decode([Companie].self, from: data)[0]
+            handler(companie, response, error)
+        }
+        task.resume()
+    }
 
     func getCompanyContracts(cui: String, handler: @escaping ([CompanyContract], URLResponse?, Error?) -> ()) {
         NSLog("Fetching Company Contracts")
@@ -187,11 +258,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(contracte, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(contracte, response, error)
                 return
             }
             
@@ -210,11 +281,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(institutii, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(institutii, response, error)
                 return
             }
             
@@ -233,11 +304,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(licitatii, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(licitatii, response, error)
                 return
             }
             
@@ -267,11 +338,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
+                handler(institutionResults, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(institutionResults, response, error)
                 return
             }
             institutionResults = try! JSONDecoder().decode([Institution].self, from: data)
@@ -296,18 +367,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
-                /*DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.companieResults = []
-                    self.tableView.reloadData()
-                }*/
+                handler(companieResults, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(companieResults, response, error)
                 return
             }
             
@@ -333,19 +397,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
-                /*DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.contractResults = []
-                    self.tableView.reloadData()
-                    
-                }*/
+                handler(contractResults, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(contractResults, response, error)
                 return
             }
             
@@ -371,18 +427,11 @@ class ApiHelper {
         
         let task = URLSession.shared.dataTask(with: url!) { data, response, error in
             guard error == nil else {
-                print(error!)
-                /*DispatchQueue.main.async {
-                    self.tableView.allowsSelection = false
-                    self.tableView.isScrollEnabled = false
-                    self.isSearching = false
-                    self.licitatieResults = []
-                    self.tableView.reloadData()
-                }*/
+                handler(licitatieResults, response, error)
                 return
             }
             guard let data = data else {
-                print("Data is empty")
+                handler(licitatieResults, response, error)
                 return
             }
             
