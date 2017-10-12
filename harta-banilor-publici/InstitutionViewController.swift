@@ -74,6 +74,14 @@ class TableCell: UITableViewCell {
             bgview.backgroundColor = hbpBlue
             self.selectedBackgroundView = bgview
         }
+        else {
+            self.titleLabel.textColor = .black
+            self.priceLabel.textColor = .black
+            self.button.backgroundColor = hbpBlue
+            self.button.textColor = .white
+            bgview.backgroundColor = .white
+            self.selectedBackgroundView = bgview
+        }
     }
     
     func startShimmer() {
