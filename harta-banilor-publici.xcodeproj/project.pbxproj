@@ -23,14 +23,13 @@
 		3AA402F11F447CDD009490EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AA402EF1F447CDD009490EB /* LaunchScreen.storyboard */; };
 		3AA402FC1F447CDE009490EB /* harta_banilor_publiciTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA402FB1F447CDE009490EB /* harta_banilor_publiciTests.swift */; };
 		3AA403071F447CDE009490EB /* harta_banilor_publiciUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA403061F447CDE009490EB /* harta_banilor_publiciUITests.swift */; };
-		3AA403161F447F84009490EB /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA403151F447F84009490EB /* CustomInfoWindow.swift */; };
-		3AA403181F447FEA009490EB /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403171F447FEA009490EB /* CustomInfoWindow.xib */; };
 		3AA403221F448110009490EB /* CrimsonText-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031C1F448110009490EB /* CrimsonText-Bold.ttf */; };
 		3AA403231F448110009490EB /* CrimsonText-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031D1F448110009490EB /* CrimsonText-BoldItalic.ttf */; };
 		3AA403241F448110009490EB /* CrimsonText-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031E1F448110009490EB /* CrimsonText-Italic.ttf */; };
 		3AA403251F448110009490EB /* CrimsonText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA4031F1F448110009490EB /* CrimsonText-Regular.ttf */; };
 		3AA403261F448110009490EB /* CrimsonText-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403201F448110009490EB /* CrimsonText-SemiBold.ttf */; };
 		3AA403271F448110009490EB /* CrimsonText-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403211F448110009490EB /* CrimsonText-SemiBoldItalic.ttf */; };
+		3AC21DC81F90F6830016BE04 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC21DC71F90F6830016BE04 /* CustomInfoWindow.swift */; };
 		3ADB634A1F6E4DAA00700200 /* institutii_publice_pins_v0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */; };
 		F3FEA5272921380B6787CDE8 /* libPods-harta-banilor-publici.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39349E64E96C127385D2AA19 /* libPods-harta-banilor-publici.a */; };
 /* End PBXBuildFile section */
@@ -77,14 +76,14 @@
 		3AA403061F447CDE009490EB /* harta_banilor_publiciUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = harta_banilor_publiciUITests.swift; sourceTree = "<group>"; };
 		3AA403081F447CDE009490EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3AA403141F447DF7009490EB /* harta-banilor-publici-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "harta-banilor-publici-Bridging-Header.h"; sourceTree = "<group>"; };
-		3AA403151F447F84009490EB /* CustomInfoWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomInfoWindow.swift; path = "../../../workspace/ios/harta-banilor-publici/harta-banilor-publici/CustomInfoWindow.swift"; sourceTree = "<group>"; };
-		3AA403171F447FEA009490EB /* CustomInfoWindow.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomInfoWindow.xib; path = "../../../workspace/ios/harta-banilor-publici/harta-banilor-publici/CustomInfoWindow.xib"; sourceTree = "<group>"; };
 		3AA4031C1F448110009490EB /* CrimsonText-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-Bold.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-Bold.ttf"; sourceTree = "<group>"; };
 		3AA4031D1F448110009490EB /* CrimsonText-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-BoldItalic.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-BoldItalic.ttf"; sourceTree = "<group>"; };
 		3AA4031E1F448110009490EB /* CrimsonText-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-Italic.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-Italic.ttf"; sourceTree = "<group>"; };
 		3AA4031F1F448110009490EB /* CrimsonText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-Regular.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-Regular.ttf"; sourceTree = "<group>"; };
 		3AA403201F448110009490EB /* CrimsonText-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-SemiBold.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-SemiBold.ttf"; sourceTree = "<group>"; };
 		3AA403211F448110009490EB /* CrimsonText-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-SemiBoldItalic.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		3AC21DC61F90F6830016BE04 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
+		3AC21DC71F90F6830016BE04 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
 		3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = institutii_publice_pins_v0.csv; path = ../../../Downloads/institutii_publice_pins_v0.csv; sourceTree = "<group>"; };
 		3CD957435C76157D936104F4 /* Pods-harta-banilor-publici.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.release.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.release.xcconfig"; sourceTree = "<group>"; };
 		F15980CF94420178A3E5FD29 /* Pods-harta-banilor-publici.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.debug.xcconfig"; sourceTree = "<group>"; };
@@ -141,8 +140,8 @@
 				3A6925541F8374B800EABAC7 /* LicitatieViewController.swift */,
 				3A87A6131F7BF5D400F79F1B /* SearchViewController.swift */,
 				3A5580D91F594178009661D9 /* ApiHelper.swift */,
-				3AA403151F447F84009490EB /* CustomInfoWindow.swift */,
-				3AA403171F447FEA009490EB /* CustomInfoWindow.xib */,
+				3AC21DC71F90F6830016BE04 /* CustomInfoWindow.swift */,
+				3AC21DC61F90F6830016BE04 /* CustomInfoWindow.xib */,
 				3AA402EA1F447CDD009490EB /* Main.storyboard */,
 				3AA402EF1F447CDD009490EB /* LaunchScreen.storyboard */,
 				3AA402F21F447CDD009490EB /* Info.plist */,
@@ -326,7 +325,6 @@
 				3AA403251F448110009490EB /* CrimsonText-Regular.ttf in Resources */,
 				3ADB634A1F6E4DAA00700200 /* institutii_publice_pins_v0.csv in Resources */,
 				3AA403221F448110009490EB /* CrimsonText-Bold.ttf in Resources */,
-				3AA403181F447FEA009490EB /* CustomInfoWindow.xib in Resources */,
 				3AA402F11F447CDD009490EB /* LaunchScreen.storyboard in Resources */,
 				3AA403231F448110009490EB /* CrimsonText-BoldItalic.ttf in Resources */,
 				3AA403241F448110009490EB /* CrimsonText-Italic.ttf in Resources */,
@@ -419,8 +417,8 @@
 				3A6925511F836BF300EABAC7 /* CompanieViewController.swift in Sources */,
 				3A6925531F836E1900EABAC7 /* ContractViewController.swift in Sources */,
 				3AA402E51F447CDD009490EB /* AppDelegate.swift in Sources */,
-				3AA403161F447F84009490EB /* CustomInfoWindow.swift in Sources */,
 				3A87A6141F7BF5D400F79F1B /* SearchViewController.swift in Sources */,
+				3AC21DC81F90F6830016BE04 /* CustomInfoWindow.swift in Sources */,
 				3A6925551F8374B800EABAC7 /* LicitatieViewController.swift in Sources */,
 				3AA402E71F447CDD009490EB /* MapViewController.swift in Sources */,
 				3A882FAB1F44A1D40040811D /* InstitutionViewController.swift in Sources */,
