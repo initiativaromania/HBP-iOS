@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="49e-Tb-3d3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -43,10 +44,6 @@
         <scene sceneID="JqB-Ne-V6P">
             <objects>
                 <viewController id="BBv-7C-nqp" customClass="MapViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="eYJ-od-qxG"/>
-                        <viewControllerLayoutGuide type="bottom" id="dD5-Ob-nHv"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="qpj-K0-Jq2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -58,6 +55,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="8Zq-gp-SJF"/>
                     </view>
                     <navigationItem key="navigationItem" title="Harta  Banilor  Publici" id="LCx-IY-aRy">
                         <barButtonItem key="backBarButtonItem" title=" " id="gu1-D2-wjd"/>
@@ -75,10 +73,6 @@
         <scene sceneID="mVQ-mf-VWH">
             <objects>
                 <viewController storyboardIdentifier="InstitutionViewController" id="mwM-rY-90A" customClass="InstitutionViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="G2E-bG-KgH"/>
-                        <viewControllerLayoutGuide type="bottom" id="jrd-6s-Zj0"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SXf-MG-dRU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -231,6 +225,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="qPy-y0-Uwp"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instituție" id="vKJ-8K-xNR">
                         <barButtonItem key="backBarButtonItem" title=" " id="eXj-Jb-w90"/>
@@ -257,10 +252,6 @@
         <scene sceneID="tLJ-FU-7au">
             <objects>
                 <viewController storyboardIdentifier="ContractViewController" id="y7W-47-BTu" customClass="ContractViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Gv4-0x-gq1"/>
-                        <viewControllerLayoutGuide type="bottom" id="GjO-vz-Xce"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uqe-Fc-3N4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -418,6 +409,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="SZK-mH-dz3"/>
                     </view>
                     <navigationItem key="navigationItem" title="Contract" id="Gai-ul-7CO">
                         <barButtonItem key="backBarButtonItem" title=" " id="pdR-u8-dJ5"/>
@@ -445,10 +437,6 @@
         <scene sceneID="XtI-ma-P0p">
             <objects>
                 <viewController storyboardIdentifier="CompanieViewController" id="Iwr-51-Xaf" customClass="CompanieViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="B72-tw-L89"/>
-                        <viewControllerLayoutGuide type="bottom" id="Si3-dC-zzc"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bDt-bn-Osv">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -558,6 +546,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Ztw-Dl-eNC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Companie" id="2Ie-O6-R3L">
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="owz-Wd-ILG"/>
@@ -578,17 +567,13 @@
         <scene sceneID="BJy-L9-aVE">
             <objects>
                 <viewController id="SXr-eX-9GQ" customClass="SearchViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ecw-yM-UZr"/>
-                        <viewControllerLayoutGuide type="bottom" id="rud-mV-Y7w"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ga1-vx-PhA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5TG-Y1-jLW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="awh-aE-41W" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
@@ -598,29 +583,44 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1S-bx-hRw" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1S-bx-hRw" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="8" width="229" height="49"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqO-eT-s85" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
-                                                    <rect key="frame" x="245" y="8" width="67" height="49"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="cf3-zH-FQg" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="55" translatesAutoresizingMaskIntoConstraints="NO" id="cf3-zH-FQg" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
                                                     <rect key="frame" x="320" y="0.0" width="55" height="65"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.52156862749999999" green="0.80392156859999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="F4x-Dj-oWf"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cqO-eT-s85" customClass="ShimmerLabel" customModule="harta_banilor_publici" customModuleProvider="target">
+                                                    <rect key="frame" x="245" y="8" width="67" height="49"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="67" id="WsP-pp-w8s"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="cf3-zH-FQg" firstAttribute="centerY" secondItem="Lgo-4W-8bg" secondAttribute="centerY" id="3AU-hS-Ipk"/>
+                                                <constraint firstItem="cf3-zH-FQg" firstAttribute="top" secondItem="Lgo-4W-8bg" secondAttribute="top" id="Ffa-0X-Hep"/>
+                                                <constraint firstItem="cqO-eT-s85" firstAttribute="top" secondItem="Lgo-4W-8bg" secondAttribute="topMargin" id="Ihv-dc-VWJ"/>
+                                                <constraint firstItem="N1S-bx-hRw" firstAttribute="leading" secondItem="Lgo-4W-8bg" secondAttribute="leadingMargin" id="Ir8-Iz-KXj"/>
+                                                <constraint firstAttribute="trailing" secondItem="cf3-zH-FQg" secondAttribute="trailing" id="Isz-Al-Mja"/>
+                                                <constraint firstItem="cf3-zH-FQg" firstAttribute="centerY" secondItem="N1S-bx-hRw" secondAttribute="centerY" id="OOh-Uv-Aeg"/>
+                                                <constraint firstItem="cf3-zH-FQg" firstAttribute="centerY" secondItem="cqO-eT-s85" secondAttribute="centerY" id="YDH-1L-FNd"/>
+                                                <constraint firstItem="cf3-zH-FQg" firstAttribute="leading" secondItem="cqO-eT-s85" secondAttribute="trailing" constant="8" symbolic="YES" id="Z3c-yP-2eB"/>
+                                                <constraint firstItem="cqO-eT-s85" firstAttribute="leading" secondItem="N1S-bx-hRw" secondAttribute="trailing" constant="8" symbolic="YES" id="pOS-BG-uWR"/>
+                                                <constraint firstItem="cqO-eT-s85" firstAttribute="baseline" secondItem="N1S-bx-hRw" secondAttribute="baseline" id="r19-ex-ctM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="selectionColor">
@@ -637,6 +637,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="j6b-9G-coC"/>
                     </view>
                     <navigationItem key="navigationItem" title="Căutare" id="EPV-JP-8aq"/>
                     <connections>
@@ -670,20 +671,17 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1863.2" y="-0.44977511244377816"/>
+            <point key="canvasLocation" x="1862.5187406296852" y="-0.80000000000000004"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="4xH-KQ-V1i">
             <objects>
                 <viewController id="wEb-5u-5kv" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="mkm-52-jvU"/>
-                        <viewControllerLayoutGuide type="bottom" id="Sha-0I-Snw"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="mYA-P7-VIH">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="arm-dn-D8q"/>
                     </view>
                     <navigationItem key="navigationItem" id="7bG-HG-ofE"/>
                 </viewController>
@@ -695,10 +693,6 @@
         <scene sceneID="JSi-ac-n1m">
             <objects>
                 <viewController id="d2c-hC-6PK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Xfv-XM-aF2"/>
-                        <viewControllerLayoutGuide type="bottom" id="LO2-GC-H3i"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sBi-F7-2Qx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -719,6 +713,7 @@
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="jJf-a9-xef"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ghm-Fb-m3m"/>
                 </viewController>
@@ -810,10 +805,6 @@
         <scene sceneID="HCU-Hf-eEB">
             <objects>
                 <viewController storyboardIdentifier="LicitatieViewController" id="UNO-tS-fE3" customClass="LicitatieViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Dh5-vF-SS8"/>
-                        <viewControllerLayoutGuide type="bottom" id="k5b-hc-EWO"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="uKl-p4-4nx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -971,6 +962,7 @@
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <viewLayoutGuide key="safeArea" id="lOA-TQ-0lB"/>
                     </view>
                     <navigationItem key="navigationItem" title="Licitație" id="SfR-1v-aJF">
                         <barButtonItem key="backBarButtonItem" title=" " id="28x-vf-jEK"/>

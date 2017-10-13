@@ -131,15 +131,15 @@ struct CompanyLicitatie: Codable {
 }
 
 class ApiHelper {
-    let api_url = "https://hbp-api.azurewebsites.net/api/"
+    private let apiURL = "https://hbp-api.azurewebsites.net/api/"
     
-    func getInstitutionByID(id: String, handler: @escaping (Institution, URLResponse?, Error?) -> ()) {
-        let url_str = self.api_url + "InstitutionByID/" + id
-        NSLog("Fetching Institution: " + url_str)
-        let url = URL(string: url_str)
+    func getInstitutionByID(id: Int, handler: @escaping (Institution, URLResponse?, Error?) -> ()) {
         var institution: Institution!
+
+        let url = self.apiURL + "InstitutionByID/" + String(id)
+        NSLog("Fetching Institution: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(institution, response, error!)
                 return
@@ -148,20 +148,52 @@ class ApiHelper {
                 handler(institution, response, error)
                 return
             }
-            
-            institution = try! JSONDecoder().decode([Institution].self, from: data)[0]
-            handler(institution, response, error)
+            do {
+                institution = try JSONDecoder().decode([Institution].self, from: data)[0]
+                handler(institution, response, error)
+            }
+            catch let error {
+                print("json error \(error)")
+                handler(institution, response, error)
+            }
         }
         task.resume()
     }
     
-    func getContractByID(id: String, handler: @escaping (Contract, URLResponse?, Error?) -> ()) {
-        let url_str = self.api_url + "Contract/" + id
-        print("Fetching Contract: " + url_str)
-        let url = URL(string: url_str)
-        var contract: Contract!
+    func getInstitutionSummary(id: Int, handler: @escaping (InstitutionSummary, URLResponse?, Error?) -> ()) {
+        var institutionSummary: InstitutionSummary!
+
+        let url = self.apiURL + "PublicInstitutionSummary/" + String(id)
+        NSLog("Fetching InstitutionSummary: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            guard error == nil else {
+                handler(institutionSummary, response, error)
+                return
+            }
+            guard let data = data else {
+                handler(institutionSummary, response, error)
+                return
+            }
+            do {
+                institutionSummary = try JSONDecoder().decode([InstitutionSummary].self, from: data)[0]
+                handler(institutionSummary, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(institutionSummary, response, error)
+            }
+        }
+        task.resume()
+    }
+
+    func getContractByID(id: Int, handler: @escaping (Contract, URLResponse?, Error?) -> ()) {
+        var contract: Contract!
+
+        let url = self.apiURL + "Contract/" + String(id)
+        print("Fetching Contract: " + url)
+        
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(contract, response, error!)
                 return
@@ -170,20 +202,25 @@ class ApiHelper {
                 handler(contract, response, error)
                 return
             }
-            
-            contract = try! JSONDecoder().decode([Contract].self, from: data)[0]
-            handler(contract, response, error)
+            do {
+                contract = try JSONDecoder().decode([Contract].self, from: data)[0]
+                handler(contract, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(contract, response, error)
+            }
         }
         task.resume()
     }
     
-    func getLicitatieByID(id: String, handler: @escaping (Licitatie, URLResponse?, Error?) -> ()) {
-        let url_str = self.api_url + "Tender/" + id
-        print("Fetching Licitatie: " + url_str)
-        let url = URL(string: url_str)
+    func getLicitatieByID(id: Int, handler: @escaping (Licitatie, URLResponse?, Error?) -> ()) {
         var licitatie: Licitatie!
+
+        let url = self.apiURL + "Tender/" + String(id)
+        print("Fetching Licitatie: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(licitatie, response, error!)
                 return
@@ -192,21 +229,25 @@ class ApiHelper {
                 handler(licitatie, response, error)
                 return
             }
-            
-            licitatie = try! JSONDecoder().decode([Licitatie].self, from: data)[0]
-            handler(licitatie, response, error)
+            do {
+                licitatie = try JSONDecoder().decode([Licitatie].self, from: data)[0]
+                handler(licitatie, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(licitatie, response, error)
+            }
         }
         task.resume()
     }
-
     
-    func getInstitutionContracts(id: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> ()) {
-        NSLog("Fetching Contracts")
-        let url_str = self.api_url + "InstitutionContracts/" + id
-        let url = URL(string: url_str)
+    func getInstitutionContracts(id: Int, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> ()) {
         var contracte:[InstitutionContract] = []
+
+        let url = self.apiURL + "InstitutionContracts/" + String(id)
+        NSLog("Fetching Contracts: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(contracte, response, error)
                 return
@@ -215,23 +256,26 @@ class ApiHelper {
                 handler(contracte, response, error)
                 return
             }
-            
-            contracte = try! JSONDecoder().decode([InstitutionContract].self, from: data)
-            
-            contracte.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(contracte, response, error)
+            do {
+                contracte = try JSONDecoder().decode([InstitutionContract].self, from: data)
+                contracte.sort(by: { $0.valoareRON > $1.valoareRON})
+                handler(contracte, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(contracte, response, error)
+            }
         }
         task.resume()
     }
     
-    func getInstitutionTenders(id: String, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> ()) {
-        NSLog("Fetching Licitatii")
-        
-        let url_str = self.api_url + "InstitutionTenders/" + id
-        let url = URL(string: url_str)
+    func getInstitutionTenders(id: Int, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> ()) {
         var licitatii:[InstitutionLicitatie] = []
+
+        let url = self.apiURL + "InstitutionTenders/" + String(id)
+        NSLog("Fetching Licitatii: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(licitatii, response, error)
                 return
@@ -240,21 +284,26 @@ class ApiHelper {
                 handler(licitatii, response, error)
                 return
             }
-            
-            licitatii = try! JSONDecoder().decode([InstitutionLicitatie].self, from: data)
-            licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(licitatii, response, error)
+            do {
+                licitatii = try JSONDecoder().decode([InstitutionLicitatie].self, from: data)
+                licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
+                handler(licitatii, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(licitatii, response, error)
+            }
         }
         task.resume()
     }
     
-    func getCompaniesByInstitution(id: String, handler: @escaping ([CompanyByInstitution], URLResponse?, Error?) -> ()) {
-        NSLog("Fetching Companii")
-        let url_str = self.api_url + "CompaniesByInstitution/" + id
-        let url = URL(string: url_str)
+    func getCompaniesByInstitution(id: Int, handler: @escaping ([CompanyByInstitution], URLResponse?, Error?) -> ()) {
         var companii:[CompanyByInstitution] = []
+
+        let url = self.apiURL + "CompaniesByInstitution/" + String(id)
+        NSLog("Fetching Companii: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(companii, response, error)
                 return
@@ -263,9 +312,14 @@ class ApiHelper {
                 handler(companii, response, error)
                 return
             }
-            
-            companii = try! JSONDecoder().decode([CompanyByInstitution].self, from: data)
-            handler(companii, response, error)
+            do {
+                companii = try JSONDecoder().decode([CompanyByInstitution].self, from: data)
+                handler(companii, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(companii, response, error)
+            }
         }
         task.resume()
     }
@@ -273,12 +327,12 @@ class ApiHelper {
     // Company API calls
     
     func getCompanyByCUI(cui: String, handler: @escaping (Companie, URLResponse?, Error?) -> ()) {
-        let url_str = self.api_url + "Company/" + cui
-        NSLog("Fetching Companie: " + url_str)
-        let url = URL(string: url_str)
         var companie: Companie!
+
+        let url = self.apiURL + "Company/" + cui
+        NSLog("Fetching Companie: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(companie, response, error!)
                 return
@@ -287,20 +341,25 @@ class ApiHelper {
                 handler(companie, response, error)
                 return
             }
-            
-            companie = try! JSONDecoder().decode([Companie].self, from: data)[0]
-            handler(companie, response, error)
+            do {
+                companie = try JSONDecoder().decode([Companie].self, from: data)[0]
+                handler(companie, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(companie, response, error)
+            }
         }
         task.resume()
     }
 
     func getCompanyContracts(cui: String, handler: @escaping ([CompanyContract], URLResponse?, Error?) -> ()) {
-        NSLog("Fetching Company Contracts")
-        let url_str = self.api_url + "CompanyContracts/" + cui
-        let url = URL(string: url_str)
         var contracte:[CompanyContract] = []
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+
+        let url = self.apiURL + "CompanyContracts/" + cui
+        NSLog("Fetching Company Contracts: " + url)
+
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(contracte, response, error)
                 return
@@ -309,21 +368,26 @@ class ApiHelper {
                 handler(contracte, response, error)
                 return
             }
-            
-            contracte = try! JSONDecoder().decode([CompanyContract].self, from: data)
-            contracte.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(contracte, response, error)
+            do {
+                contracte = try JSONDecoder().decode([CompanyContract].self, from: data)
+                contracte.sort(by: { $0.valoareRON > $1.valoareRON})
+                handler(contracte, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(contracte, response, error)
+            }
         }
         task.resume()
     }
     
     func getInstitutionsByCompany(cui: String, handler: @escaping ([InstitutionByCompany], URLResponse?, Error?) -> ()) {
-        let url_str = self.api_url + "InstitutionsByCompany/" + cui
-        NSLog("Fetching Institutions: " + url_str)
-        let url = URL(string: url_str)
         var institutii: [InstitutionByCompany] = []
+
+        let url = self.apiURL + "InstitutionsByCompany/" + cui
+        NSLog("Fetching Institutions: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(institutii, response, error)
                 return
@@ -332,21 +396,25 @@ class ApiHelper {
                 handler(institutii, response, error)
                 return
             }
-            
-            institutii = try! JSONDecoder().decode([InstitutionByCompany].self, from: data)
-            handler(institutii, response, error)
+            do {
+                institutii = try JSONDecoder().decode([InstitutionByCompany].self, from: data)
+                handler(institutii, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(institutii, response, error)
+            }
         }
         task.resume()
     }
     
     func getCompanyTenders(cui: String, handler: @escaping ([CompanyLicitatie], URLResponse?, Error?) -> ()) {
-        NSLog("Fetching Licitatii")
-        
-        let url_str = self.api_url + "CompanyTenders/" + cui
-        let url = URL(string: url_str)
         var licitatii:[CompanyLicitatie] = []
+
+        let url = self.apiURL + "CompanyTenders/" + cui
+        NSLog("Fetching Company Licitatii: " + url)
         
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(licitatii, response, error)
                 return
@@ -355,10 +423,15 @@ class ApiHelper {
                 handler(licitatii, response, error)
                 return
             }
-            
-            licitatii = try! JSONDecoder().decode([CompanyLicitatie].self, from: data)
-            licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
-            handler(licitatii, response, error)
+            do {
+                licitatii = try JSONDecoder().decode([CompanyLicitatie].self, from: data)
+                licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
+                handler(licitatii, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(licitatii, response, error)
+            }
         }
         task.resume()
     }
@@ -366,21 +439,12 @@ class ApiHelper {
 // Search API calls
 
     func searchInstitution(pattern: String, handler: @escaping ([Institution], URLResponse?, Error?) -> ()) {
-        if pattern.isEmpty {
-            return
-        }
-        NSLog("Searching Institutions for " + pattern)
-        
         var institutionResults:[Institution] = []
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
         
-        
-        let url_str = self.api_url + "SearchInstitution/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let url = self.apiURL + "SearchInstitution/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        NSLog("Searching Institutions: " + url)
+
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(institutionResults, response, error)
                 return
@@ -389,27 +453,25 @@ class ApiHelper {
                 handler(institutionResults, response, error)
                 return
             }
-            institutionResults = try! JSONDecoder().decode([Institution].self, from: data)
-            handler(institutionResults, response, error)
+            do {
+                institutionResults = try JSONDecoder().decode([Institution].self, from: data)
+                handler(institutionResults, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(institutionResults, response, error)
+            }
         }
         task.resume()
     }
     
     func searchCompanies(pattern: String, handler: @escaping ([CompanyByInstitution], URLResponse?, Error?) -> ()) {
-        if pattern.isEmpty {
-            return
-        }
-        NSLog("Fetching Companies for " + pattern)
         var companieResults:[CompanyByInstitution] = []
         
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
-        
-        let url_str = "https://hbp-api.azurewebsites.net/api/SearchCompany/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let url = self.apiURL + "/SearchCompany/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        NSLog("Searching Companies: " + url)
+
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(companieResults, response, error)
                 return
@@ -418,28 +480,25 @@ class ApiHelper {
                 handler(companieResults, response, error)
                 return
             }
-            
-            companieResults = try! JSONDecoder().decode([CompanyByInstitution].self, from: data)
-            handler(companieResults, response, error)
+            do {
+                companieResults = try JSONDecoder().decode([CompanyByInstitution].self, from: data)
+                handler(companieResults, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(companieResults, response, error)
+            }
         }
         task.resume()
     }
     
     func searchContracts(pattern: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> ()) {
-        if pattern.isEmpty {
-            return
-        }
-        NSLog("Fetching Contracts for " + pattern)
         var contractResults:[InstitutionContract] = []
 
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
-        
-        let url_str = "https://hbp-api.azurewebsites.net/api/SearchContract/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let url = self.apiURL + "SearchContract/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        NSLog("Searching Contracts: " + url)
+
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(contractResults, response, error)
                 return
@@ -448,28 +507,25 @@ class ApiHelper {
                 handler(contractResults, response, error)
                 return
             }
-            
-            contractResults = try! JSONDecoder().decode([InstitutionContract].self, from: data)
-            handler(contractResults, response, error)
+            do {
+                contractResults = try JSONDecoder().decode([InstitutionContract].self, from: data)
+                handler(contractResults, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(contractResults, response, error)
+            }
         }
         task.resume()
     }
     
     func searchLicitatii(pattern: String, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> ()) {
-        if pattern.isEmpty {
-            return
-        }
-        NSLog("Fetching Licitatii for " + pattern)
         var licitatieResults:[InstitutionLicitatie] = []
 
-        let pattern_escaped = pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
-        NSLog(pattern_escaped!)
-        
-        let url_str = "https://hbp-api.azurewebsites.net/api/SearchTenters/" + pattern_escaped!
-        NSLog(url_str)
-        let url = URL(string: url_str)
-        
-        let task = URLSession.shared.dataTask(with: url!) { data, response, error in
+        let url = self.apiURL + "SearchTenters/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        NSLog("Searching Licitatii for " + url)
+
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(licitatieResults, response, error)
                 return
@@ -478,9 +534,14 @@ class ApiHelper {
                 handler(licitatieResults, response, error)
                 return
             }
-            
-            licitatieResults = try! JSONDecoder().decode([InstitutionLicitatie].self, from: data)
-            handler(licitatieResults, response, error)
+            do {
+                licitatieResults = try JSONDecoder().decode([InstitutionLicitatie].self, from: data)
+                handler(licitatieResults, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(licitatieResults, response, error)
+            }
         }
         task.resume()
     }

@@ -105,7 +105,7 @@ class TableCell: UITableViewCell {
 }
 
 class InstitutionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var id: String = ""
+    var id: Int!
     var institutionName: String = ""
     var achizitiiCount: String = ""
     var licitatiiCount: String = ""
@@ -132,9 +132,11 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     var api: ApiHelper!
     
     @IBAction func indexChanged(_ sender: UISegmentedControl) {
-        self.tableView.setContentOffset(.zero, animated: false)
+        DispatchQueue.main.async {
+            self.tableView.setContentOffset(.zero, animated: false)
+            self.tableView.reloadData()
+        }
         
-        self.tableView.reloadData()
         switch tabBar.selectedSegmentIndex {
         case 0:
             if contracte.count == 0 && !fetchedContracts{
@@ -251,7 +253,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
     }
-    
+        
     private func customizeNavBar() {
         self.navigationController?.navigationBar.backItem?.title = " "
         self.navigationController?.navigationBar.tintColor = UIColor.white

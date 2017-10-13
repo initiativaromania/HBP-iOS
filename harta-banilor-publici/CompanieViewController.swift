@@ -220,7 +220,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         switch tabBar.selectedSegmentIndex {
         case 0:
             let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
-            controller.id = "1" //String(institutii[indexPath.row].id)
+            controller.id = 1 //String(institutii[indexPath.row].id)
             controller.institutionName = institutii[indexPath.row].nume
             show(controller, sender: self)
         default:

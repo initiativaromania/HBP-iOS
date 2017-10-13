@@ -87,11 +87,15 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-
+        if (searchBar.text?.isEmpty)! {
+            return
+        }
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
             isSearchingInstitutions = true
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
 
             api.searchInstitution(pattern: searchBar.text!) { (institutionResults, response, error) -> () in
                 guard error == nil else {
@@ -116,7 +120,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             }
         case 1:
             isSearchingCompanies = true
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
 
             api.searchCompanies(pattern: searchBar.text!) { (companieResults, response, error) -> () in
                 guard error == nil else {
@@ -141,7 +147,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             }
         case 2:
             isSearchingContracts = true
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
 
             api.searchContracts(pattern: searchBar.text!) { (contractResults, response, error) -> () in
                 guard error == nil else {
@@ -166,7 +174,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             }
         case 3:
             isSearchingLicitatii = true
-            self.tableView.reloadData()
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
 
             api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, response, error) -> () in
                 guard error == nil else {
@@ -182,7 +192,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.licitatieResults = licitatieResults
                 self.isSearchingLicitatii = false
 
-                DispatchQueue.main.async{
+                DispatchQueue.main.async {
                     NSLog("DONE Fetching Licitatii")
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -197,7 +207,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         institutionResults = []
         companieResults = []
-        tableView.reloadData()
+        isSearchingInstitutions = false
+        isSearchingCompanies = false
+        isSearchingContracts = false
+        isSearchingLicitatii = false
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
     func setupSearchBarSize(){
@@ -205,11 +221,25 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        if (searchBar.text?.isEmpty)! {
+            institutionResults = []
+            companieResults = []
+            contractResults = []
+            licitatieResults = []
+            DispatchQueue.main.async {
+                self.tableView.allowsSelection = false
+                self.tableView.isScrollEnabled = false
+                self.tableView.reloadData()
+            }
+            return
+        }
         switch selectedScope {
         case 0:
             if institutionResults.count == 0 {
                 self.isSearchingInstitutions = true
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
 
                 api.searchInstitution(pattern: searchBar.text!) { (institutionResults, response, error) -> () in
                     guard error == nil else {
@@ -236,13 +266,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if isSearchingCompanies || isSearchingContracts || isSearchingLicitatii {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         case 1:
             if companieResults.count == 0 {
                 self.isSearchingCompanies = true
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 
                 api.searchCompanies(pattern: searchBar.text!) { (companieResults, response, error) -> () in
                     guard error == nil else {
@@ -270,13 +304,17 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if isSearchingInstitutions || isSearchingContracts || isSearchingLicitatii {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         case 2:
             if contractResults.count == 0 {
                 self.isSearchingContracts = true
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
                 
                 api.searchContracts(pattern: searchBar.text!) { (contractResults, response, error) -> () in
                     guard error == nil else {
@@ -304,13 +342,18 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if isSearchingInstitutions || isSearchingCompanies || isSearchingLicitatii {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         case 3:
             if licitatieResults.count == 0 {
                 self.isSearchingLicitatii = true
-                self.tableView.reloadData()
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+                
                 api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, response, error) -> () in
                     guard error == nil else {
                         self.isSearchingLicitatii = false
@@ -337,7 +380,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if isSearchingInstitutions || isSearchingCompanies || isSearchingContracts {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }
             }
         default:
@@ -458,7 +503,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
             let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
-            controller.id = String(institutionResults[indexPath.row].id)
+            controller.id = institutionResults[indexPath.row].id
             controller.institutionName = institutionResults[indexPath.row].nume
             show(controller, sender: self)
         case 1:

@@ -29,7 +29,7 @@ extension CALayer {
 
 class ContractViewController: UIViewController {
     var id: Int!
-    var senderId: String!
+    var senderId: Int!
     
     @IBOutlet weak var titluLabel: UILabel!
     @IBOutlet weak var institutieLabel: UILabel!
@@ -54,12 +54,12 @@ class ContractViewController: UIViewController {
     
     
     @IBAction func pressedInstitutieButton(_ sender: UIButton) {
-        if senderId == String(self.institutie.id) {
+        if senderId == self.institutie.id {
             self.navigationController?.popViewController(animated: true)
         }
         else {
             let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
-            controller.id = String(self.institutie.id)
+            controller.id = self.institutie.id
             controller.institutionName = self.institutie.nume
             show(controller, sender: self)
         }
@@ -88,7 +88,7 @@ class ContractViewController: UIViewController {
         dataLabel.layer.addBorder(edge: UIRectEdge.left, color: .lightGray, thickness: 0.5)
         cpvLabel.layer.addBorder(edge: UIRectEdge.left, color: .lightGray, thickness: 0.5)
         
-        api.getContractByID(id: String(self.id!)) { (contract, response, error) -> () in
+        api.getContractByID(id: self.id) { (contract, response, error) -> () in
             guard error == nil else {
                 print(error!)
                 return
@@ -116,8 +116,7 @@ class ContractViewController: UIViewController {
                 }
             }
             DispatchQueue.main.async {
-                
-                self.api.getInstitutionByID(id: String(self.contract.institutiePublicaID)) { (institutie, response, error) -> () in
+                self.api.getInstitutionByID(id: self.contract.institutiePublicaID) { (institutie, response, error) -> () in
                     guard error == nil else {
                         print(error!)
                         return
@@ -126,12 +125,9 @@ class ContractViewController: UIViewController {
                     DispatchQueue.main.async {
                         self.institutieLabel.text = self.institutie.nume
                         self.institutieButton.isEnabled = true
-
                     }
                 }
             }
         }
-        
-        
     }
 }
