@@ -130,6 +130,15 @@ struct CompanyLicitatie: Codable {
     }
 }
 
+extension String {
+    func trailingTrim(_ characterSet : CharacterSet) -> String {
+        if let range = rangeOfCharacter(from: characterSet, options: [.anchored, .backwards]) {
+            return self.substring(to: range.lowerBound).trailingTrim(characterSet)
+        }
+        return self
+    }
+}
+
 class ApiHelper {
     private let apiURL = "https://hbp-api.azurewebsites.net/api/"
     
@@ -137,7 +146,7 @@ class ApiHelper {
         var institution: Institution!
 
         let url = self.apiURL + "InstitutionByID/" + String(id)
-        NSLog("Fetching Institution: " + url)
+        print("Fetching Institution: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -164,7 +173,7 @@ class ApiHelper {
         var institutionSummary: InstitutionSummary!
 
         let url = self.apiURL + "PublicInstitutionSummary/" + String(id)
-        NSLog("Fetching InstitutionSummary: " + url)
+        print("Fetching InstitutionSummary: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -245,7 +254,7 @@ class ApiHelper {
         var contracte:[InstitutionContract] = []
 
         let url = self.apiURL + "InstitutionContracts/" + String(id)
-        NSLog("Fetching Contracts: " + url)
+        print("Fetching Contracts: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -273,7 +282,7 @@ class ApiHelper {
         var licitatii:[InstitutionLicitatie] = []
 
         let url = self.apiURL + "InstitutionTenders/" + String(id)
-        NSLog("Fetching Licitatii: " + url)
+        print("Fetching Licitatii: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -301,7 +310,7 @@ class ApiHelper {
         var companii:[CompanyByInstitution] = []
 
         let url = self.apiURL + "CompaniesByInstitution/" + String(id)
-        NSLog("Fetching Companii: " + url)
+        print("Fetching Companii: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -330,7 +339,7 @@ class ApiHelper {
         var companie: Companie!
 
         let url = self.apiURL + "Company/" + cui
-        NSLog("Fetching Companie: " + url)
+        print("Fetching Companie: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -357,7 +366,7 @@ class ApiHelper {
         var contracte:[CompanyContract] = []
 
         let url = self.apiURL + "CompanyContracts/" + cui
-        NSLog("Fetching Company Contracts: " + url)
+        print("Fetching Company Contracts: " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -385,7 +394,7 @@ class ApiHelper {
         var institutii: [InstitutionByCompany] = []
 
         let url = self.apiURL + "InstitutionsByCompany/" + cui
-        NSLog("Fetching Institutions: " + url)
+        print("Fetching Institutions: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -412,7 +421,7 @@ class ApiHelper {
         var licitatii:[CompanyLicitatie] = []
 
         let url = self.apiURL + "CompanyTenders/" + cui
-        NSLog("Fetching Company Licitatii: " + url)
+        print("Fetching Company Licitatii: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -441,8 +450,8 @@ class ApiHelper {
     func searchInstitution(pattern: String, handler: @escaping ([Institution], URLResponse?, Error?) -> ()) {
         var institutionResults:[Institution] = []
         
-        let url = self.apiURL + "SearchInstitution/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        NSLog("Searching Institutions: " + url)
+        let url = self.apiURL + "SearchInstitution/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print("Searching Institutions: " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -468,8 +477,8 @@ class ApiHelper {
     func searchCompanies(pattern: String, handler: @escaping ([CompanyByInstitution], URLResponse?, Error?) -> ()) {
         var companieResults:[CompanyByInstitution] = []
         
-        let url = self.apiURL + "/SearchCompany/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        NSLog("Searching Companies: " + url)
+        let url = self.apiURL + "/SearchCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print("Searching Companies: " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -494,9 +503,8 @@ class ApiHelper {
     
     func searchContracts(pattern: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> ()) {
         var contractResults:[InstitutionContract] = []
-
-        let url = self.apiURL + "SearchContract/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        NSLog("Searching Contracts: " + url)
+        let url = self.apiURL + "SearchContract/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print("Searching Contracts: " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
@@ -522,8 +530,8 @@ class ApiHelper {
     func searchLicitatii(pattern: String, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> ()) {
         var licitatieResults:[InstitutionLicitatie] = []
 
-        let url = self.apiURL + "SearchTenters/" + pattern.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        NSLog("Searching Licitatii for " + url)
+        let url = self.apiURL + "SearchTenters/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print("Searching Licitatii for " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
