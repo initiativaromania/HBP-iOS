@@ -30,7 +30,6 @@
 		3AA403261F448110009490EB /* CrimsonText-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403201F448110009490EB /* CrimsonText-SemiBold.ttf */; };
 		3AA403271F448110009490EB /* CrimsonText-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3AA403211F448110009490EB /* CrimsonText-SemiBoldItalic.ttf */; };
 		3AC21DC81F90F6830016BE04 /* CustomInfoWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AC21DC71F90F6830016BE04 /* CustomInfoWindow.swift */; };
-		3ADB634A1F6E4DAA00700200 /* institutii_publice_pins_v0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */; };
 		F3FEA5272921380B6787CDE8 /* libPods-harta-banilor-publici.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 39349E64E96C127385D2AA19 /* libPods-harta-banilor-publici.a */; };
 /* End PBXBuildFile section */
 
@@ -53,6 +52,7 @@
 
 /* Begin PBXFileReference section */
 		39349E64E96C127385D2AA19 /* libPods-harta-banilor-publici.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-harta-banilor-publici.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3A1B217F1F91036F00EEE2A3 /* institutii_publice_pins_v0.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = institutii_publice_pins_v0.csv; sourceTree = "<group>"; };
 		3A1EF52B1F52CE51005D1CE9 /* AvenirNextLTPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AvenirNextLTPro-Bold.otf"; path = "../../../Downloads/New folder (10)/AvenirNextLTPro-Bold.otf"; sourceTree = "<group>"; };
 		3A1EF52C1F52CE51005D1CE9 /* AvenirNextLTPro-It.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AvenirNextLTPro-It.otf"; path = "../../../Downloads/New folder (10)/AvenirNextLTPro-It.otf"; sourceTree = "<group>"; };
 		3A1EF52D1F52CE51005D1CE9 /* AvenirNextLTPro-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "AvenirNextLTPro-Regular.otf"; path = "../../../Downloads/New folder (10)/AvenirNextLTPro-Regular.otf"; sourceTree = "<group>"; };
@@ -84,7 +84,6 @@
 		3AA403211F448110009490EB /* CrimsonText-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "CrimsonText-SemiBoldItalic.ttf"; path = "../../../Downloads/Crimson_Text/CrimsonText-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
 		3AC21DC61F90F6830016BE04 /* CustomInfoWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomInfoWindow.xib; sourceTree = "<group>"; };
 		3AC21DC71F90F6830016BE04 /* CustomInfoWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInfoWindow.swift; sourceTree = "<group>"; };
-		3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = institutii_publice_pins_v0.csv; path = ../../../Downloads/institutii_publice_pins_v0.csv; sourceTree = "<group>"; };
 		3CD957435C76157D936104F4 /* Pods-harta-banilor-publici.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.release.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.release.xcconfig"; sourceTree = "<group>"; };
 		F15980CF94420178A3E5FD29 /* Pods-harta-banilor-publici.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +144,7 @@
 				3AA402EA1F447CDD009490EB /* Main.storyboard */,
 				3AA402EF1F447CDD009490EB /* LaunchScreen.storyboard */,
 				3AA402F21F447CDD009490EB /* Info.plist */,
-				3ADB63491F6E4DAA00700200 /* institutii_publice_pins_v0.csv */,
+				3A1B217F1F91036F00EEE2A3 /* institutii_publice_pins_v0.csv */,
 				3AA403141F447DF7009490EB /* harta-banilor-publici-Bridging-Header.h */,
 				3AA402ED1F447CDD009490EB /* Assets.xcassets */,
 				3AA403191F44809F009490EB /* fonts */,
@@ -323,7 +322,6 @@
 				3A1EF52E1F52CE51005D1CE9 /* AvenirNextLTPro-Bold.otf in Resources */,
 				3AA403261F448110009490EB /* CrimsonText-SemiBold.ttf in Resources */,
 				3AA403251F448110009490EB /* CrimsonText-Regular.ttf in Resources */,
-				3ADB634A1F6E4DAA00700200 /* institutii_publice_pins_v0.csv in Resources */,
 				3AA403221F448110009490EB /* CrimsonText-Bold.ttf in Resources */,
 				3AA402F11F447CDD009490EB /* LaunchScreen.storyboard in Resources */,
 				3AA403231F448110009490EB /* CrimsonText-BoldItalic.ttf in Resources */,
