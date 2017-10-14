@@ -140,7 +140,7 @@ extension String {
 }
 
 class ApiHelper {
-    private let apiURL = "<<<CHANGEME>>>"
+    private let apiURL = "https://hbp-api.azurewebsites.net/api/"
     
     func getInstitutionByID(id: Int, handler: @escaping (Institution, URLResponse?, Error?) -> ()) {
         var institution: Institution!

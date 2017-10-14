@@ -4,25 +4,19 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <array key="AvenirNext.ttc">
             <string>AvenirNext-DemiBold</string>
-        </array>
-        <array key="CrimsonText-Bold.ttf">
-            <string>CrimsonText-Bold</string>
-        </array>
-        <array key="CrimsonText-SemiBold.ttf">
-            <string>CrimsonText-SemiBold</string>
+            <string>AvenirNext-Medium</string>
         </array>
     </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomInfoWindow" customModule="harta_banilor_publici" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="CustomInfoWindow" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="250" height="114"/>
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
@@ -37,7 +31,7 @@
                     <rect key="frame" x="204" y="0.0" width="46" height="114"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" red="0.52156862749999999" green="0.80392156859999997" blue="0.81568627449999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                    <fontDescription key="fontDescription" name="CrimsonText-Bold" family="Crimson Text" pointSize="45"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="35"/>
                     <state key="normal" title="&gt;">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
@@ -48,14 +42,14 @@
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tia-SO-JVT">
                     <rect key="frame" x="154" y="72" width="42" height="16"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="CrimsonText-SemiBold" family="Crimson Text" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                     <color key="textColor" white="0.25" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgJ-vf-q7S">
                     <rect key="frame" x="154" y="90" width="42" height="16"/>
                     <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" name="CrimsonText-SemiBold" family="Crimson Text" pointSize="14"/>
+                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -81,7 +75,7 @@
                 <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
             </userDefinedRuntimeAttributes>
             <connections>
-                <outlet property="achizitiiDirecteLabel" destination="tia-SO-JVT" id="ALJ-gG-xOG"/>
+                <outlet property="achizitiiDirecteLabel" destination="tia-SO-JVT" id="2b1-a0-nam"/>
                 <outlet property="intitutionNameLabel" destination="pgq-nl-EfH" id="A6c-ne-wB3"/>
                 <outlet property="licitatiiLabel" destination="hgJ-vf-q7S" id="Dhc-tU-iBs"/>
             </connections>
