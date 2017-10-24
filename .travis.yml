@@ -9,15 +9,12 @@ env:
   - LANG=en_US.UTF-8
   - WORKSPACE=harta-banilor-publici.xcworkspace
   - IOS_FRAMEWORK_SCHEME="harta-banilor-publici"
-  matrix:
-    - DESTINATION="OS=10.3.1,name=iPhone 6s"   SCHEME="$IOS_FRAMEWORK_SCHEME"
-    - DESTINATION="OS=11.0,name=iPhone 6s"     SCHEME="$IOS_FRAMEWORK_SCHEME"
 before_install:
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-
  
-  - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "$DESTINATION" ONLY_ACTIVE_ARCH=NO | xcpretty;
+  - xcodebuild clean build -workspace "$WORKSPACE" -scheme "$SCHEME" -destination "OS=11.0,name="iPhone 6s" | xcpretty;
+
