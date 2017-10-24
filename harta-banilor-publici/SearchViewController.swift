@@ -1,6 +1,6 @@
 import Foundation
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate {
+class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UIViewControllerPreviewingDelegate {
     
     var companieResults:[CompanyByInstitution] = []
     var institutionResults:[Institution] = []
@@ -30,6 +30,13 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         searchController.searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
+            print("REGISTERED POP")
+        } else {
+            print("3D Touch Not Available")
+        }
 
         if #available(iOS 11.0, *) {
             searchController.dimsBackgroundDuringPresentation = false
@@ -84,6 +91,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             automaticallyAdjustsScrollViewInsets = false
             // now reframe the searchBar to add some margins
         }
+
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -521,5 +529,34 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         default:
             break;
         }
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
+        switch searchController.searchBar.selectedScopeButtonIndex {
+        case 0:
+            
+            guard let indexPath = self.tableView.indexPathForRow(at: location),
+                let cell = self.tableView.cellForRow(at: indexPath) else {
+                    return nil }
+            
+            let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
+            controller.id = self.institutionResults[indexPath.row].id
+            controller.institutionName = self.institutionResults[indexPath.row].nume
+            controller.preferredContentSize =
+                CGSize(width: 0.0, height: 600)
+            
+            previewingContext.sourceRect = cell.frame
+            return controller
+        default:
+            break
+            
+        }
+        return controller
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        show(viewControllerToCommit, sender: self)
     }
 }

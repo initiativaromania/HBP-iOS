@@ -104,7 +104,7 @@ class TableCell: UITableViewCell {
     }
 }
 
-class InstitutionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class InstitutionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
     var id: Int!
     var institutionName: String = ""
     var achizitiiCount: String = ""
@@ -252,6 +252,12 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
                 self.tableView.reloadData()
             }
         }
+        
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: self.tableView)
+        } else {
+            print("3D Touch Not Available")
+        }
     }
         
     private func customizeNavBar() {
@@ -317,6 +323,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
+
         case 1:
             if licitatii.count == 0 {
                 self.tableView.allowsSelection = false
@@ -373,4 +380,35 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             break
         }
     }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
+
+        switch tabBar.selectedSegmentIndex {
+        case 0:
+            guard let indexPath = tableView.indexPathForRow(at: location),
+                let cell = tableView.cellForRow(at: indexPath) else {
+                    return nil }
+            
+            let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
+            controller.id = self.contracte[indexPath.row].id
+            controller.senderId = self.id
+            controller.preferredContentSize =
+                CGSize(width: 0.0, height: 600)
+
+            
+            previewingContext.sourceRect = cell.frame
+            return controller
+        default:
+            break
+        
+        }
+        return controller
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        
+        show(viewControllerToCommit, sender: self)
+    }
+
 }
