@@ -1,11 +1,10 @@
 language: swift
-osx_image: xcode9.0
+osx_image: xcode9.2
 before_install:
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 script:
+
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-
- 
-  - xcodebuild clean build -workspace "harta-banilor-publici.xcworkspace" -scheme "harta-banilor-publici" -destination "OS=11.0,name=iPhone 6s" ONLY_ACTIVE_ARCH=NO | xcpretty;
+  - xcodebuild clean build -workspace "harta-banilor-publici.xcworkspace" -scheme "harta-banilor-publici" -destination "platform=iOS Simulator,name=iPhone 6s,OS=11.2" ONLY_ACTIVE_ARCH=NO | xcpretty;
