@@ -50,7 +50,6 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             self.navigationItem.searchController = searchController
             self.navigationItem.hidesSearchBarWhenScrolling = false
             if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-                NSLog("LIGHTGRAY!!!!!")
                 DispatchQueue.main.async {
                     textfield.textColor = .lightGray
                     textfield.tintColor = .lightGray
@@ -129,7 +128,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
 
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        //searchController.searchBar.becomeFirstResponder()
+        sleep(1)
+        searchController.searchBar.becomeFirstResponder()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
