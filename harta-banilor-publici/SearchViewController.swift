@@ -15,6 +15,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
     var isSearchingCompanies: Bool = false
     var isSearchingContracts: Bool = false
     var isSearchingLicitatii: Bool = false
+    var imageView: UIImageView = UIImageView()
+
     
     var api: ApiHelper!
 
@@ -48,8 +50,12 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             self.navigationItem.searchController = searchController
             self.navigationItem.hidesSearchBarWhenScrolling = false
             if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
-                textfield.textColor = .lightGray
-                textfield.tintColor = .lightGray
+                NSLog("LIGHTGRAY!!!!!")
+                DispatchQueue.main.async {
+                    textfield.textColor = .lightGray
+                    textfield.tintColor = .lightGray
+
+                }
                 if let backgroundview = textfield.subviews.first {
                     
                     // Background color
@@ -91,13 +97,48 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             automaticallyAdjustsScrollViewInsets = false
             // now reframe the searchBar to add some margins
         }
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let image: UIImage = UIImage(named: "searchArt")!
+        self.imageView = UIImageView(image: image)
+        
+        switch searchController.searchBar.selectedScopeButtonIndex {
+        case 0:
+            if institutionResults.count == 0 {
+                self.tableView.isHidden = true
+                self.view.addSubview(imageView)
+                imageView.frame = CGRect(x: self.view.frame.size.width/2-61, y: self.view.frame.size.height/2-61, width: 123, height: 123)
+                imageView.layer.opacity = 0.3
+            }
+        case 2:
+            if contractResults.count == 0 {
+                self.tableView.isHidden = true
+                self.view.addSubview(imageView)
+                imageView.frame = CGRect(x: self.view.frame.size.width/2-46, y: self.view.frame.size.height/2-46, width: 93, height: 93)
+            }
+        case 3:
+            if licitatieResults.count == 0 {
+                self.tableView.isHidden = true
+                self.view.addSubview(imageView)
+                imageView.frame = CGRect(x: self.view.frame.size.width/2-46, y: self.view.frame.size.height/2-46, width: 93, height: 93)
+            }
+        default:
+            break;
+        }
+    }
 
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(true)
+        //searchController.searchBar.becomeFirstResponder()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         if (searchBar.text?.isEmpty)! {
             return
         }
+        self.tableView.isHidden = false
+        imageView.removeFromSuperview()
+        
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
             isSearchingInstitutions = true
@@ -241,6 +282,9 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             }
             return
         }
+        self.tableView.isHidden = false
+        self.imageView.removeFromSuperview()
+        
         switch selectedScope {
         case 0:
             if institutionResults.count == 0 {
@@ -516,7 +560,8 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             show(controller, sender: self)
         case 1:
             let controller = storyboard?.instantiateViewController(withIdentifier: "CompanieViewController") as! CompanieViewController
-            controller.companieSummary = self.companieResults[indexPath.row]
+            controller.id = self.companieResults[indexPath.row].id
+            controller.cui = self.companieResults[indexPath.row].cui
             show(controller, sender: self)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController

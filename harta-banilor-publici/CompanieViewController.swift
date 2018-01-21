@@ -2,7 +2,11 @@ import UIKit
 import Foundation
 
 class CompanieViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    var companieSummary: CompanyByInstitution?
+    var id: Int = 0
+    var companyType: String = ""
+    var cui: String = ""
+    
+    var companie: Companie!
     
     @IBOutlet weak var adresaLabel: UILabel!
     @IBOutlet weak var cuiLabel: UILabel!
@@ -26,7 +30,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         switch tabBar.selectedSegmentIndex {
         case 0:
             if institutii.count == 0 && !fetchedInstitutii {
-                api.getInstitutionsByCompany(cui: (companieSummary?.cui)!) { (institutii, response, error) -> () in
+                api.getInstitutionsByADCompany(id: id) { (institutii, response, error) -> () in
                     guard error == nil else {
                         self.fetchedInstitutii = true
                         DispatchQueue.main.async {
@@ -45,7 +49,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
         case 1:
             if contracte.count == 0 && !fetchedContracts {
-                api.getCompanyContracts(cui: (companieSummary?.cui)!) { (contracte, response, error) -> () in
+                api.getCompanyContracts(cui: cui) { (contracte, response, error) -> () in
                     guard error == nil else {
                         self.fetchedContracts = true
                         DispatchQueue.main.async {
@@ -64,7 +68,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
         case 2:
             if licitatii.count == 0 && !fetchedLicitatii {
-                api.getCompanyTenders(cui: (companieSummary?.cui)!) { (licitatii, response, error) -> () in
+                api.getCompanyTenders(cui: cui) { (licitatii, response, error) -> () in
                     guard error == nil else {
                         self.fetchedLicitatii = true
                         DispatchQueue.main.async {
@@ -90,19 +94,29 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         api = ApiHelper()
         
+        api.getCompanyByCUI(cui: cui) { (companie, response, error) -> () in
+            guard error == nil else {
+                return
+            }
+            self.companie = companie
+            DispatchQueue.main.async {
+                self.companyNameLabel.adjustsFontSizeToFitWidth = true
+                self.companyNameLabel.minimumScaleFactor = 0.2
+                self.companyNameLabel.text = self.companie.nume
+            }
+        }
+        
         self.customizeNavBar()
         self.setLabels()
         
-        self.companyNameLabel.adjustsFontSizeToFitWidth = true
-        self.companyNameLabel.minimumScaleFactor = 0.2
-        self.companyNameLabel.text = companieSummary?.nume
+        
         
         setTableHeaderSeparator()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        api.getInstitutionsByCompany(cui: (companieSummary?.cui)!) { (institutii, response, error) -> () in
+        api.getInstitutionsByCompany(cui: cui) { (institutii, response, error) -> () in
             guard error == nil else {
                 self.fetchedInstitutii = true
                 DispatchQueue.main.async {
@@ -134,11 +148,11 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     private func setLabels() {
-        self.adresaLabel.text = companieSummary?.adresa
+        self.adresaLabel.text = self.companie.adresa
         self.adresaLabel.adjustsFontSizeToFitWidth = true
         self.adresaLabel.minimumScaleFactor = 0.2
         
-        self.cuiLabel.text = companieSummary?.cui
+        self.cuiLabel.text = self.companie.cui
         self.cuiLabel.adjustsFontSizeToFitWidth = true
         self.cuiLabel.minimumScaleFactor = 0.2
     }

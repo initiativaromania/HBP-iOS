@@ -122,7 +122,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     
     var contracte: [InstitutionContract] = []
     var licitatii: [InstitutionLicitatie] = []
-    var companii: [CompanyByInstitution] = []
+    var companii: [ADCompanieByInstitution] = []
     var institution: Institution!
     
     var fetchedContracts: Bool = false
@@ -182,7 +182,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         case 2:
             if companii.count == 0 && !fetchedCompanii {
-                api.getCompaniesByInstitution(id: id) { (companii, response, error) -> () in
+                api.getADCompaniesByInstitution(id: id) { (companii, response, error) -> () in
                     guard error == nil else {
                         self.fetchedCompanii = true
                         DispatchQueue.main.async {
@@ -374,7 +374,13 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             show(controller, sender: self)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "CompanieViewController") as! CompanieViewController
-            controller.companieSummary = self.companii[indexPath.row]
+            controller.id = self.companii[indexPath.row].id
+            if self.tabBar.selectedSegmentIndex == 0 {
+                controller.companyType = "AD"
+            }
+            else if self.tabBar.selectedSegmentIndex == 1 {
+                controller.companyType = "TD"
+            }
             show(controller, sender: self)
         default:
             break

@@ -90,6 +90,15 @@ struct CompanyByInstitution: Codable {
         case tara = "Tara", localitate = "Localitate", adresa = "Adresa"
     }
 }
+
+struct ADCompanieByInstitution: Codable {
+    let id: Int
+    let nume: String
+    private enum CodingKeys : String, CodingKey {
+        case id = "CompanieId", nume = "Nume"
+    }
+}
+
 struct InstitutionByCompany: Codable {
     let cui, nume: String
     
@@ -99,6 +108,16 @@ struct InstitutionByCompany: Codable {
 }
 
 struct Companie: Codable {
+    let id: Int
+    let nume, cui, tara, localitate, adresa: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "CompanieId", nume = "Nume", cui = "CUI"
+        case tara = "Tara", localitate = "Localitate", adresa = "Adresa"
+    }
+}
+
+struct ADCompanie: Codable {
     let id: Int
     let nume, cui, tara, localitate, adresa: String
     
@@ -164,6 +183,33 @@ class ApiHelper {
             catch let error {
                 print("json error \(error)")
                 handler(institution, response, error)
+            }
+        }
+        task.resume()
+    }
+    
+    func getADCompaniesByInstitution(id: Int, handler: @escaping ([ADCompanieByInstitution], URLResponse?, Error?) -> ()) {
+        var ADCompaniesByInstitution: [ADCompanieByInstitution] = []
+        
+        let url = self.apiURL + "ADCompaniesByInstitution/" + String(id)
+        print("Fetching ADCompaniesByInstitution: " + url)
+        
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            guard error == nil else {
+                handler(ADCompaniesByInstitution, response, error)
+                return
+            }
+            guard let data = data else {
+                handler(ADCompaniesByInstitution, response, error)
+                return
+            }
+            do {
+                ADCompaniesByInstitution = try JSONDecoder().decode([ADCompanieByInstitution].self, from: data)
+                handler(ADCompaniesByInstitution, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(ADCompaniesByInstitution, response, error)
             }
         }
         task.resume()
@@ -336,6 +382,7 @@ class ApiHelper {
     // Company API calls
     
     func getCompanyByCUI(cui: String, handler: @escaping (Companie, URLResponse?, Error?) -> ()) {
+        return 
         var companie: Companie!
 
         let url = self.apiURL + "Company/" + cui
@@ -389,7 +436,32 @@ class ApiHelper {
         }
         task.resume()
     }
-    
+    func getInstitutionsByADCompany(id : Int, handler: @escaping ([InstitutionByCompany], URLResponse?, Error?) -> ()) {
+        var institutii: [InstitutionByCompany] = []
+        
+        let url = self.apiURL + "InstitutionsByADCompany/" + String(id)
+        print("Fetching Institutions: " + url)
+        
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            guard error == nil else {
+                handler(institutii, response, error)
+                return
+            }
+            guard let data = data else {
+                handler(institutii, response, error)
+                return
+            }
+            do {
+                institutii = try JSONDecoder().decode([InstitutionByCompany].self, from: data)
+                handler(institutii, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(institutii, response, error)
+            }
+        }
+        task.resume()
+    }
     func getInstitutionsByCompany(cui: String, handler: @escaping ([InstitutionByCompany], URLResponse?, Error?) -> ()) {
         var institutii: [InstitutionByCompany] = []
 
@@ -444,6 +516,35 @@ class ApiHelper {
         }
         task.resume()
     }
+    
+    /*func getInsitutionsByTenderCompany(cui: String, handler: @escaping ([Institution], URLResponse?, Error?) -> ()) {
+        var licitatii:[CompanyLicitatie] = []
+        
+        let url = self.apiURL + "CompanyTenders/" + cui
+        print("Fetching Company Licitatii: " + url)
+        
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            guard error == nil else {
+                handler(licitatii, response, error)
+                return
+            }
+            guard let data = data else {
+                handler(licitatii, response, error)
+                return
+            }
+            do {
+                licitatii = try JSONDecoder().decode([CompanyLicitatie].self, from: data)
+                licitatii.sort(by: { $0.valoareRON > $1.valoareRON})
+                handler(licitatii, response, error)
+            }
+            catch let error {
+                print("json error: \(error)")
+                handler(licitatii, response, error)
+            }
+        }
+        task.resume()
+    }
+ */
 
 // Search API calls
 
