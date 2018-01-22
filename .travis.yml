@@ -3,8 +3,8 @@ osx_image: xcode9.2
 before_install:
   - gem install cocoapods --pre --no-rdoc --no-ri --no-document --quiet
 script:
+  - swiftlint lint --config .swiftlint.yml
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - swiftlint lint --config .swiftlint.yml
   - xcodebuild clean build -workspace "harta-banilor-publici.xcworkspace" -scheme "harta-banilor-publici" -destination "platform=iOS Simulator,name=iPhone 6s,OS=11.2" ONLY_ACTIVE_ARCH=NO | xcpretty;
