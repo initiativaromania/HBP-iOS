@@ -1,0 +1,13 @@
+disabled_rules:
+  - line_length
+  - identifier_name
+  - trailing_whitespace
+  - colon
+  - function_body_length
+  - type_name
+  - cyclomatic_complexity
+  - function_parameter_count
+  - shorthand_operator
+excluded:
+  - Carthage
+  - Pods
