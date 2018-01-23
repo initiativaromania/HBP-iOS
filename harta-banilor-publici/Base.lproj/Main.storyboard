@@ -37,7 +37,7 @@
                     </view>
                     <connections>
                         <outlet property="launchImageView" destination="2bW-R8-KLq" id="71V-Cq-agz"/>
-                        <segue destination="49e-Tb-3d3" kind="show" id="ncH-XA-fJk"/>
+                        <segue destination="49e-Tb-3d3" kind="show" identifier="launchscreenToHartaSegue" id="ncH-XA-fJk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rgz-lB-ThP" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -89,7 +89,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="FUf-w5-32E" id="hYv-eT-vtW"/>
-                        <segue destination="mwM-rY-90A" kind="show" id="qxZ-MU-Jch"/>
+                        <segue destination="mwM-rY-90A" kind="show" identifier="hartaToIntituieSegue" id="qxZ-MU-Jch"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zYe-90-X0i" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -129,16 +129,16 @@
                                     <action selector="indexChanged:" destination="mwM-rY-90A" eventType="valueChanged" id="41N-Aw-Kr2"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-UU-Q5q">
+                            <tableView contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-UU-Q5q">
                                 <rect key="frame" x="0.0" y="205" width="375" height="364"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="QKu-Ma-ycD" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="QKu-Ma-ycD" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKu-Ma-ycD" id="CBs-gi-FUC">
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QKu-Ma-ycD" id="CBs-gi-FUC">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -266,9 +266,9 @@
                         <outlet property="licitatiiCountLabel" destination="vdL-8C-xWa" id="a0U-bT-Z3D"/>
                         <outlet property="tabBar" destination="R8s-Pq-APZ" id="81B-hJ-SuI"/>
                         <outlet property="tableView" destination="cyO-UU-Q5q" id="htq-FN-f1S"/>
-                        <segue destination="Iwr-51-Xaf" kind="show" identifier="companieSegue" id="fUa-g3-xJn"/>
-                        <segue destination="y7W-47-BTu" kind="show" identifier="contractSegue" id="9oq-zI-RxO"/>
-                        <segue destination="UNO-tS-fE3" kind="show" id="mHV-I0-o3g"/>
+                        <segue destination="Iwr-51-Xaf" kind="show" identifier="institutieToCompanieSegue" id="fUa-g3-xJn"/>
+                        <segue destination="y7W-47-BTu" kind="show" identifier="institutieToContractSegue" id="9oq-zI-RxO"/>
+                        <segue destination="UNO-tS-fE3" kind="show" identifier="institutieToLicitatieSegue" id="mHV-I0-o3g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="arT-gK-Hgw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -493,16 +493,16 @@
                                     <action selector="indexChanged:" destination="Iwr-51-Xaf" eventType="valueChanged" id="fLg-0b-Mu7"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-46-gEu">
+                            <tableView contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-46-gEu">
                                 <rect key="frame" x="-1" y="205" width="375" height="364"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="OZd-v0-pqd" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="OZd-v0-pqd" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZd-v0-pqd" id="Me1-xX-G43">
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OZd-v0-pqd" id="Me1-xX-G43">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -598,15 +598,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5TG-Y1-jLW">
+                            <tableView contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="5TG-Y1-jLW">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="awh-aE-41W" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="65" id="awh-aE-41W" customClass="TableCell" customModule="harta_banilor_publici" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awh-aE-41W" id="Lgo-4W-8bg">
+                                        <tableViewCellContentView key="contentView" opaque="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="awh-aE-41W" id="Lgo-4W-8bg">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
@@ -670,10 +670,10 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="PrW-rf-jk3" id="dfg-gP-KtD"/>
                         <outlet property="tableView" destination="5TG-Y1-jLW" id="PsY-PE-1EW"/>
-                        <segue destination="mwM-rY-90A" kind="show" identifier="institutieSegue" id="9iA-GD-Hts"/>
-                        <segue destination="Iwr-51-Xaf" kind="show" id="udn-eB-5Nc"/>
-                        <segue destination="y7W-47-BTu" kind="show" identifier="searchToInstitutionSegue" id="9wn-FR-w1y"/>
-                        <segue destination="UNO-tS-fE3" kind="show" id="5dL-PS-IjL"/>
+                        <segue destination="mwM-rY-90A" kind="show" identifier="searchToInstitutieSegue" id="9iA-GD-Hts"/>
+                        <segue destination="Iwr-51-Xaf" kind="show" identifier="searchToCompanieSegue" id="udn-eB-5Nc"/>
+                        <segue destination="y7W-47-BTu" kind="show" identifier="searchToContractSegue" id="9wn-FR-w1y"/>
+                        <segue destination="UNO-tS-fE3" kind="show" identifier="searchToLicitatieSegue" id="5dL-PS-IjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sqi-PJ-0ye" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -732,7 +732,7 @@
                                 <rect key="frame" x="16" y="72" width="343" height="279"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmV-VH-c1O">
+                            <textView multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MmV-VH-c1O">
                                 <rect key="frame" x="16" y="359" width="343" height="251"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1020,6 +1020,6 @@
         <segue reference="5dL-PS-IjL"/>
         <segue reference="udn-eB-5Nc"/>
         <segue reference="9wn-FR-w1y"/>
-        <segue reference="qxZ-MU-Jch"/>
+        <segue reference="9iA-GD-Hts"/>
     </inferredMetricsTieBreakers>
 </document>

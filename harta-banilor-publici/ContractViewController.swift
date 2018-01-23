@@ -7,25 +7,20 @@ extension CALayer {
         switch edge {
         case UIRectEdge.top:
             border.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: thickness)
-            break
         case UIRectEdge.bottom:
             border.frame = CGRect(x: 0, y: self.frame.height - thickness, width: self.frame.width, height: thickness)
-            break
         case UIRectEdge.left:
             border.frame = CGRect(x: 0, y: 0, width: thickness, height: self.frame.height)
-            break
         case UIRectEdge.right:
             border.frame = CGRect(x: self.frame.width - thickness, y: 0, width: thickness, height: self.frame.height)
-            break
         default:
             break
         }
-        border.backgroundColor = color.cgColor;
+        border.backgroundColor = color.cgColor
         
         self.addSublayer(border)
     }
 }
-
 
 class ContractViewController: UIViewController {
     var id: Int!
@@ -48,16 +43,13 @@ class ContractViewController: UIViewController {
     var companie: Companie!
     var institutie: Institution!
     
-    
     @IBAction func pressedCompanieButton(_ sender: UIButton) {
     }
-    
     
     @IBAction func pressedInstitutieButton(_ sender: UIButton) {
         if senderId == self.institutie.id {
             self.navigationController?.popViewController(animated: true)
-        }
-        else {
+        } else {
             let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
             controller.id = self.institutie.id
             controller.institutionName = self.institutie.nume
@@ -72,10 +64,10 @@ class ContractViewController: UIViewController {
         self.institutieButton.isEnabled = false
         
         companieLabel.layer.borderColor = UIColor(red: 116/255, green: 197/255, blue: 201/255, alpha: 1).cgColor
-        companieLabel.layer.borderWidth = 0.5;
+        companieLabel.layer.borderWidth = 0.5
         
         institutieLabel.layer.borderColor = UIColor(red: 116/255, green: 197/255, blue: 201/255, alpha: 1).cgColor
-        institutieLabel.layer.borderWidth = 0.5;
+        institutieLabel.layer.borderWidth = 0.5
         
         //titluLabel.layer.borderColor = UIColor.lightGray.cgColor
         //titluLabel.layer.borderWidth = 0.5
@@ -88,7 +80,7 @@ class ContractViewController: UIViewController {
         dataLabel.layer.addBorder(edge: UIRectEdge.left, color: .lightGray, thickness: 0.5)
         cpvLabel.layer.addBorder(edge: UIRectEdge.left, color: .lightGray, thickness: 0.5)
         
-        api.getContractByID(id: self.id) { (contract, response, error) -> () in
+        api.getContractByID(id: self.id) { (contract, response, error) -> Void in
             guard error == nil else {
                 print(error!)
                 return
@@ -104,7 +96,7 @@ class ContractViewController: UIViewController {
                 self.cpvLabel.text = self.contract.cpvCode
             }
             DispatchQueue.main.async {
-                self.api.getCompanyByCUI(cui: self.contract.companieCUI) { (companie, respone, error) -> () in
+                self.api.getCompanyByCUI(cui: self.contract.companieCUI) { (companie, _ respone, error) -> Void in
                     guard error == nil else {
                         print(error!)
                         return
@@ -116,7 +108,7 @@ class ContractViewController: UIViewController {
                 }
             }
             DispatchQueue.main.async {
-                self.api.getInstitutionByID(id: self.contract.institutiePublicaID) { (institutie, response, error) -> () in
+                self.api.getInstitutionByID(id: self.contract.institutiePublicaID) { (institutie, _ response, error) -> Void in
                     guard error == nil else {
                         print(error!)
                         return

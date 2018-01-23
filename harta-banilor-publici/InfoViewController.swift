@@ -1,15 +1,7 @@
-//
-//  InfoControllerView.swift
-//  harta-banilor-publici
-//
-//  Created by grijincu on 20/01/2018.
-//  Copyright © 2018 grijincu. All rights reserved.
-//
-
 import Foundation
 
 class InfoViewController: UIViewController {
-    var imageVector:[UIImage] = []
+    var imageVector: [UIImage] = []
     var animatedImage: UIImage!
     @IBOutlet weak var infoImageView: UIImageView!
 

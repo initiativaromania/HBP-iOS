@@ -2,7 +2,6 @@ import UIKit
 import GoogleMaps
 import CoreLocation
 
-
 /// Point of Interest Item which implements the GMUClusterItem protocol.
 class POIItem: NSObject, GMUClusterItem {
     var position: CLLocationCoordinate2D
@@ -20,9 +19,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
 
     @IBOutlet var mapView: GMSMapView!
     private var clusterManager: GMUClusterManager!
-    private var customInfoWindow : CustomInfoWindow!
+    private var customInfoWindow: CustomInfoWindow!
     
-    private var tappedMarker : GMSMarker?
+    private var tappedMarker: GMSMarker?
     private var locationManager: CLLocationManager = CLLocationManager()
     
     private var api: ApiHelper!
@@ -76,14 +75,12 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
         
         // Register self to listen to both GMUClusterManagerDelegate and GMSMapViewDelegate events.
         self.clusterManager.setDelegate(self, mapDelegate: self)
-
     }
     
     func determineMyCurrentLocation() {
         locationManager = CLLocationManager()
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
-        
         
         if CLLocationManager.locationServicesEnabled() {
             if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.notDetermined {
@@ -94,7 +91,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let userLocation:CLLocation = locations[0] as CLLocation
+        let userLocation: CLLocation = locations[0] as CLLocation
         kCameraLatitude = userLocation.coordinate.latitude
         kCameraLongitude = userLocation.coordinate.longitude
         let camera = GMSCameraPosition.camera(withLatitude: kCameraLatitude, longitude: kCameraLongitude, zoom: 15)
@@ -111,11 +108,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
         
     }
     
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
-    {
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print("Error \(error)")
     }
-
     
     func callSegueFromInfoWindow() {
         let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
@@ -139,7 +134,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
             }
             let poi = marker.userData as! POIItem
             let id = poi.id
-            api.getInstitutionSummary(id: id!) { (institutionSummary, response, error) -> () in
+            api.getInstitutionSummary(id: id!) { (institutionSummary, _ response, error) -> Void in
                 guard error == nil else {
                     print(error!)
                     return
@@ -221,16 +216,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
             do {
                 print(path)
                 contents = try String(contentsOfFile: path, encoding: String.Encoding.utf8)
+            } catch {
+                
             }
-            catch{}
         }
         let csv_data = csv(data: contents)
-        for csv_item in csv_data {
-            if csv_item.count == 4 {
-                let item = POIItem(position: CLLocationCoordinate2DMake(Double(csv_item[2])!, Double(csv_item[1])!), id: Int(csv_item[0])!)
+        for csv_item in csv_data where csv_item.count == 4 {
+            let item = POIItem(position: CLLocationCoordinate2DMake(Double(csv_item[2])!, Double(csv_item[1])!), id: Int(csv_item[0])!)
             clusterManager.add(item)
-            }
         }
-
     }
 }

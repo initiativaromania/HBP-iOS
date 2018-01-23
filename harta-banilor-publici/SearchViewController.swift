@@ -1,23 +1,22 @@
 import Foundation
 
-class SearchViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UIViewControllerPreviewingDelegate {
-    
-    var companieResults:[CompanyByInstitution] = []
-    var institutionResults:[Institution] = []
-    var contractResults:[InstitutionContract] = []
-    var licitatieResults:[InstitutionLicitatie] = []
-    let cellReuseIdentifier = "cell"
-    
+class SearchViewController: UIViewController, UITableViewDataSource,
+                            UITableViewDelegate, UISearchBarDelegate,
+                            UISearchDisplayDelegate, UIViewControllerPreviewingDelegate {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+
+    var companieResults: [CompanyByInstitution] = []
+    var institutionResults: [Institution] = []
+    var contractResults: [InstitutionContract] = []
+    var licitatieResults: [InstitutionLicitatie] = []
+    let cellReuseIdentifier = "cell"
     let searchController = UISearchController(searchResultsController: nil)
     var isSearchingInstitutions: Bool = false
     var isSearchingCompanies: Bool = false
     var isSearchingContracts: Bool = false
     var isSearchingLicitatii: Bool = false
     var imageView: UIImageView = UIImageView()
-
-    
     var api: ApiHelper!
 
     //@IBOutlet weak var searchBar: UISearchBar!
@@ -61,12 +60,11 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     backgroundview.backgroundColor = .white
                     
                     // Rounded corner
-                    backgroundview.layer.cornerRadius = 10;
-                    backgroundview.clipsToBounds = true;
+                    backgroundview.layer.cornerRadius = 10
+                    backgroundview.clipsToBounds = true
                 }
             }
-        }
-        else {
+        } else {
             
             /*definesPresentationContext = true
             searchBar.tintColor = .white
@@ -89,7 +87,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             //searchBar.barTintColor = UIColor(red: 116/255, green: 197/255, blue: 201/255, alpha: 1)
             searchBar.tintColor = .white
             searchBar.isTranslucent = true
-            searchBar.layer.borderWidth = 0;
+            searchBar.layer.borderWidth = 0
 
             searchBar.scopeButtonTitles = ["Instituții", "Companii", "Contracte", "Licitații"]
             tableView.tableHeaderView = searchBar
@@ -122,7 +120,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 imageView.frame = CGRect(x: self.view.frame.size.width/2-46, y: self.view.frame.size.height/2-46, width: 93, height: 93)
             }
         default:
-            break;
+            break
         }
     }
 
@@ -146,7 +144,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
 
-            api.searchInstitution(pattern: searchBar.text!) { (institutionResults, response, error) -> () in
+            api.searchInstitution(pattern: searchBar.text!) { (institutionResults, _ response, error) -> Void in
                 guard error == nil else {
                     self.isSearchingInstitutions = false
                     self.institutionResults = []
@@ -160,7 +158,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.institutionResults = institutionResults
                 self.isSearchingInstitutions = false
                 
-                DispatchQueue.main.async{
+                DispatchQueue.main.async {
                     NSLog("DONE Fetching Institutions")
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -173,7 +171,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
 
-            api.searchCompanies(pattern: searchBar.text!) { (companieResults, response, error) -> () in
+            api.searchCompanies(pattern: searchBar.text!) { (companieResults, _ response, error) -> Void in
                 guard error == nil else {
                     self.isSearchingCompanies = false
                     self.companieResults = []
@@ -187,7 +185,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.companieResults = companieResults
                 self.isSearchingCompanies = false
 
-                DispatchQueue.main.async{
+                DispatchQueue.main.async {
                     NSLog("DONE Fetching Companies")
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -200,7 +198,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
 
-            api.searchContracts(pattern: searchBar.text!) { (contractResults, response, error) -> () in
+            api.searchContracts(pattern: searchBar.text!) { (contractResults, _ response, error) -> Void in
                 guard error == nil else {
                     self.isSearchingContracts = false
                     self.contractResults = []
@@ -214,7 +212,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.contractResults = contractResults
                 self.isSearchingContracts = false
 
-                DispatchQueue.main.async{
+                DispatchQueue.main.async {
                     NSLog("DONE Fetching Contracts")
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -227,7 +225,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 self.tableView.reloadData()
             }
 
-            api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, response, error) -> () in
+            api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, _ response, error) -> Void in
                 guard error == nil else {
                     self.isSearchingLicitatii = false
                     self.licitatieResults = []
@@ -265,7 +263,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
         }
     }
     
-    func setupSearchBarSize(){
+    func setupSearchBarSize() {
         self.searchController.searchBar.frame.size.width = self.view.frame.size.width
     }
     
@@ -293,7 +291,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.tableView.reloadData()
                 }
 
-                api.searchInstitution(pattern: searchBar.text!) { (institutionResults, response, error) -> () in
+                api.searchInstitution(pattern: searchBar.text!) { (institutionResults, _ response, error) -> Void in
                     guard error == nil else {
                         self.isSearchingInstitutions = false
                         self.institutionResults = []
@@ -306,15 +304,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     }
                     self.institutionResults = institutionResults
                     self.isSearchingInstitutions = false
-                    DispatchQueue.main.async{
+                    DispatchQueue.main.async {
                         NSLog("DONE Fetching Institutions")
                         self.tableView.allowsSelection = true
                         self.tableView.isScrollEnabled = true
                         self.tableView.reloadData()
                     }
                 }
-            }
-            else {
+            } else {
                 if isSearchingCompanies || isSearchingContracts || isSearchingLicitatii {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -330,7 +327,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.tableView.reloadData()
                 }
                 
-                api.searchCompanies(pattern: searchBar.text!) { (companieResults, response, error) -> () in
+                api.searchCompanies(pattern: searchBar.text!) { (companieResults, _ response, error) -> Void in
                     guard error == nil else {
                         self.isSearchingCompanies = false
                         self.companieResults = []
@@ -344,15 +341,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.companieResults = companieResults
                     self.isSearchingCompanies = false
                     
-                    DispatchQueue.main.async{
+                    DispatchQueue.main.async {
                         NSLog("DONE Fetching Companies")
                         self.tableView.allowsSelection = true
                         self.tableView.isScrollEnabled = true
                         self.tableView.reloadData()
                     }
                 }
-            }
-            else {
+            } else {
                 if isSearchingInstitutions || isSearchingContracts || isSearchingLicitatii {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -368,7 +364,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.tableView.reloadData()
                 }
                 
-                api.searchContracts(pattern: searchBar.text!) { (contractResults, response, error) -> () in
+                api.searchContracts(pattern: searchBar.text!) { (contractResults, _ response, error) -> Void in
                     guard error == nil else {
                         self.isSearchingContracts = false
                         self.contractResults = []
@@ -382,15 +378,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.contractResults = contractResults
                     self.isSearchingContracts = false
                     
-                    DispatchQueue.main.async{
+                    DispatchQueue.main.async {
                         NSLog("DONE Fetching Contracts")
                         self.tableView.allowsSelection = true
                         self.tableView.isScrollEnabled = true
                         self.tableView.reloadData()
                     }
                 }
-            }
-            else {
+            } else {
                 if isSearchingInstitutions || isSearchingCompanies || isSearchingLicitatii {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -406,7 +401,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.tableView.reloadData()
                 }
                 
-                api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, response, error) -> () in
+                api.searchLicitatii(pattern: searchBar.text!) { (licitatieResults, _ response, error) -> Void in
                     guard error == nil else {
                         self.isSearchingLicitatii = false
                         self.licitatieResults = []
@@ -420,15 +415,14 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                     self.licitatieResults = licitatieResults
                     self.isSearchingLicitatii = false
                     
-                    DispatchQueue.main.async{
+                    DispatchQueue.main.async {
                         NSLog("DONE Fetching Licitatii")
                         self.tableView.allowsSelection = true
                         self.tableView.isScrollEnabled = true
                         self.tableView.reloadData()
                     }
                 }
-            }
-            else {
+            } else {
                 if isSearchingInstitutions || isSearchingCompanies || isSearchingContracts {
                     self.tableView.allowsSelection = true
                     self.tableView.isScrollEnabled = true
@@ -438,7 +432,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 }
             }
         default:
-            break;
+            break
         }
     }
     
@@ -457,21 +451,20 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             if licitatieResults.count == 0 && isSearchingLicitatii { return 15 }
             return licitatieResults.count
         default:
-            break;
+            break
         }
         return institutionResults.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
+        let cell: TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
             if institutionResults.count == 0 {
                 if isSearchingInstitutions {
                     cell.button.isHidden = false
                     cell.startShimmer()
-                }
-                else {
+                } else {
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
@@ -490,8 +483,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if isSearchingCompanies {
                     cell.button.isHidden = false
                     cell.startShimmer()
-                }
-                else {
+                } else {
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
@@ -510,8 +502,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if isSearchingContracts {
                     cell.button.isHidden = false
                     cell.startShimmer()
-                }
-                else {
+                } else {
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
@@ -530,8 +521,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
                 if isSearchingLicitatii {
                     cell.button.isHidden = false
                     cell.startShimmer()
-                }
-                else {
+                } else {
                     cell.button.isHidden = true
                     cell.stopShimmer()
                 }
@@ -546,7 +536,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             cell.titleLabel.minimumScaleFactor = 0.2
             cell.button.text = ">"
         default:
-            break;
+            break
         }
         return cell
     }
@@ -572,7 +562,7 @@ class SearchViewController: UIViewController, UITableViewDataSource, UITableView
             controller.id = self.licitatieResults[indexPath.row].id
             show(controller, sender: self)
         default:
-            break;
+            break
         }
     }
     

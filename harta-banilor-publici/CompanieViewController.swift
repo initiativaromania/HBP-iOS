@@ -30,7 +30,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         switch tabBar.selectedSegmentIndex {
         case 0:
             if institutii.count == 0 && !fetchedInstitutii {
-                api.getInstitutionsByADCompany(id: id) { (institutii, response, error) -> () in
+                api.getInstitutionsByADCompany(id: id) { (institutii, _ response, error) -> Void in
                     guard error == nil else {
                         self.fetchedInstitutii = true
                         DispatchQueue.main.async {
@@ -49,7 +49,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
         case 1:
             if contracte.count == 0 && !fetchedContracts {
-                api.getCompanyContracts(cui: cui) { (contracte, response, error) -> () in
+                api.getCompanyContracts(cui: cui) { (contracte, _ response, error) -> Void in
                     guard error == nil else {
                         self.fetchedContracts = true
                         DispatchQueue.main.async {
@@ -68,7 +68,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
         case 2:
             if licitatii.count == 0 && !fetchedLicitatii {
-                api.getCompanyTenders(cui: cui) { (licitatii, response, error) -> () in
+                api.getCompanyTenders(cui: cui) { (licitatii, _ response, error) -> Void in
                     guard error == nil else {
                         self.fetchedLicitatii = true
                         DispatchQueue.main.async {
@@ -86,7 +86,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
                 }
             }
         default:
-            break;
+            break
         }
     }
 
@@ -94,7 +94,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         api = ApiHelper()
         
-        api.getCompanyByCUI(cui: cui) { (companie, response, error) -> () in
+        api.getCompanyByCUI(cui: cui) { (companie, _ response, error) -> Void in
             guard error == nil else {
                 return
             }
@@ -109,14 +109,12 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         self.customizeNavBar()
         self.setLabels()
         
-        
-        
         setTableHeaderSeparator()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        api.getInstitutionsByCompany(cui: cui) { (institutii, response, error) -> () in
+        api.getInstitutionsByCompany(cui: cui) { (institutii, _ response, error) -> Void in
             guard error == nil else {
                 self.fetchedInstitutii = true
                 DispatchQueue.main.async {
@@ -170,14 +168,14 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             if licitatii.count == 0 && !fetchedLicitatii { return 15 }
             return licitatii.count
         default:
-            break;
+            break
         }
         return institutii.count
     }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
+        let cell: TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
         switch tabBar.selectedSegmentIndex {
         case 0:
             if institutii.count == 0 {
@@ -224,7 +222,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
         default:
-            break;
+            break
         }
         return cell
     }
@@ -238,7 +236,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             controller.institutionName = institutii[indexPath.row].nume
             show(controller, sender: self)
         default:
-            break;
+            break
         }
     }
 }

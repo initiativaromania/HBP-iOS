@@ -3,7 +3,7 @@ import Foundation
 class LaunchScreenViewController: UIViewController {
     @IBOutlet weak var launchImageView: UIImageView!
     var animatedImage: UIImage!
-    var imageVector:[UIImage] = []
+    var imageVector: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()

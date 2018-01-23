@@ -24,8 +24,8 @@ class ShimmerLabel: UILabel {
     
     func stopShimmer() {
         self.backgroundColor = initialColor
-        guard let _ = shimmer else { return }
-        shimmer.isShimmering = false
+        guard let shmr = shimmer else { return }
+        shmr.isShimmering = false
     }
 }
 
@@ -51,8 +51,7 @@ class TableCell: UITableViewCell {
             self.button.textColor = hbpBlue
             bgview.backgroundColor = hbpBlue
             self.selectedBackgroundView = bgview
-        }
-        else {
+        } else {
             self.titleLabel.textColor = .black
             self.priceLabel.textColor = .black
             self.button.backgroundColor = hbpBlue
@@ -73,8 +72,7 @@ class TableCell: UITableViewCell {
             self.button.textColor = hbpBlue
             bgview.backgroundColor = hbpBlue
             self.selectedBackgroundView = bgview
-        }
-        else {
+        } else {
             self.titleLabel.textColor = .black
             self.priceLabel.textColor = .black
             self.button.backgroundColor = hbpBlue
@@ -139,8 +137,8 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         
         switch tabBar.selectedSegmentIndex {
         case 0:
-            if contracte.count == 0 && !fetchedContracts{
-                api.getInstitutionContracts(id: id) { (contracte, response, error) -> () in
+            if contracte.count == 0 && !fetchedContracts {
+                api.getInstitutionContracts(id: id) { (contracte, _ response, error) -> Void in
                     guard error == nil else {
                         self.fetchedContracts = true
                         DispatchQueue.main.async {
@@ -161,7 +159,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         case 1:
             if licitatii.count == 0 && !fetchedLicitatii {
-                api.getInstitutionTenders(id: id) { (licitatii, response, error) -> () in
+                api.getInstitutionTenders(id: id) { (licitatii, _ response, error) -> Void in
                     guard error == nil else {
                         self.fetchedLicitatii = true
                         DispatchQueue.main.async {
@@ -182,7 +180,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         case 2:
             if companii.count == 0 && !fetchedCompanii {
-                api.getADCompaniesByInstitution(id: id) { (companii, response, error) -> () in
+                api.getADCompaniesByInstitution(id: id) { (companii, _ response, error) -> Void in
                     guard error == nil else {
                         self.fetchedCompanii = true
                         DispatchQueue.main.async {
@@ -202,7 +200,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
                 }
             }
         default:
-            break;
+            break
         }
     }
 
@@ -220,7 +218,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         self.achizitiiCountLabel.text = achizitiiCount
         self.licitatiiCountLabel.text = licitatiiCount
 
-        api.getInstitutionByID(id: id) { (institution, response, error) -> () in
+        api.getInstitutionByID(id: id) { (institution, _ response, error) -> Void in
             guard error == nil else {
                 print("ERROR getting institution")
                 return
@@ -235,7 +233,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         
         tableView.delegate = self
         tableView.dataSource = self
-        api.getInstitutionContracts(id: id) { (contracte, response, error) -> () in
+        api.getInstitutionContracts(id: id) { (contracte, _ response, error) -> Void in
             guard error == nil else {
                 self.fetchedContracts = true
                 DispatchQueue.main.async {
@@ -283,8 +281,6 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         self.cuiLabel.minimumScaleFactor = 0.2
     }
 
-    
-
     // number of rows in table view
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch tabBar.selectedSegmentIndex {
@@ -298,14 +294,14 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             if companii.count == 0 && !fetchedCompanii { return 20 }
             return companii.count
         default:
-            break;
+            break
         }
         return contracte.count
     }
     
     // create a cell for each table view row
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
+        let cell: TableCell = self.tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier) as! TableCell
         
         switch tabBar.selectedSegmentIndex {
         case 0:
@@ -355,7 +351,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
         default:
-            break;
+            break
         }
         return cell
     }
@@ -377,8 +373,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             controller.id = self.companii[indexPath.row].id
             if self.tabBar.selectedSegmentIndex == 0 {
                 controller.companyType = "AD"
-            }
-            else if self.tabBar.selectedSegmentIndex == 1 {
+            } else if self.tabBar.selectedSegmentIndex == 1 {
                 controller.companyType = "TD"
             }
             show(controller, sender: self)
@@ -402,7 +397,6 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             controller.preferredContentSize =
                 CGSize(width: 0.0, height: 600)
 
-            
             previewingContext.sourceRect = cell.frame
             return controller
         default:
@@ -416,5 +410,4 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         
         show(viewControllerToCommit, sender: self)
     }
-
 }

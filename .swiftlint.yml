@@ -2,12 +2,13 @@ disabled_rules:
   - line_length
   - identifier_name
   - trailing_whitespace
-  - colon
   - function_body_length
   - type_name
   - cyclomatic_complexity
-  - function_parameter_count
-  - shorthand_operator
+  - force_cast
+  - type_body_length
+  - file_length
+  - empty_parentheses_with_trailing_closure
 excluded:
   - Carthage
   - Pods

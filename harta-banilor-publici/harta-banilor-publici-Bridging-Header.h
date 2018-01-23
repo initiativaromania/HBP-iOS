@@ -1,7 +1,3 @@
 #import "GMUMarkerClustering.h"
-#import "GMUKMLParser.h"
-#import "Google-Maps-iOS-Utils/GMUGeometryRenderer.h"
-#import "Google-Maps-iOS-Utils/GMUGeoJSONParser.h"
 #import "FBShimmering.h"
-#import "FBShimmeringLayer.h"
 #import "FBShimmeringView.h"
