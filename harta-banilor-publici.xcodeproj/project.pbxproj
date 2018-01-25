@@ -22,7 +22,6 @@
 		3AE335A8201348C200CF0169 /* LaunchScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE335A7201348C200CF0169 /* LaunchScreenViewController.swift */; };
 		3AE529592013730C0087BB3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AE529582013730C0087BB3A /* LaunchScreen.storyboard */; };
 		3AE5295B201381ED0087BB3A /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE5295A201381ED0087BB3A /* InfoViewController.swift */; };
-		3AE5295D201392700087BB3A /* lightbluemaps.json in Resources */ = {isa = PBXBuildFile; fileRef = 3AE5295C201392700087BB3A /* lightbluemaps.json */; };
 		3AECEFD01F91CE8900E0B2EC /* CustomInfoWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3AC21DC61F90F6830016BE04 /* CustomInfoWindow.xib */; };
 		3AECEFD11F91D1E400E0B2EC /* institutii_publice_pins_v0.csv in Resources */ = {isa = PBXBuildFile; fileRef = 3A1B217F1F91036F00EEE2A3 /* institutii_publice_pins_v0.csv */; };
 		3AEFE91220122E8300263A8E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3AEFE91120122E8300263A8E /* Assets.xcassets */; };
@@ -72,7 +71,6 @@
 		3AE335A7201348C200CF0169 /* LaunchScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenViewController.swift; sourceTree = "<group>"; };
 		3AE529582013730C0087BB3A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3AE5295A201381ED0087BB3A /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
-		3AE5295C201392700087BB3A /* lightbluemaps.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = lightbluemaps.json; sourceTree = "<group>"; };
 		3AEFE91120122E8300263A8E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CD957435C76157D936104F4 /* Pods-harta-banilor-publici.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.release.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.release.xcconfig"; sourceTree = "<group>"; };
 		F15980CF94420178A3E5FD29 /* Pods-harta-banilor-publici.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-harta-banilor-publici.debug.xcconfig"; path = "Pods/Target Support Files/Pods-harta-banilor-publici/Pods-harta-banilor-publici.debug.xcconfig"; sourceTree = "<group>"; };
@@ -139,7 +137,6 @@
 				3A1B217F1F91036F00EEE2A3 /* institutii_publice_pins_v0.csv */,
 				3AEFE91120122E8300263A8E /* Assets.xcassets */,
 				3AA403141F447DF7009490EB /* harta-banilor-publici-Bridging-Header.h */,
-				3AE5295C201392700087BB3A /* lightbluemaps.json */,
 			);
 			path = "harta-banilor-publici";
 			sourceTree = "<group>";
@@ -300,7 +297,6 @@
 				3AEFE91220122E8300263A8E /* Assets.xcassets in Resources */,
 				3AE529592013730C0087BB3A /* LaunchScreen.storyboard in Resources */,
 				3AA402EC1F447CDD009490EB /* Main.storyboard in Resources */,
-				3AE5295D201392700087BB3A /* lightbluemaps.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

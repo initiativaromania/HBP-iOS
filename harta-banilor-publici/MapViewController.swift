@@ -1,5 +1,4 @@
 import UIKit
-import GoogleMaps
 import CoreLocation
 
 /// Point of Interest Item which implements the GMUClusterItem protocol.
