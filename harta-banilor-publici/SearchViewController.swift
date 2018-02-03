@@ -6,7 +6,7 @@ class SearchViewController: UIViewController, UITableViewDataSource,
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
 
-    var companieResults: [CompanyByInstitution] = []
+    var companieResults: [CompanieByInstitution] = []
     var institutionResults: [Institution] = []
     var contractResults: [InstitutionContract] = []
     var licitatieResults: [InstitutionLicitatie] = []
@@ -551,7 +551,7 @@ class SearchViewController: UIViewController, UITableViewDataSource,
         case 1:
             let controller = storyboard?.instantiateViewController(withIdentifier: "CompanieViewController") as! CompanieViewController
             controller.id = self.companieResults[indexPath.row].id
-            controller.cui = self.companieResults[indexPath.row].cui
+            //controller.cui = "7" //TODO self.companieResults[indexPath.row].cui
             show(controller, sender: self)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController

@@ -96,14 +96,23 @@ class ContractViewController: UIViewController {
                 self.cpvLabel.text = self.contract.cpvCode
             }
             DispatchQueue.main.async {
-                self.api.getCompanyByCUI(cui: self.contract.companieCUI) { (companie, _ respone, error) -> Void in
-                    guard error == nil else {
-                        print(error!)
-                        return
-                    }
-                    self.companie = companie
-                    DispatchQueue.main.async {
-                        self.companieLabel.text = self.companie.nume
+                //TODO Check what kind of company we get by ID
+                // https://github.com/initiativaromania/HBP-web/issues/5
+                self.api.getADCompany(id: self.contract.companieId) { (companie, _ respone, error) -> Void in
+                    if error == nil && (companie != nil) {
+                        self.companie = companie
+                        DispatchQueue.main.async {
+                            self.companieLabel.text = self.companie.nume
+                        }
+                    } else {
+                        self.api.getTenderCompany(id: self.contract.companieId) { (companie, _ response, error) -> Void in
+                            if error == nil && (companie != nil) {
+                                self.companie = companie
+                                DispatchQueue.main.async {
+                                    self.companieLabel.text = self.companie.nume
+                                }
+                            }
+                        }
                     }
                 }
             }

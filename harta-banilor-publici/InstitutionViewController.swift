@@ -120,7 +120,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
     
     var contracte: [InstitutionContract] = []
     var licitatii: [InstitutionLicitatie] = []
-    var companii: [ADCompanieByInstitution] = []
+    var companii: [CompanieByInstitution] = []
     var institution: Institution!
     
     var fetchedContracts: Bool = false
@@ -180,22 +180,29 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
         case 2:
             if companii.count == 0 && !fetchedCompanii {
-                api.getADCompaniesByInstitution(id: id) { (companii, _ response, error) -> Void in
-                    guard error == nil else {
+                api.getADCompaniesByInstitution(id: id) { (adCompanii, _ response, error) -> Void in
+                    if error == nil {
                         self.fetchedCompanii = true
-                        DispatchQueue.main.async {
-                            self.tableView.reloadData()
-                        }
-                        return
+                        self.companii += adCompanii
                     }
-                    self.companii = companii
-                    self.fetchedCompanii = true
-
-                    DispatchQueue.main.async {
-                        NSLog("DONE Fetching companii")
-                        self.tableView.allowsSelection = true
-                        self.tableView.isScrollEnabled = true
-                        self.tableView.reloadData()
+                    self.api.getTenderCompaniesByInstitution(id: self.id) { (tenderCompanii, _ response, error) -> Void in
+                        if error == nil {
+                            self.fetchedCompanii = true
+                            self.companii += tenderCompanii
+                        }
+                        if self.companii.count == 0 {
+                            self.fetchedCompanii = true
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        } else {
+                            DispatchQueue.main.async {
+                                NSLog("DONE Fetching companii")
+                                self.tableView.allowsSelection = true
+                                self.tableView.isScrollEnabled = true
+                                self.tableView.reloadData()
+                            }
+                        }
                     }
                 }
             }
@@ -346,7 +353,6 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             }
             cell.stopShimmer()
             cell.titleLabel.text = companii[indexPath.row].nume
-            cell.priceLabel.text = String(licitatii[indexPath.row].valoareRON) + "\nRON"
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
@@ -371,11 +377,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "CompanieViewController") as! CompanieViewController
             controller.id = self.companii[indexPath.row].id
-            if self.tabBar.selectedSegmentIndex == 0 {
-                controller.companyType = "AD"
-            } else if self.tabBar.selectedSegmentIndex == 1 {
-                controller.companyType = "TD"
-            }
+            controller.ad = self.companii[indexPath.row].ad!
             show(controller, sender: self)
         default:
             break

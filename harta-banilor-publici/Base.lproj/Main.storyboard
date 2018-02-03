@@ -100,7 +100,7 @@
         <scene sceneID="mVQ-mf-VWH">
             <objects>
                 <viewController storyboardIdentifier="InstitutionViewController" id="mwM-rY-90A" customClass="InstitutionViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="SXf-MG-dRU">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="SXf-MG-dRU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -115,7 +115,7 @@
                                 <rect key="frame" x="16" y="72" width="41" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Pq-APZ">
+                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Pq-APZ">
                                 <rect key="frame" x="-3" y="176" width="381" height="29"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -129,8 +129,8 @@
                                     <action selector="indexChanged:" destination="mwM-rY-90A" eventType="valueChanged" id="41N-Aw-Kr2"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-UU-Q5q">
-                                <rect key="frame" x="0.0" y="205" width="375" height="364"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cyO-UU-Q5q">
+                                <rect key="frame" x="0.0" y="205" width="375" height="413"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -493,8 +493,8 @@
                                     <action selector="indexChanged:" destination="Iwr-51-Xaf" eventType="valueChanged" id="fLg-0b-Mu7"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-46-gEu">
-                                <rect key="frame" x="-1" y="205" width="375" height="364"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" bounces="NO" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="AKw-46-gEu">
+                                <rect key="frame" x="-1" y="205" width="375" height="413"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -588,7 +588,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tge-rg-p6H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3566" y="716"/>
+            <point key="canvasLocation" x="3565.5999999999999" y="715.59220389805103"/>
         </scene>
         <!--Căutare-->
         <scene sceneID="BJy-L9-aVE">

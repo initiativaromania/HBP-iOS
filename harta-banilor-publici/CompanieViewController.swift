@@ -3,6 +3,7 @@ import Foundation
 
 class CompanieViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var id: Int = 0
+    var ad: Bool!
     var companyType: String = ""
     var cui: String = ""
     
@@ -18,7 +19,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
     
     var institutii: [InstitutionByCompany] = []
     var contracte: [CompanyContract] = []
-    var licitatii: [CompanyLicitatie] = []
+    var licitatii: [CompanyContract] = []
     
     var fetchedInstitutii: Bool = false
     var fetchedContracts: Bool = false
@@ -49,39 +50,43 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
         case 1:
             if contracte.count == 0 && !fetchedContracts {
-                api.getCompanyContracts(cui: cui) { (contracte, _ response, error) -> Void in
-                    guard error == nil else {
-                        self.fetchedContracts = true
+                if self.ad {
+                    api.getADCompanyContracts(id: id) { (contracte, _ response, error) -> Void in
+                        guard error == nil else {
+                            self.fetchedContracts = true
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                            return
+                        }
+                        self.contracte = contracte
                         DispatchQueue.main.async {
+                            NSLog("DONE Fetching Contracts")
+                            self.tableView.allowsSelection = true
+                            self.tableView.isScrollEnabled = true
                             self.tableView.reloadData()
                         }
-                        return
-                    }
-                    self.contracte = contracte
-                    DispatchQueue.main.async {
-                        NSLog("DONE Fetching Contracts")
-                        self.tableView.allowsSelection = true
-                        self.tableView.isScrollEnabled = true
-                        self.tableView.reloadData()
                     }
                 }
             }
         case 2:
             if licitatii.count == 0 && !fetchedLicitatii {
-                api.getCompanyTenders(cui: cui) { (licitatii, _ response, error) -> Void in
-                    guard error == nil else {
-                        self.fetchedLicitatii = true
+                if !self.ad {
+                    api.getTenderCompanyTenders(id: id) { (licitatii, _ response, error) -> Void in
+                        guard error == nil else {
+                            self.fetchedLicitatii = true
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                            return
+                        }
+                        self.licitatii = licitatii
                         DispatchQueue.main.async {
+                            NSLog("DONE Fetching Licitatii")
+                            self.tableView.allowsSelection = true
+                            self.tableView.isScrollEnabled = true
                             self.tableView.reloadData()
                         }
-                        return
-                    }
-                    self.licitatii = licitatii
-                    DispatchQueue.main.async {
-                        NSLog("DONE Fetching Licitatii")
-                        self.tableView.allowsSelection = true
-                        self.tableView.isScrollEnabled = true
-                        self.tableView.reloadData()
                     }
                 }
             }
@@ -94,40 +99,81 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
         super.viewDidLoad()
         api = ApiHelper()
         
-        api.getCompanyByCUI(cui: cui) { (companie, _ response, error) -> Void in
-            guard error == nil else {
-                return
+        if self.ad! {
+            self.tabBar.setEnabled(false, forSegmentAt: 2)
+        } else {
+            self.tabBar.setEnabled(false, forSegmentAt: 1)
+        }
+        
+        if self.ad! {
+            api.getADCompany(id: id) { (companie, _ response, error) -> Void in
+                guard error == nil else {
+                    return
+                }
+                self.companie = companie
+                DispatchQueue.main.async {
+                    self.companyNameLabel.adjustsFontSizeToFitWidth = true
+                    self.companyNameLabel.minimumScaleFactor = 0.2
+                    self.companyNameLabel.text = self.companie.nume
+                    self.setLabels()
+
+                }
             }
-            self.companie = companie
-            DispatchQueue.main.async {
-                self.companyNameLabel.adjustsFontSizeToFitWidth = true
-                self.companyNameLabel.minimumScaleFactor = 0.2
-                self.companyNameLabel.text = self.companie.nume
+        } else {
+            api.getTenderCompany(id: id) { (companie, _ response, error) -> Void in
+                guard error == nil else {
+                    return
+                }
+                self.companie = companie
+                DispatchQueue.main.async {
+                    self.companyNameLabel.adjustsFontSizeToFitWidth = true
+                    self.companyNameLabel.minimumScaleFactor = 0.2
+                    self.companyNameLabel.text = self.companie.nume
+                    self.setLabels()
+                }
             }
         }
         
         self.customizeNavBar()
-        self.setLabels()
         
         setTableHeaderSeparator()
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        api.getInstitutionsByCompany(cui: cui) { (institutii, _ response, error) -> Void in
-            guard error == nil else {
-                self.fetchedInstitutii = true
+        if self.ad! {
+            api.getInstitutionsByADCompany(id: id) { (institutii, _ response, error) -> Void in
+                guard error == nil else {
+                    self.fetchedInstitutii = true
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
+                self.institutii = institutii
                 DispatchQueue.main.async {
+                    NSLog("DONE Fetching Institutions")
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
                     self.tableView.reloadData()
                 }
-                return
             }
-            self.institutii = institutii
-            DispatchQueue.main.async {
-                NSLog("DONE Fetching Institutions")
-                self.tableView.allowsSelection = true
-                self.tableView.isScrollEnabled = true
-                self.tableView.reloadData()
+        } else {
+            api.getInstitutionsByTenderCompany(id: id) { (institutii, _ response, error) -> Void in
+                guard error == nil else {
+                    self.fetchedInstitutii = true
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
+                    return
+                }
+                self.institutii = institutii
+                DispatchQueue.main.async {
+                    NSLog("DONE Fetching Institutions")
+                    self.tableView.allowsSelection = true
+                    self.tableView.isScrollEnabled = true
+                    self.tableView.reloadData()
+                }
             }
         }
     }
@@ -202,7 +248,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
             cell.stopShimmer()
             cell.titleLabel.text = contracte[indexPath.row].titluContract.capitalized(with: Locale(identifier: "ro"))
-            cell.priceLabel.text = String(contracte[indexPath.row].valoareRON) + "\nRON"
+            //cell.priceLabel.text = String(contracte[indexPath.row].valoareRON) + "\nRON"
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
@@ -217,7 +263,7 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             }
             cell.stopShimmer()
             cell.titleLabel.text = licitatii[indexPath.row].titluContract
-            cell.priceLabel.text = String(licitatii[indexPath.row].valoareRON) + "\nRON"
+            //cell.priceLabel.text = String(licitatii[indexPath.row].valoareRON) + "\nRON"
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
@@ -234,6 +280,14 @@ class CompanieViewController: UIViewController, UITableViewDelegate, UITableView
             let controller = storyboard?.instantiateViewController(withIdentifier: "InstitutionViewController") as! InstitutionViewController
             controller.id = 1 //String(institutii[indexPath.row].id)
             controller.institutionName = institutii[indexPath.row].nume
+            show(controller, sender: self)
+        case 1:
+            let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
+            controller.id = self.contracte[indexPath.row].id
+            show(controller, sender: self)
+        case 2:
+            let controller = storyboard?.instantiateViewController(withIdentifier: "LicitatieViewController") as! LicitatieViewController
+            controller.id = self.licitatii[indexPath.row].id
             show(controller, sender: self)
         default:
             break
