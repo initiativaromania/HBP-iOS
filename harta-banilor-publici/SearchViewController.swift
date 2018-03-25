@@ -170,8 +170,9 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
+            let search_pattern = searchBar.text!
 
-            api.searchCompanies(pattern: searchBar.text!) { (companieResults, _ response, error) -> Void in
+            api.searchADCompanies(pattern: search_pattern) { (companieResults, _ response, error) -> Void in
                 guard error == nil else {
                     self.isSearchingCompanies = false
                     self.companieResults = []
@@ -183,13 +184,16 @@ class SearchViewController: UIViewController, UITableViewDataSource,
                     return
                 }
                 self.companieResults = companieResults
-                self.isSearchingCompanies = false
+                self.api.searchTenderCompanies(pattern: search_pattern) { (companieResults, _ response, error) -> Void in
+                    self.companieResults += companieResults
+                    self.isSearchingCompanies = false
 
-                DispatchQueue.main.async {
-                    NSLog("DONE Fetching Companies")
-                    self.tableView.allowsSelection = true
-                    self.tableView.isScrollEnabled = true
-                    self.tableView.reloadData()
+                    DispatchQueue.main.async {
+                        NSLog("DONE Fetching Companies")
+                        self.tableView.allowsSelection = true
+                        self.tableView.isScrollEnabled = true
+                        self.tableView.reloadData()
+                    }
                 }
             }
         case 2:
@@ -327,7 +331,9 @@ class SearchViewController: UIViewController, UITableViewDataSource,
                     self.tableView.reloadData()
                 }
                 
-                api.searchCompanies(pattern: searchBar.text!) { (companieResults, _ response, error) -> Void in
+                let search_pattern = searchBar.text!
+                
+                api.searchADCompanies(pattern: search_pattern) { (companieResults, _ response, error) -> Void in
                     guard error == nil else {
                         self.isSearchingCompanies = false
                         self.companieResults = []
@@ -339,13 +345,18 @@ class SearchViewController: UIViewController, UITableViewDataSource,
                         return
                     }
                     self.companieResults = companieResults
-                    self.isSearchingCompanies = false
-                    
-                    DispatchQueue.main.async {
-                        NSLog("DONE Fetching Companies")
-                        self.tableView.allowsSelection = true
-                        self.tableView.isScrollEnabled = true
-                        self.tableView.reloadData()
+                    self.api.searchTenderCompanies(pattern: search_pattern) { (companieResults, _ response, error) -> Void in
+                        if error == nil {
+                            self.companieResults += companieResults
+                            self.isSearchingCompanies = false
+                            
+                            DispatchQueue.main.async {
+                                NSLog("DONE Fetching Companies")
+                                self.tableView.allowsSelection = true
+                                self.tableView.isScrollEnabled = true
+                                self.tableView.reloadData()
+                            }
+                        }
                     }
                 }
             } else {
@@ -551,7 +562,7 @@ class SearchViewController: UIViewController, UITableViewDataSource,
         case 1:
             let controller = storyboard?.instantiateViewController(withIdentifier: "CompanieViewController") as! CompanieViewController
             controller.id = self.companieResults[indexPath.row].id
-            //controller.cui = "7" //TODO self.companieResults[indexPath.row].cui
+            controller.ad = self.companieResults[indexPath.row].ad
             show(controller, sender: self)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController

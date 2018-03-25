@@ -549,12 +549,12 @@ class ApiHelper {
         task.resume()
     }
     
-    func searchCompanies(pattern: String, handler: @escaping ([CompanieByInstitution], URLResponse?, Error?) -> Void) {
+    func searchADCompanies(pattern: String, handler: @escaping ([CompanieByInstitution], URLResponse?, Error?) -> Void) {
         var companieResults: [CompanieByInstitution] = []
         
-        let url = self.apiURL + "/SearchCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-        print("Searching Companies: " + url)
-
+        let url = self.apiURL + "SearchADCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print("Searching AD Companies: " + url)
+        
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(companieResults, response, error)
@@ -566,6 +566,9 @@ class ApiHelper {
             }
             do {
                 companieResults = try JSONDecoder().decode([CompanieByInstitution].self, from: data)
+                for index in 0..<companieResults.count {
+                    companieResults[index].ad = true
+                }
                 handler(companieResults, response, error)
             } catch let error {
                 print("json error: \(error)")
@@ -574,6 +577,36 @@ class ApiHelper {
         }
         task.resume()
     }
+    
+    func searchTenderCompanies(pattern: String, handler: @escaping ([CompanieByInstitution], URLResponse?, Error?) -> Void) {
+        var companieResults: [CompanieByInstitution] = []
+        
+        let url = self.apiURL + "SearchTenderCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        print("Searching Tender Companies: " + url)
+        
+        let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
+            guard error == nil else {
+                handler(companieResults, response, error)
+                return
+            }
+            guard let data = data else {
+                handler(companieResults, response, error)
+                return
+            }
+            do {
+                companieResults = try JSONDecoder().decode([CompanieByInstitution].self, from: data)
+                for index in 0..<companieResults.count {
+                    companieResults[index].ad = false
+                }
+                handler(companieResults, response, error)
+            } catch let error {
+                print("json error: \(error)")
+                handler(companieResults, response, error)
+            }
+        }
+        task.resume()
+    }
+
     
     func searchContracts(pattern: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> Void) {
         var contractResults: [InstitutionContract] = []

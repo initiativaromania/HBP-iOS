@@ -44,7 +44,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
         mapView = GMSMapView.map(withFrame: .zero, camera: camera)
         do {
             // Set the map style by passing the URL of the local file.
-            if let styleURL = Bundle.main.url(forResource: "lightbluemaps", withExtension: "json") {
+            if let styleURL = Bundle.main.url(forResource: "mapstyle", withExtension: "json") {
                 mapView.mapStyle = try GMSMapStyle(contentsOfFileURL: styleURL)
             } else {
                 NSLog("Unable to find style.json")

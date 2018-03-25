@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-let hbpBlue = UIColor(red: 133/255, green: 205/255, blue: 208/255, alpha: 1)
+let hbpBlue = UIColor(red: 80/255, green: 0/255, blue: 20/255, alpha: 1)
 
 class ShimmerLabel: UILabel {
     var shimmer: FBShimmeringView!
@@ -35,6 +35,12 @@ class TableCell: UITableViewCell {
     @IBOutlet weak var button: ShimmerLabel!
     var addedShimmerViews: Bool = false
     var bgview: UIView!
+    
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.priceLabel.layer.cornerRadius = 5
+
+    }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
@@ -323,6 +329,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
             cell.stopShimmer()
             cell.titleLabel.text = contracte[indexPath.row].titluContract.capitalized(with: Locale(identifier: "ro"))
             cell.priceLabel.text = String(contracte[indexPath.row].valoareRON) + "\nRON"
+            cell.priceLabel.layer.cornerRadius = 5
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true

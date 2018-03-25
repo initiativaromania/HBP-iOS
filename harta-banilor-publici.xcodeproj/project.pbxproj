@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A36CBE42052783D009B62C0 /* mapstyle.json in Resources */ = {isa = PBXBuildFile; fileRef = 3A36CBE32052783D009B62C0 /* mapstyle.json */; };
 		3A5580DA1F594178009661D9 /* ApiHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A5580D91F594178009661D9 /* ApiHelper.swift */; };
 		3A6925511F836BF300EABAC7 /* CompanieViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6925501F836BF300EABAC7 /* CompanieViewController.swift */; };
 		3A6925531F836E1900EABAC7 /* ContractViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6925521F836E1900EABAC7 /* ContractViewController.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		39349E64E96C127385D2AA19 /* libPods-harta-banilor-publici.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-harta-banilor-publici.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A1B217F1F91036F00EEE2A3 /* institutii_publice_pins_v0.csv */ = {isa = PBXFileReference; lastKnownFileType = text; path = institutii_publice_pins_v0.csv; sourceTree = "<group>"; };
+		3A36CBE32052783D009B62C0 /* mapstyle.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = mapstyle.json; sourceTree = "<group>"; };
 		3A3ADB071F739B8D00356210 /* harta-banilor-publici.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "harta-banilor-publici.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3ADB081F739B8D00356210 /* harta-banilor-publiciTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "harta-banilor-publiciTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3ADB091F739B8D00356210 /* harta-banilor-publiciUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "harta-banilor-publiciUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +136,7 @@
 				3AA402EA1F447CDD009490EB /* Main.storyboard */,
 				3AE529582013730C0087BB3A /* LaunchScreen.storyboard */,
 				3AA402F21F447CDD009490EB /* Info.plist */,
+				3A36CBE32052783D009B62C0 /* mapstyle.json */,
 				3A1B217F1F91036F00EEE2A3 /* institutii_publice_pins_v0.csv */,
 				3AEFE91120122E8300263A8E /* Assets.xcassets */,
 				3AA403141F447DF7009490EB /* harta-banilor-publici-Bridging-Header.h */,
@@ -292,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3A36CBE42052783D009B62C0 /* mapstyle.json in Resources */,
 				3AECEFD01F91CE8900E0B2EC /* CustomInfoWindow.xib in Resources */,
 				3AECEFD11F91D1E400E0B2EC /* institutii_publice_pins_v0.csv in Resources */,
 				3AEFE91220122E8300263A8E /* Assets.xcassets in Resources */,
