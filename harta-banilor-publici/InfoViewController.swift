@@ -1,11 +1,11 @@
 import Foundation
 
 class InfoViewController: UIViewController {
-    var imageVector: [UIImage] = []
-    var animatedImage: UIImage!
-    @IBOutlet weak var infoImageView: UIImageView!
 
+    @IBOutlet weak var firstTextView: UITextView!
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+        let auvenirFontMedium = UIFont(name: "Avenir Next Regular", size: 14)
+
     }
 }

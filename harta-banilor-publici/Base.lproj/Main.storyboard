@@ -29,7 +29,6 @@
                         <viewLayoutGuide key="safeArea" id="8G2-pp-nLl"/>
                     </view>
                     <connections>
-                        <outlet property="launchImageView" destination="2bW-R8-KLq" id="71V-Cq-agz"/>
                         <segue destination="49e-Tb-3d3" kind="show" identifier="launchscreenToHartaSegue" id="ncH-XA-fJk"/>
                     </connections>
                 </viewController>
@@ -805,64 +804,128 @@
             <objects>
                 <viewController id="d2c-hC-6PK" customClass="InfoViewController" customModule="harta_banilor_publici" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="sBi-F7-2Qx">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="737"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Bi-gW-7kJ">
-                                <rect key="frame" x="16" y="9" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="idh-m5-CJX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="737"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VkN-4v-ZMj">
-                                        <rect key="frame" x="0.0" y="0.0" width="112" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="P98-zf-Mqg">
-                                        <rect key="frame" x="225" y="0.0" width="118" height="128"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="este un proiect" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAk-WE-cuU">
-                                        <rect key="frame" x="120" y="52" width="97" height="40"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="11"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBZ-mV-Bfh">
+                                        <rect key="frame" x="8" y="8" width="359" height="128"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hbp_logo" translatesAutoresizingMaskIntoConstraints="NO" id="hvr-0r-PTl">
+                                                <rect key="frame" x="5" y="3" width="120" height="122"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="initiativa_logo" translatesAutoresizingMaskIntoConstraints="NO" id="LkO-9J-oVW">
+                                                <rect key="frame" x="234" y="2" width="122" height="124"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="este un proiect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5aF-vW-4cX">
+                                                <rect key="frame" x="129" y="95" width="101" height="20"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="14"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="1ka-EB-yWT"/>
+                                        </constraints>
+                                    </view>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dws-Oy-Xz4">
+                                        <rect key="frame" x="8" y="144" width="359" height="95"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="95" id="0js-Yh-srL"/>
+                                        </constraints>
+                                        <string key="text">Harta Banilor Publici (HBP) este prima aplicație din România care îți arată cu acuratețe toate achizițiile publice realizate de toate instituțiile publice din România din 2007 până in 2017</string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zw-80-4eg">
+                                        <rect key="frame" x="8" y="247" width="359" height="135"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="113" id="Y6s-c4-xG8"/>
+                                        </constraints>
+                                        <string key="text">În Harta Banilor Publici găsești: 13.731 instituții publice 72.897 companii 8.839.409 achiziții directe, din care: 	7.946.406 achiziții directe 	893.003 licitații</string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7j-GI-RpR">
+                                        <rect key="frame" x="8" y="474" width="359" height="157"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="149" id="rlm-7a-YhA"/>
+                                        </constraints>
+                                        <mutableString key="text">Știați că: potrivit datelor de pe www.data.gov.ro, orașul Cluj-Napoca apare scris în 20 de feluri, afectând astfel orice încercare de a estima în mod corect cheltuielile publice? De aceea, am corectat erorile de scriere pentru toate intrările, am automatizat corectarea lor, astfel încât să vă prezentăm situația cheltuielilor publice cu acuratețe.</mutableString>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cgn-Lh-uwx">
+                                        <rect key="frame" x="8" y="390" width="359" height="76"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="76" id="Oqg-eH-U3Y"/>
+                                        </constraints>
+                                        <string key="text">HBP folosește ca surse de date: www.data.gov.ro, SEAP, Ministerul Finanțelor și Google Maps API. HBP nu colectează date despre utilizatorii aplicației.</string>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Pentru statistici mai avansate, vizitează versiunea web: www.hbp.ro" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tf5-SD-ITA">
+                                        <rect key="frame" x="8" y="639" width="359" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                    </textView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fZS-dR-BXL">
-                                <rect key="frame" x="16" y="145" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="brm-Bz-k9d">
-                                <rect key="frame" x="16" y="281" width="343" height="73"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="JSh-pk-PUu">
-                                <rect key="frame" x="16" y="362" width="343" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                                <color key="backgroundColor" name="controlHighlightColor" catalog="System" colorSpace="catalog"/>
+                                <constraints>
+                                    <constraint firstItem="nBZ-mV-Bfh" firstAttribute="centerX" secondItem="idh-m5-CJX" secondAttribute="centerX" id="2Ky-9N-Qgy"/>
+                                    <constraint firstItem="Dws-Oy-Xz4" firstAttribute="leading" secondItem="0zw-80-4eg" secondAttribute="leading" id="78H-am-fyJ"/>
+                                    <constraint firstItem="h7j-GI-RpR" firstAttribute="leading" secondItem="tf5-SD-ITA" secondAttribute="leading" id="7kb-NP-qck"/>
+                                    <constraint firstItem="0zw-80-4eg" firstAttribute="trailing" secondItem="Cgn-Lh-uwx" secondAttribute="trailing" id="EMp-qN-9OG"/>
+                                    <constraint firstItem="Cgn-Lh-uwx" firstAttribute="leading" secondItem="h7j-GI-RpR" secondAttribute="leading" id="FWL-xb-gyY"/>
+                                    <constraint firstItem="nBZ-mV-Bfh" firstAttribute="leading" secondItem="idh-m5-CJX" secondAttribute="leadingMargin" id="L40-fH-H2T"/>
+                                    <constraint firstItem="Dws-Oy-Xz4" firstAttribute="top" secondItem="nBZ-mV-Bfh" secondAttribute="bottom" constant="8" symbolic="YES" id="SU0-eM-XRk"/>
+                                    <constraint firstItem="Cgn-Lh-uwx" firstAttribute="top" secondItem="0zw-80-4eg" secondAttribute="bottom" constant="8" symbolic="YES" id="Sos-SF-Dba"/>
+                                    <constraint firstAttribute="bottom" secondItem="tf5-SD-ITA" secondAttribute="bottom" constant="73" id="VzD-6j-gld"/>
+                                    <constraint firstItem="Dws-Oy-Xz4" firstAttribute="trailing" secondItem="0zw-80-4eg" secondAttribute="trailing" id="ZS2-hD-vtg"/>
+                                    <constraint firstItem="Cgn-Lh-uwx" firstAttribute="trailing" secondItem="h7j-GI-RpR" secondAttribute="trailing" id="ZcD-cw-4QG"/>
+                                    <constraint firstItem="tf5-SD-ITA" firstAttribute="top" secondItem="h7j-GI-RpR" secondAttribute="bottom" constant="8" symbolic="YES" id="aEP-l0-3a5"/>
+                                    <constraint firstItem="h7j-GI-RpR" firstAttribute="top" secondItem="Cgn-Lh-uwx" secondAttribute="bottom" constant="8" symbolic="YES" id="h5c-zT-8I8"/>
+                                    <constraint firstItem="0zw-80-4eg" firstAttribute="top" secondItem="Dws-Oy-Xz4" secondAttribute="bottom" constant="8" symbolic="YES" id="hpf-X0-X9S"/>
+                                    <constraint firstItem="nBZ-mV-Bfh" firstAttribute="leading" secondItem="Dws-Oy-Xz4" secondAttribute="leading" id="lT8-fq-Kza"/>
+                                    <constraint firstItem="nBZ-mV-Bfh" firstAttribute="trailing" secondItem="Dws-Oy-Xz4" secondAttribute="trailing" id="pfr-MM-WOB"/>
+                                    <constraint firstItem="h7j-GI-RpR" firstAttribute="trailing" secondItem="tf5-SD-ITA" secondAttribute="trailing" id="qVV-3H-FeE"/>
+                                    <constraint firstItem="nBZ-mV-Bfh" firstAttribute="trailing" secondItem="idh-m5-CJX" secondAttribute="trailingMargin" id="rnZ-I9-a4h"/>
+                                    <constraint firstItem="0zw-80-4eg" firstAttribute="leading" secondItem="Cgn-Lh-uwx" secondAttribute="leading" id="sYQ-6p-1bR"/>
+                                    <constraint firstItem="nBZ-mV-Bfh" firstAttribute="top" secondItem="idh-m5-CJX" secondAttribute="topMargin" id="wvW-8d-r8S"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="idh-m5-CJX" firstAttribute="bottom" secondItem="jJf-a9-xef" secondAttribute="bottom" id="4JO-bZ-nSl"/>
+                            <constraint firstItem="idh-m5-CJX" firstAttribute="leading" secondItem="sBi-F7-2Qx" secondAttribute="leading" id="Ef9-rE-gdR"/>
+                            <constraint firstAttribute="trailing" secondItem="idh-m5-CJX" secondAttribute="trailing" id="c2V-Kq-i8u"/>
+                            <constraint firstItem="idh-m5-CJX" firstAttribute="top" secondItem="jJf-a9-xef" secondAttribute="top" id="pzH-rg-NxF"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="jJf-a9-xef"/>
                     </view>
                     <navigationItem key="navigationItem" title="Info" id="Ghm-Fb-m3m"/>
+                    <size key="freeformSize" width="375" height="850"/>
+                    <connections>
+                        <outlet property="firstTextView" destination="Dws-Oy-Xz4" id="ay0-Hb-YwS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4JV-hD-5eT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1863.2" y="1421.7391304347827"/>
+            <point key="canvasLocation" x="1863.2" y="1420.3898050974515"/>
         </scene>
         <!--Hartă-->
         <scene sceneID="o15-B0-DF4">
@@ -1482,10 +1545,12 @@
     </scenes>
     <resources>
         <image name="city-hall" width="32" height="32"/>
+        <image name="hbp_logo" width="201" height="157"/>
         <image name="ic_info_outline_black" width="25" height="25"/>
         <image name="ic_map_black" width="25" height="25"/>
         <image name="ic_search_black" width="25" height="25"/>
         <image name="ic_show_chart_black" width="25" height="25"/>
+        <image name="initiativa_logo" width="237" height="96"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mHV-I0-o3g"/>

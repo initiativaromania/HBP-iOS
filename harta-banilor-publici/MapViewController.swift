@@ -24,7 +24,7 @@ extension UIImage {
 }
 
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, GMUClusterManagerDelegate, GMSMapViewDelegate, CustomInfoWindowDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, GMUClusterManagerDelegate, GMSMapViewDelegate, CustomInfoWindowDelegate, GMUClusterRendererDelegate {
     private var kCameraLatitude = 44.42
     private var kCameraLongitude = 26.09
 
@@ -44,7 +44,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
         let tabBar = self.tabBarController!.tabBar
         tabBar.selectionIndicatorImage = UIImage().createSelectionIndicator(color: hbpColor, size: CGSize(width: tabBar.frame.width/CGFloat(tabBar.items!.count), height: tabBar.frame.height), lineWidth: 3.0)
 
-        
         api = ApiHelper()
         
         setupGoogleMaps()
@@ -53,6 +52,14 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
         DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1), execute: {
             self.determineMyCurrentLocation()
         })
+    }
+    
+    func renderer(_ renderer: GMUClusterRenderer, willRenderMarker marker: GMSMarker) {
+        if marker.userData is POIItem {
+            marker.icon = UIImage(named: "gmaps_pin")
+        } else {
+            marker.icon = UIImage(named: "gmaps_cluster")
+        }
     }
     
     func setupGoogleMaps() {
@@ -78,7 +85,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, GMUCluster
         let algorithm = GMUNonHierarchicalDistanceBasedAlgorithm()
         let renderer = GMUDefaultClusterRenderer(mapView: mapView, clusterIconGenerator: iconGenerator)
         clusterManager = GMUClusterManager(map: mapView, algorithm: algorithm, renderer: renderer)
-        
+        renderer.delegate = self
         populateMap()
         
         // Call cluster() after items have been added to perform the clustering and rendering on map.
