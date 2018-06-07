@@ -42,15 +42,40 @@ struct InstitutionLicitatie: Codable {
     }
 }
 
+struct SearchResultLicitatie: Codable {
+    let id: Int
+    let titluContract: String
+    let valoareRON: String
+    let dataContract: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "LicitatieId", dataContract = "DataContract"
+        case titluContract = "TitluContract", valoareRON = "ValoareRON"
+    }
+}
+
+struct SearchResultContract: Codable {
+    let id: Int
+    let titluContract: String
+    let valoareRON: String
+    let dataContract: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case id = "ContracteId", dataContract = "DataContract"
+        case titluContract = "TitluContract", valoareRON = "ValoareRON"
+    }
+}
+
+
 struct Contract: Codable {
-    let id, institutiePublicaID, companieId: Int
+    let id, institutiePublicaID, companieId, numarJustificari: Int
     let companieCUI, tipProcedura, institutiePublicaCUI, numarAnuntParticipare: String
     let dataAnuntParticipare, tipIncheiereContract, numarContract, dataContract: String
     let titluContract, cpvCode: String
     let valoareRON, valoareEUR: String
     
     private enum CodingKeys: String, CodingKey {
-        case id = "ContracteId", institutiePublicaID = "InstitutiePublicaID", companieId = "CompanieId"
+        case id = "ContracteId", institutiePublicaID = "InstitutiePublicaID", companieId = "CompanieId", numarJustificari = "NumarJustificari"
         case companieCUI = "CompanieCUI", tipProcedura = "TipProcedura", institutiePublicaCUI = "InstitutiePublicaCUI"
         case numarAnuntParticipare = "NumarAnuntParticipare", dataAnuntParticipare = "DataAnuntParticipare"
         case tipIncheiereContract = "TipIncheiereContract", numarContract = "NumarContract", dataContract = "DataContract"
@@ -59,22 +84,23 @@ struct Contract: Codable {
 }
 
 struct Licitatie: Codable {
-    let id, institutiePublicaID: Int
+    let id, institutiePublicaID, companieId, numarOfertePrimite, cpvCodeID, numarJustificari: Int
     let companieCUI, tip, tipContract, tipProcedura, institutiePublicaCUI, tipActivitateAC, numarAnuntAtribuire: String
-    let dataAnuntAtribuire, tipIncheiereContract, tipCriteriiAtribuire, CUILicitatieElectronica, numarOfertePrimite: String
-    let subcontractat, numarContract, dataContract: String
-    let titluContract, cpvCodeID, cpvCode, numarAnuntParticipare, dataAnuntParticipare: String
+    let dataAnuntAtribuire, tipIncheiereContract, tipCriteriiAtribuire: String
+    let numarContract, dataContract: String
+    let titluContract, cpvCode, numarAnuntParticipare, dataAnuntParticipare: String
     let valoareEstimataParticipare, monedaValoareEstimataParticipare, depoziteGarantii, modalitatiFinantare: String
     let valoareRON, valoareEUR: String
+    let CUILicitatieElectronica, subcontractat: Bool
     
     private enum CodingKeys: String, CodingKey {
-        case id = "LicitatiiId", institutiePublicaID = "InstitutiePublicaID"
-        case companieCUI = "CompanieCUI", tip = "Tip", tipContract = "TipContract", tipProcedura = "TipProcedura"
+        case id = "LicitatiiId", institutiePublicaID = "InstitutiePublicaID", companieId = "CompanieId", numarOfertePrimite = "NumarOfertePrimite"
+        case companieCUI = "CompanieCUI", tip = "Tip", tipContract = "TipContract", tipProcedura = "TipProcedura", numarJustificari = "NumarJustificari"
         case institutiePublicaCUI = "InstitutiePublicaCUI", tipActivitateAC = "TipActivitateAC", numarAnuntAtribuire = "NumarAnuntAtribuire"
         case dataAnuntAtribuire = "DataAnuntAtribuire", tipIncheiereContract = "TipIncheiereContract", tipCriteriiAtribuire = "TipCriteriiAtribuire"
-        case CUILicitatieElectronica = "CUILicitatieElectronica", numarOfertePrimite = "NumarOfertePrimite", subcontractat = "Subcontractat"
+        case CUILicitatieElectronica = "CUILicitatieElectronica", subcontractat = "Subcontractat"
         case numarContract = "NumarContract", dataContract = "DataContract", titluContract = "TitluContract", valoareRON = "ValoareRON"
-        case valoareEUR = "ValoareEUR", cpvCodeID = "CPVCodeID", cpvCode = "CPVCode", numarAnuntParticipare = "NumarAnuntParticipare"
+        case valoareEUR = "ValoareEUR", cpvCodeID = "CPVCodeId", cpvCode = "CPVCode", numarAnuntParticipare = "NumarAnuntParticipare"
         case dataAnuntParticipare = "DataAnuntParticipare", valoareEstimataParticipare = "ValoareEstimataParticipare"
         case monedaValoareEstimataParticipare = "MonedaValoareEstimataParticipare", depoziteGarantii = "DepoziteGarantii", modalitatiFinantare = "ModalitatiFinantare"
     }
@@ -607,9 +633,9 @@ class ApiHelper {
     }
 
     
-    func searchContracts(pattern: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> Void) {
-        var contractResults: [InstitutionContract] = []
-        let url = self.apiURL + "SearchContract/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+    func searchContracts(pattern: String, handler: @escaping ([SearchResultContract], URLResponse?, Error?) -> Void) {
+        var contractResults: [SearchResultContract] = []
+        let url = self.apiURL + "SearchAD/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print("Searching Contracts: " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -622,7 +648,7 @@ class ApiHelper {
                 return
             }
             do {
-                contractResults = try JSONDecoder().decode([InstitutionContract].self, from: data)
+                contractResults = try JSONDecoder().decode([SearchResultContract].self, from: data)
                 handler(contractResults, response, error)
             } catch let error {
                 print("json error: \(error)")
@@ -632,12 +658,12 @@ class ApiHelper {
         task.resume()
     }
     
-    func searchLicitatii(pattern: String, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> Void) {
-        var licitatieResults: [InstitutionLicitatie] = []
+    func searchLicitatii(pattern: String, handler: @escaping ([SearchResultLicitatie], URLResponse?, Error?) -> Void) {
+        var licitatieResults: [SearchResultLicitatie] = []
 
-        let url = self.apiURL + "SearchTenters/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = self.apiURL + "SearchTender/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print("Searching Licitatii for " + url)
-
+        
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
             guard error == nil else {
                 handler(licitatieResults, response, error)
@@ -648,11 +674,58 @@ class ApiHelper {
                 return
             }
             do {
-                licitatieResults = try JSONDecoder().decode([InstitutionLicitatie].self, from: data)
+                licitatieResults = try JSONDecoder().decode([SearchResultLicitatie].self, from: data)
                 handler(licitatieResults, response, error)
             } catch let error {
                 print("json error: \(error)")
                 handler(licitatieResults, response, error)
+            }
+        }
+        task.resume()
+    }
+    
+    func semnaleazaAD(contractId: Int) {
+        let url = self.apiURL + "JustifyAD/" + String(contractId)
+        print("Semnaleaza AD " + url)
+        
+        var request = URLRequest(url: URL(string: url)!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
+            }
+
+        }
+        task.resume()
+    }
+    
+    func semnaleazaTender(tenderId: Int) {
+        let url = self.apiURL + "JustifyTender/" + String(tenderId)
+        print("Semnaleaza AD " + url)
+        
+        var request = URLRequest(url: URL(string: url)!)
+        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        request.httpMethod = "POST"
+        
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            guard error == nil else {
+                print("error=\(String(describing: error))")
+                return
+            }
+            
+            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {
+                print("statusCode should be 200, but is \(httpStatus.statusCode)")
+                print("response = \(String(describing: response))")
             }
         }
         task.resume()

@@ -8,8 +8,8 @@ class SearchViewController: UIViewController, UITableViewDataSource,
 
     var companieResults: [CompanieByInstitution] = []
     var institutionResults: [Institution] = []
-    var contractResults: [InstitutionContract] = []
-    var licitatieResults: [InstitutionLicitatie] = []
+    var contractResults: [SearchResultContract] = []
+    var licitatieResults: [SearchResultLicitatie] = []
     let cellReuseIdentifier = "cell"
     let searchController = UISearchController(searchResultsController: nil)
     var isSearchingInstitutions: Bool = false

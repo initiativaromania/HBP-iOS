@@ -40,14 +40,59 @@ class ContractViewController: UIViewController {
     @IBOutlet weak var tipIncheiereLabel: UILabel!
     @IBOutlet weak var tipProceduraLabel: UILabel!
     @IBOutlet weak var separatorLabel2: UILabel!
-    
     @IBOutlet weak var separatorLabel4: UILabel!
     @IBOutlet weak var separatorLabel3: UILabel!
+    @IBOutlet weak var cereJustificareButton: UIButton!
+    
     var contract: Contract!
     var api: ApiHelper!
     var companie: Companie!
     var institutie: Institution!
+    var userDefaults: UserDefaults!
     
+    @IBAction func pressedSemnaleazaButton(_ sender: Any) {
+        
+        let alreadySemnalat = self.userDefaults.bool(forKey: "contract_" + String(id))
+        if alreadySemnalat {
+            let alert = UIAlertController(title: "Ai mai semnalat acest contract.", message: "Mulțumim!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                    
+                }}))
+            self.present(alert, animated: true, completion: nil)
+        }
+        else {
+            self.api.semnaleazaAD(contractId: id)
+            userDefaults.set(true, forKey: "contract_" + String(id))
+            
+            let alert = UIAlertController(title: "Contractul a fost semnalat.", message: "Mulțumim!", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+                switch action.style{
+                case .default:
+                    print("default")
+                    
+                case .cancel:
+                    print("cancel")
+                    
+                case .destructive:
+                    print("destructive")
+                    
+                    
+                }}))
+            self.present(alert, animated: true, completion: nil)
+            self.cereJustificareButton.setTitle("Semnaleaza (" + String(self.contract.numarJustificari+1) + ")", for: .normal)
+        }
+
+    }
     @IBAction func pressedCompanieButton(_ sender: UIButton) {
         if senderId == self.companie.id {
             self.navigationController?.popViewController(animated: true)
@@ -72,6 +117,8 @@ class ContractViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        userDefaults = UserDefaults.standard
+
         api = ApiHelper()
         
         self.institutieButton.isEnabled = false
@@ -83,7 +130,7 @@ class ContractViewController: UIViewController {
         let companieLabelGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ContractViewController.pressedCompanieButton(_:)))
         companieLabel.addGestureRecognizer(companieLabelGestureRecognizer)
         
-        titluLabel.layer.addBorder(edge: UIRectEdge.bottom, color: .groupTableViewBackground, thickness: 0.5)
+        titluLabel.layer.addBorder(edge: UIRectEdge.bottom, color: .groupTableViewBackground, thickness: 1)
         separatorLabel.layer.addBorder(edge: UIRectEdge.bottom, color: .groupTableViewBackground, thickness: 1)
         separatorLabel2.layer.addBorder(edge: UIRectEdge.top, color: .groupTableViewBackground, thickness: 1)
         separatorLabel3.layer.addBorder(edge: UIRectEdge.bottom, color: .groupTableViewBackground, thickness: 1)
@@ -106,6 +153,7 @@ class ContractViewController: UIViewController {
                 self.cpvLabel.text = self.contract.cpvCode
                 self.tipIncheiereLabel.text = self.contract.tipIncheiereContract
                 self.tipProceduraLabel.text = self.contract.tipProcedura
+                self.cereJustificareButton.setTitle("Semnaleaza (" + String(self.contract.numarJustificari) + ")", for: .normal)
             }
             DispatchQueue.main.async {
                 //TODO Check what kind of company we get by ID

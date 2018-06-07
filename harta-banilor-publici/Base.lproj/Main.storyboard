@@ -282,6 +282,9 @@
                                 <state key="normal" title="SEMNALEAZA (0)">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="pressedSemnaleazaButton:" destination="y7W-47-BTu" eventType="touchUpInside" id="qdz-I9-luk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="28j-WF-HEz">
                                 <rect key="frame" x="15" y="7" width="343" height="69"/>
@@ -517,6 +520,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="action" id="ifA-Sb-SkV"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="cereJustificareButton" destination="he1-53-hbx" id="YKw-Ip-Fp6"/>
                         <outlet property="companieButton" destination="sUD-qc-apO" id="GFs-Al-aEJ"/>
                         <outlet property="companieLabel" destination="IpR-pJ-FGz" id="HOj-JQ-HCL"/>
                         <outlet property="cpvLabel" destination="gu6-6i-D2z" id="Byt-5J-Vog"/>
@@ -864,7 +868,7 @@
         <scene sceneID="o15-B0-DF4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xtV-Pc-eaH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Hartă" image="placeholder" selectedImage="placeholder" id="64D-uo-1RU"/>
+                    <tabBarItem key="tabBarItem" title="Hartă" image="ic_map_black" selectedImage="ic_map_black" id="64D-uo-1RU"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="txu-tI-nbJ">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -888,7 +892,7 @@
         <scene sceneID="rgF-2o-nEX">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V7S-Ob-cJm" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Caută" image="search" selectedImage="search" id="Ofu-Cp-9uF"/>
+                    <tabBarItem key="tabBarItem" title="Caută" image="ic_search_black" selectedImage="ic_search_black" id="Ofu-Cp-9uF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="qBy-1y-pQ1">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -908,7 +912,7 @@
         <scene sceneID="Isi-VX-aqn">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f9w-X5-AHf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" enabled="NO" title="Statistici" image="barchart" selectedImage="barchart" id="N4W-NC-fj0"/>
+                    <tabBarItem key="tabBarItem" enabled="NO" title="Statistici" image="ic_show_chart_black" selectedImage="ic_show_chart_black" id="N4W-NC-fj0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="Z0x-DG-h9E">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -928,7 +932,7 @@
         <scene sceneID="fCu-Pf-2bh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="DAk-OI-E1T" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Info" image="info" selectedImage="info" id="IDp-pn-Wg1"/>
+                    <tabBarItem key="tabBarItem" title="Info" image="ic_info_outline_black" selectedImage="ic_info_outline_black" id="IDp-pn-Wg1"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" barStyle="black" translucent="NO" id="ywq-y7-udB">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1091,8 +1095,8 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cumpărare directă" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lj-Zp-du8">
-                                        <rect key="frame" x="206" y="266" width="129" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cumpărare directă" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Lj-Zp-du8">
+                                        <rect key="frame" x="206" y="266.5" width="129" height="20.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1163,8 +1167,8 @@
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prețul cel mai scăzut" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIT-Kf-mAe">
-                                        <rect key="frame" x="17" y="459" width="139" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Prețul cel mai scăzut" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nIT-Kf-mAe">
+                                        <rect key="frame" x="17" y="459" width="139" height="20.5"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -1176,37 +1180,37 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAM-Xc-tMi">
-                                        <rect key="frame" x="206" y="459" width="9" height="21"/>
+                                        <rect key="frame" x="206" y="458.5" width="9" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subcontractat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="54h-nb-I3i">
-                                        <rect key="frame" x="17" y="488" width="83" height="18"/>
+                                        <rect key="frame" x="17" y="487.5" width="83" height="18"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="false" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umS-hA-TBe">
-                                        <rect key="frame" x="17" y="507" width="32" height="21"/>
+                                        <rect key="frame" x="17" y="506.5" width="32" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Valoare Estimată" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YXC-wP-7a2">
-                                        <rect key="frame" x="206" y="488" width="100" height="18"/>
+                                        <rect key="frame" x="206" y="487.5" width="100" height="18"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" white="0.5" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="201613.0 RON" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IPx-AR-mBk">
-                                        <rect key="frame" x="206" y="507" width="104" height="21"/>
+                                        <rect key="frame" x="206" y="506.5" width="104" height="21"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QqZ-Os-AZ6">
-                                        <rect key="frame" x="116" y="709" width="140" height="47"/>
+                                        <rect key="frame" x="116" y="708.5" width="140" height="47"/>
                                         <color key="backgroundColor" red="0.31372549020000001" green="0.0" blue="0.078431372550000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="140" id="cGs-06-WtP"/>
@@ -1216,27 +1220,30 @@
                                         <state key="normal" title="SEMNALEAZA (0)">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <action selector="pressedSemnaleazaButton:" destination="UNO-tS-fE3" eventType="touchUpInside" id="uGf-sM-dJT"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Companie" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SuT-zT-gIX">
-                                        <rect key="frame" x="16" y="536" width="77" height="24"/>
+                                        <rect key="frame" x="16" y="535.5" width="77" height="24"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ahF-oG-KpG">
-                                        <rect key="frame" x="15" y="560" width="290" height="47"/>
+                                        <rect key="frame" x="15" y="559.5" width="290" height="47"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0LS-QZ-a21">
-                                        <rect key="frame" x="15" y="648" width="290" height="47"/>
+                                        <rect key="frame" x="15" y="647.5" width="290" height="47"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="17"/>
                                         <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xik-Ys-Cj6">
-                                        <rect key="frame" x="304" y="654" width="54" height="38"/>
+                                        <rect key="frame" x="304" y="653.5" width="54" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="38" id="9yJ-bF-96r"/>
                                         </constraints>
@@ -1249,13 +1256,13 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instituție" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f0H-WR-OPz">
-                                        <rect key="frame" x="15" y="624" width="77" height="24"/>
+                                        <rect key="frame" x="15" y="623.5" width="77" height="24"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="13"/>
                                         <color key="textColor" name="systemGrayColor" catalog="System" colorSpace="catalog"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qzz-TC-XME">
-                                        <rect key="frame" x="16" y="554" width="342" height="4"/>
+                                        <rect key="frame" x="16" y="553.5" width="342" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="RnP-DP-1k9"/>
                                         </constraints>
@@ -1264,7 +1271,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="trailing" contentVerticalAlignment="fill" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zK3-2g-Uur">
-                                        <rect key="frame" x="304" y="566" width="54" height="38"/>
+                                        <rect key="frame" x="304" y="565.5" width="54" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="54" id="Fwv-8d-Ohi"/>
                                             <constraint firstAttribute="height" constant="38" id="tqY-oE-bQu"/>
@@ -1278,7 +1285,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hph-KW-uHA">
-                                        <rect key="frame" x="16" y="609" width="342" height="4"/>
+                                        <rect key="frame" x="16" y="608.5" width="342" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="aMU-Lj-2eO"/>
                                         </constraints>
@@ -1287,7 +1294,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EYZ-3S-lx5">
-                                        <rect key="frame" x="16" y="642" width="343" height="4"/>
+                                        <rect key="frame" x="16" y="641.5" width="343" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="dIV-H8-dRb"/>
                                         </constraints>
@@ -1296,7 +1303,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ij-DH-xMR">
-                                        <rect key="frame" x="16" y="697" width="343" height="4"/>
+                                        <rect key="frame" x="16" y="696.5" width="343" height="4"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="4" id="r5b-tj-Buo"/>
                                         </constraints>
@@ -1439,7 +1446,33 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="878"/>
                     <connections>
+                        <outlet property="cereJustificareButton" destination="QqZ-Os-AZ6" id="S78-tF-4iT"/>
+                        <outlet property="companieButton" destination="zK3-2g-Uur" id="IKD-aL-eOi"/>
+                        <outlet property="companieLabel" destination="ahF-oG-KpG" id="NGG-HV-d17"/>
+                        <outlet property="cpvLabel" destination="y7e-Kj-ZtU" id="P93-uv-lrx"/>
+                        <outlet property="criteriiAtribuireLabel" destination="nIT-Kf-mAe" id="RKH-Ss-1Kx"/>
+                        <outlet property="dataAnuntAtribuire" destination="bg1-mm-Wrk" id="eRD-kW-1i7"/>
+                        <outlet property="dataAnuntParticipareLabel" destination="BqM-At-nYe" id="FBn-Nj-eOw"/>
+                        <outlet property="dataContractLabel" destination="t35-7Y-QJM" id="0Jw-IH-xXL"/>
+                        <outlet property="institutieButton" destination="xik-Ys-Cj6" id="INk-9C-5pk"/>
+                        <outlet property="institutieLabel" destination="0LS-QZ-a21" id="nvK-Gg-hJU"/>
+                        <outlet property="numarAnuntAtribuireLabel" destination="cRY-do-CbK" id="ydK-3K-h1M"/>
+                        <outlet property="numarAnuntParticipareLabel" destination="6CL-Id-xTo" id="4cZ-SV-J87"/>
+                        <outlet property="numarContractLabel" destination="f3l-5Y-SHy" id="4s4-1C-Nds"/>
+                        <outlet property="numarOfertePrimiteLabel" destination="MAM-Xc-tMi" id="eGV-bI-pNk"/>
                         <outlet property="scrollView" destination="jPm-vy-gpQ" id="ytw-p6-Fjw"/>
+                        <outlet property="separatorLabel" destination="qzz-TC-XME" id="le4-Cc-QV3"/>
+                        <outlet property="separatorLabel2" destination="Hph-KW-uHA" id="xJP-RO-etJ"/>
+                        <outlet property="separatorLabel3" destination="EYZ-3S-lx5" id="V62-VP-dIP"/>
+                        <outlet property="separatorLabel4" destination="2Ij-DH-xMR" id="cNS-Cf-q7Y"/>
+                        <outlet property="subcontractLabel" destination="umS-hA-TBe" id="oSj-kc-UgF"/>
+                        <outlet property="tipContractLabel" destination="3hy-Rk-fhy" id="vl9-PV-Fmq"/>
+                        <outlet property="tipIncheiereLabel" destination="5Lj-Zp-du8" id="dKI-58-nrW"/>
+                        <outlet property="tipProceduraLabel" destination="Yb5-yf-azJ" id="njU-N0-Yzf"/>
+                        <outlet property="titluLabel" destination="fpi-Al-DhN" id="jkj-nl-ayg"/>
+                        <outlet property="valoareEUROLabel" destination="FHs-d9-rl1" id="qzp-Xr-noa"/>
+                        <outlet property="valoareEstimataLabel" destination="IPx-AR-mBk" id="SOv-XP-6ey"/>
+                        <outlet property="valoareRONLabel" destination="fto-YF-Gtj" id="cLe-b0-Wdo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prN-yA-r3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1448,16 +1481,16 @@
         </scene>
     </scenes>
     <resources>
-        <image name="barchart" width="25" height="25"/>
         <image name="city-hall" width="32" height="32"/>
-        <image name="info" width="25" height="25"/>
-        <image name="placeholder" width="25" height="25"/>
-        <image name="search" width="25" height="25"/>
+        <image name="ic_info_outline_black" width="25" height="25"/>
+        <image name="ic_map_black" width="25" height="25"/>
+        <image name="ic_search_black" width="25" height="25"/>
+        <image name="ic_show_chart_black" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mHV-I0-o3g"/>
         <segue reference="fUa-g3-xJn"/>
         <segue reference="9oq-zI-RxO"/>
-        <segue reference="9iA-GD-Hts"/>
+        <segue reference="qxZ-MU-Jch"/>
     </inferredMetricsTieBreakers>
 </document>

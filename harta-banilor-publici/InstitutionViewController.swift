@@ -374,6 +374,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         case 1:
             let controller = storyboard?.instantiateViewController(withIdentifier: "LicitatieViewController") as! LicitatieViewController
             controller.id = self.licitatii[indexPath.row].id
+            controller.senderId = self.id
             show(controller, sender: self)
         case 2:
             let controller = storyboard?.instantiateViewController(withIdentifier: "CompanieViewController") as! CompanieViewController
