@@ -16,7 +16,7 @@ class SearchViewController: UIViewController, UITableViewDataSource,
     var isSearchingCompanies: Bool = false
     var isSearchingContracts: Bool = false
     var isSearchingLicitatii: Bool = false
-    var imageView: UIImageView = UIImageView()
+    //var imageView: UIImageView = UIImageView()
     var api: ApiHelper!
 
     //@IBOutlet weak var searchBar: UISearchBar!
@@ -25,7 +25,7 @@ class SearchViewController: UIViewController, UITableViewDataSource,
         
         api = ApiHelper()
         
-        searchController.searchBar.scopeButtonTitles = ["Instituții", "Companii", "Contracte", "Licitații"]
+        searchController.searchBar.scopeButtonTitles = ["Instituții", "Companii", "Achiziții", "Licitații"]
         searchController.searchBar.placeholder = "Caută..."
         searchController.hidesNavigationBarDuringPresentation = false
         searchController.searchBar.delegate = self
@@ -95,39 +95,9 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             // now reframe the searchBar to add some margins
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        let image: UIImage = UIImage(named: "searchArt")!
-        self.imageView = UIImageView(image: image)
-        
-        switch searchController.searchBar.selectedScopeButtonIndex {
-        case 0:
-            if institutionResults.count == 0 {
-                self.tableView.isHidden = true
-                self.view.addSubview(imageView)
-                imageView.frame = CGRect(x: self.view.frame.size.width/2-61, y: self.view.frame.size.height/2-61, width: 123, height: 123)
-                imageView.layer.opacity = 0.3
-            }
-        case 2:
-            if contractResults.count == 0 {
-                self.tableView.isHidden = true
-                self.view.addSubview(imageView)
-                imageView.frame = CGRect(x: self.view.frame.size.width/2-46, y: self.view.frame.size.height/2-46, width: 93, height: 93)
-            }
-        case 3:
-            if licitatieResults.count == 0 {
-                self.tableView.isHidden = true
-                self.view.addSubview(imageView)
-                imageView.frame = CGRect(x: self.view.frame.size.width/2-46, y: self.view.frame.size.height/2-46, width: 93, height: 93)
-            }
-        default:
-            break
-        }
-    }
-
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
-        sleep(1)
-        searchController.searchBar.becomeFirstResponder()
+        self.searchController.searchBar.becomeFirstResponder()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -135,7 +105,6 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             return
         }
         self.tableView.isHidden = false
-        imageView.removeFromSuperview()
         
         switch searchController.searchBar.selectedScopeButtonIndex {
         case 0:
@@ -285,7 +254,7 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             return
         }
         self.tableView.isHidden = false
-        self.imageView.removeFromSuperview()
+        //self.imageView.removeFromSuperview()
         
         switch selectedScope {
         case 0:
@@ -486,8 +455,8 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             cell.button.isHidden = false
             cell.stopShimmer()
             cell.titleLabel.text = institutionResults[indexPath.row].nume
-            cell.titleLabel.adjustsFontSizeToFitWidth = true
-            cell.titleLabel.minimumScaleFactor = 0.2
+            //cell.titleLabel.adjustsFontSizeToFitWidth = true
+            //cell.titleLabel.minimumScaleFactor = 0.2
             cell.button.text = ">"
         case 1:
             if companieResults.count == 0 {
@@ -505,8 +474,8 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             cell.button.isHidden = false
             cell.stopShimmer()
             cell.titleLabel.text = companieResults[indexPath.row].nume
-            cell.titleLabel.adjustsFontSizeToFitWidth = true
-            cell.titleLabel.minimumScaleFactor = 0.2
+            //cell.titleLabel.adjustsFontSizeToFitWidth = true
+            //cell.titleLabel.minimumScaleFactor = 0.2
             cell.button.text = ">"
         case 2:
             if contractResults.count == 0 {
@@ -524,8 +493,8 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             cell.button.isHidden = false
             cell.stopShimmer()
             cell.titleLabel.text = contractResults[indexPath.row].titluContract
-            cell.titleLabel.adjustsFontSizeToFitWidth = true
-            cell.titleLabel.minimumScaleFactor = 0.2
+            //cell.titleLabel.adjustsFontSizeToFitWidth = true
+            //cell.titleLabel.minimumScaleFactor = 0.2
             cell.button.text = ">"
         case 3:
             if licitatieResults.count == 0 {
@@ -543,8 +512,8 @@ class SearchViewController: UIViewController, UITableViewDataSource,
             cell.button.isHidden = false
             cell.stopShimmer()
             cell.titleLabel.text = licitatieResults[indexPath.row].titluContract
-            cell.titleLabel.adjustsFontSizeToFitWidth = true
-            cell.titleLabel.minimumScaleFactor = 0.2
+            //cell.titleLabel.adjustsFontSizeToFitWidth = true
+            //cell.titleLabel.minimumScaleFactor = 0.2
             cell.button.text = ">"
         default:
             break

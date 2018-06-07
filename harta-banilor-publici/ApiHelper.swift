@@ -1,14 +1,14 @@
 import Foundation
 
 struct Institution: Codable {
-    let id: Int
+    let id, version: Int
     let cui, nume, adresa, judet, uat: String
     let longitude, latitude: Double
     
     private enum CodingKeys: String, CodingKey {
         case id = "InstitutiePublicaId", cui = "CUI", nume = "Nume"
         case adresa = "Adresa", judet = "Judet", uat = "UAT"
-        case longitude = "long", latitude = "lat"
+        case longitude = "long", latitude = "lat", version = "version"
     }
 }
 
@@ -23,8 +23,7 @@ struct InstitutionSummary: Codable {
 
 struct InstitutionContract: Codable {
     let id: Int
-    let titluContract, numarContract: String
-    let valoareRON: Double
+    let titluContract, numarContract, valoareRON: String
     
     private enum CodingKeys: String, CodingKey {
         case id = "ContracteId", numarContract = "NumarContract"
@@ -35,7 +34,7 @@ struct InstitutionContract: Codable {
 struct InstitutionLicitatie: Codable {
     let id: Int
     let titluContract, numarContract: String
-    let valoareRON: Double
+    let valoareRON: String
     
     private enum CodingKeys: String, CodingKey {
         case id = "LicitatieID", numarContract = "NumarContract"
@@ -48,7 +47,7 @@ struct Contract: Codable {
     let companieCUI, tipProcedura, institutiePublicaCUI, numarAnuntParticipare: String
     let dataAnuntParticipare, tipIncheiereContract, numarContract, dataContract: String
     let titluContract, cpvCode: String
-    let valoareRON, valoareEUR: Double
+    let valoareRON, valoareEUR: String
     
     private enum CodingKeys: String, CodingKey {
         case id = "ContracteId", institutiePublicaID = "InstitutiePublicaID", companieId = "CompanieId"
@@ -66,7 +65,7 @@ struct Licitatie: Codable {
     let subcontractat, numarContract, dataContract: String
     let titluContract, cpvCodeID, cpvCode, numarAnuntParticipare, dataAnuntParticipare: String
     let valoareEstimataParticipare, monedaValoareEstimataParticipare, depoziteGarantii, modalitatiFinantare: String
-    let valoareRON, valoareEUR: Double
+    let valoareRON, valoareEUR: String
     
     private enum CodingKeys: String, CodingKey {
         case id = "LicitatiiId", institutiePublicaID = "InstitutiePublicaID"
@@ -134,7 +133,7 @@ extension String {
 }
 
 class ApiHelper {
-    private let apiURL = "https://hbp-api.azurewebsites.net/api/"
+    private let apiURL = "https://hbp-api2.azurewebsites.net/api/"
     
     func getInstitutionByID(id: Int, handler: @escaping (Institution, URLResponse?, Error?) -> Void) {
         var institution: Institution!
@@ -526,7 +525,7 @@ class ApiHelper {
     func searchInstitution(pattern: String, handler: @escaping ([Institution], URLResponse?, Error?) -> Void) {
         var institutionResults: [Institution] = []
         
-        let url = self.apiURL + "SearchInstitution/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = self.apiURL + "SearchInstitution/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print("Searching Institutions: " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -552,7 +551,7 @@ class ApiHelper {
     func searchADCompanies(pattern: String, handler: @escaping ([CompanieByInstitution], URLResponse?, Error?) -> Void) {
         var companieResults: [CompanieByInstitution] = []
         
-        let url = self.apiURL + "SearchADCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = self.apiURL + "SearchADCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print("Searching AD Companies: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -581,7 +580,7 @@ class ApiHelper {
     func searchTenderCompanies(pattern: String, handler: @escaping ([CompanieByInstitution], URLResponse?, Error?) -> Void) {
         var companieResults: [CompanieByInstitution] = []
         
-        let url = self.apiURL + "SearchTenderCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = self.apiURL + "SearchTenderCompany/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print("Searching Tender Companies: " + url)
         
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -610,7 +609,7 @@ class ApiHelper {
     
     func searchContracts(pattern: String, handler: @escaping ([InstitutionContract], URLResponse?, Error?) -> Void) {
         var contractResults: [InstitutionContract] = []
-        let url = self.apiURL + "SearchContract/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = self.apiURL + "SearchContract/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print("Searching Contracts: " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in
@@ -636,7 +635,7 @@ class ApiHelper {
     func searchLicitatii(pattern: String, handler: @escaping ([InstitutionLicitatie], URLResponse?, Error?) -> Void) {
         var licitatieResults: [InstitutionLicitatie] = []
 
-        let url = self.apiURL + "SearchTenters/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trailingTrim(.whitespaces).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+        let url = self.apiURL + "SearchTenters/" + pattern.folding(options: .diacriticInsensitive, locale: .current).trimmingCharacters(in: .whitespacesAndNewlines).addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         print("Searching Licitatii for " + url)
 
         let task = URLSession.shared.dataTask(with: URL(string: url)!) { data, response, error in

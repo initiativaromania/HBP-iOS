@@ -129,9 +129,9 @@
 				3A6925541F8374B800EABAC7 /* LicitatieViewController.swift */,
 				3A87A6131F7BF5D400F79F1B /* SearchViewController.swift */,
 				3A5580D91F594178009661D9 /* ApiHelper.swift */,
-				3AC21DC71F90F6830016BE04 /* CustomInfoWindow.swift */,
 				3AE335A7201348C200CF0169 /* LaunchScreenViewController.swift */,
 				3AE5295A201381ED0087BB3A /* InfoViewController.swift */,
+				3AC21DC71F90F6830016BE04 /* CustomInfoWindow.swift */,
 				3AC21DC61F90F6830016BE04 /* CustomInfoWindow.xib */,
 				3AA402EA1F447CDD009490EB /* Main.storyboard */,
 				3AE529582013730C0087BB3A /* LaunchScreen.storyboard */,
@@ -250,7 +250,7 @@
 				TargetAttributes = {
 					3AA402E01F447CDD009490EB = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 56RHDVP96M;
+						DevelopmentTeam = A9PHH27GH3;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
@@ -486,7 +486,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -537,7 +537,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -551,11 +551,11 @@
 			baseConfigurationReference = F15980CF94420178A3E5FD29 /* Pods-harta-banilor-publici.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56RHDVP96M;
+				DEVELOPMENT_TEAM = A9PHH27GH3;
 				INFOPLIST_FILE = "harta-banilor-publici/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ro.initiativaromania.harta-banilor-publici";
+				PRODUCT_BUNDLE_IDENTIFIER = ro.initiativaromania.hartabanilorpublici;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "harta-banilor-publici/harta-banilor-publici-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -568,11 +568,11 @@
 			baseConfigurationReference = 3CD957435C76157D936104F4 /* Pods-harta-banilor-publici.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 56RHDVP96M;
+				DEVELOPMENT_TEAM = A9PHH27GH3;
 				INFOPLIST_FILE = "harta-banilor-publici/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "ro.initiativaromania.harta-banilor-publici";
+				PRODUCT_BUNDLE_IDENTIFIER = ro.initiativaromania.hartabanilorpublici;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "harta-banilor-publici/harta-banilor-publici-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;

@@ -1,7 +1,7 @@
 import UIKit
 import Foundation
 
-let hbpBlue = UIColor(red: 80/255, green: 0/255, blue: 20/255, alpha: 1)
+let hbpColor = UIColor(red: 80/255, green: 0/255, blue: 20/255, alpha: 1)
 
 class ShimmerLabel: UILabel {
     var shimmer: FBShimmeringView!
@@ -10,8 +10,8 @@ class ShimmerLabel: UILabel {
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)!
         shimmer = FBShimmeringView(frame: self.frame)
-        self.adjustsFontSizeToFitWidth = true
-        self.minimumScaleFactor = 0.2
+        //self.adjustsFontSizeToFitWidth = true
+        //self.minimumScaleFactor = 0.2
         self.initialColor = self.backgroundColor
     }
     
@@ -38,8 +38,6 @@ class TableCell: UITableViewCell {
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.priceLabel.layer.cornerRadius = 5
-
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -51,17 +49,17 @@ class TableCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
         if selected {
+            self.priceLabel.layer.cornerRadius = 5
             self.titleLabel.textColor = .white
-            self.priceLabel.textColor = .white
-            self.button.backgroundColor = .white
-            self.button.textColor = hbpBlue
-            bgview.backgroundColor = hbpBlue
+            self.priceLabel.textColor = hbpColor
+            self.priceLabel.backgroundColor = .white
+            self.button.textColor = .white
+            bgview.backgroundColor = hbpColor
             self.selectedBackgroundView = bgview
         } else {
-            self.titleLabel.textColor = .black
-            self.priceLabel.textColor = .black
-            self.button.backgroundColor = hbpBlue
-            self.button.textColor = .white
+            self.priceLabel.layer.cornerRadius = 5
+            self.titleLabel.textColor = .darkGray
+            self.priceLabel.textColor = .white
             bgview.backgroundColor = .white
             self.selectedBackgroundView = bgview
         }
@@ -74,15 +72,12 @@ class TableCell: UITableViewCell {
             self.titleLabel.textColor = .white
             self.titleLabel.textColor = .white
             self.priceLabel.textColor = .white
-            self.button.backgroundColor = .white
-            self.button.textColor = hbpBlue
-            bgview.backgroundColor = hbpBlue
+            self.button.textColor = hbpColor
+            bgview.backgroundColor = hbpColor
             self.selectedBackgroundView = bgview
         } else {
-            self.titleLabel.textColor = .black
-            self.priceLabel.textColor = .black
-            self.button.backgroundColor = hbpBlue
-            self.button.textColor = .white
+            self.titleLabel.textColor = .darkGray
+            self.priceLabel.textColor = .white
             bgview.backgroundColor = .white
             self.selectedBackgroundView = bgview
         }
@@ -108,7 +103,7 @@ class TableCell: UITableViewCell {
     }
 }
 
-class InstitutionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate {
+class InstitutionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var id: Int!
     var institutionName: String = ""
     var achizitiiCount: String = ""
@@ -221,6 +216,8 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         super.viewDidLoad()
         
         api = ApiHelper()
+        tableView.contentInsetAdjustmentBehavior = .never
+
         
         self.customizeNavBar()
         
@@ -262,12 +259,6 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
                 self.tableView.isScrollEnabled = true
                 self.tableView.reloadData()
             }
-        }
-        
-        if traitCollection.forceTouchCapability == .available {
-            registerForPreviewing(with: self, sourceView: self.tableView)
-        } else {
-            print("3D Touch Not Available")
         }
     }
         
@@ -318,6 +309,7 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         
         switch tabBar.selectedSegmentIndex {
         case 0:
+            cell.priceLabel.isHidden = false
             if contracte.count == 0 {
                 self.tableView.allowsSelection = false
                 self.tableView.isScrollEnabled = false
@@ -327,14 +319,14 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
                 return cell
             }
             cell.stopShimmer()
-            cell.titleLabel.text = contracte[indexPath.row].titluContract.capitalized(with: Locale(identifier: "ro"))
-            cell.priceLabel.text = String(contracte[indexPath.row].valoareRON) + "\nRON"
-            cell.priceLabel.layer.cornerRadius = 5
+            cell.titleLabel.text = contracte[indexPath.row].titluContract.capitalized(with: Locale(identifier: "ro")).trimmingCharacters(in: .whitespacesAndNewlines)
+            cell.priceLabel.text = contracte[indexPath.row].valoareRON + " RON"
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
 
         case 1:
+            cell.priceLabel.isHidden = false
             if licitatii.count == 0 {
                 self.tableView.allowsSelection = false
                 self.tableView.isScrollEnabled = false
@@ -344,22 +336,24 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
                 return cell
             }
             cell.stopShimmer()
-            cell.titleLabel.text = licitatii[indexPath.row].titluContract
-            cell.priceLabel.text = String(licitatii[indexPath.row].valoareRON) + "\nRON"
+            cell.titleLabel.text = licitatii[indexPath.row].titluContract.capitalized(with: Locale(identifier: "ro")).trimmingCharacters(in: .whitespacesAndNewlines)
+            cell.priceLabel.text = licitatii[indexPath.row].valoareRON + " RON"
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
         case 2:
+            cell.priceLabel.isHidden = true
             if companii.count == 0 {
                 self.tableView.allowsSelection = false
                 self.tableView.isScrollEnabled = false
+
                 if !fetchedCompanii {
                     cell.startShimmer()
                 }
                 return cell
             }
             cell.stopShimmer()
-            cell.titleLabel.text = companii[indexPath.row].nume
+            cell.titleLabel.text = companii[indexPath.row].nume.capitalized(with: Locale(identifier: "ro")).trimmingCharacters(in: .whitespacesAndNewlines)
             cell.button.text = ">"
             self.tableView.allowsSelection = true
             self.tableView.isScrollEnabled = true
@@ -389,34 +383,5 @@ class InstitutionViewController: UIViewController, UITableViewDelegate, UITableV
         default:
             break
         }
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-        let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
-
-        switch tabBar.selectedSegmentIndex {
-        case 0:
-            guard let indexPath = tableView.indexPathForRow(at: location),
-                let cell = tableView.cellForRow(at: indexPath) else {
-                    return nil }
-            
-            let controller = storyboard?.instantiateViewController(withIdentifier: "ContractViewController") as! ContractViewController
-            controller.id = self.contracte[indexPath.row].id
-            controller.senderId = self.id
-            controller.preferredContentSize =
-                CGSize(width: 0.0, height: 600)
-
-            previewingContext.sourceRect = cell.frame
-            return controller
-        default:
-            break
-        
-        }
-        return controller
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        
-        show(viewControllerToCommit, sender: self)
     }
 }

@@ -4,7 +4,7 @@ import Foundation
 class CompanieViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var id: Int = 0
     var ad: Bool!
-    var companyType: String = ""
+    //var companyType: String = ""
     var cui: String = ""
     
     var companie: Companie!
