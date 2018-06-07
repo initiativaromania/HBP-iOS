@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>harta-banilor-publici.ipa</key>
+	<array>
+		<dict>
+			<key>architectures</key>
+			<array>
+				<string>arm64</string>
+			</array>
+			<key>bitcode</key>
+			<true/>
+			<key>certificate</key>
+			<dict>
+				<key>SHA1</key>
+				<string>2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E</string>
+				<key>dateExpires</key>
+				<string>06/06/2019</string>
+				<key>type</key>
+				<string>iOS Distribution</string>
+			</dict>
+			<key>entitlements</key>
+			<dict>
+				<key>application-identifier</key>
+				<string>A9PHH27GH3.ro.initiativaromania.hartabanilorpublici</string>
+				<key>beta-reports-active</key>
+				<true/>
+				<key>com.apple.developer.team-identifier</key>
+				<string>A9PHH27GH3</string>
+				<key>get-task-allow</key>
+				<false/>
+				<key>keychain-access-groups</key>
+				<array>
+					<string>A9PHH27GH3.ro.initiativaromania.hartabanilorpublici</string>
+				</array>
+			</dict>
+			<key>name</key>
+			<string>harta-banilor-publici.app</string>
+			<key>profile</key>
+			<dict>
+				<key>UUID</key>
+				<string>ef751089-408b-46dd-8c17-66811d495dfe</string>
+				<key>name</key>
+				<string>iOS Team Store Provisioning Profile: ro.initiativaromania.hartabanilorpublici</string>
+			</dict>
+			<key>symbols</key>
+			<true/>
+			<key>team</key>
+			<dict>
+				<key>id</key>
+				<string>A9PHH27GH3</string>
+				<key>name</key>
+				<string>ASOCIATIA PLATFORMA INITIATIVA ROMANIA</string>
+			</dict>
+		</dict>
+	</array>
+</dict>
+</plist>

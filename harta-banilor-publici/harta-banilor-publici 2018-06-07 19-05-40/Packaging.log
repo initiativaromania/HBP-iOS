@@ -1,0 +1,1520 @@
+2018-06-07 16:05:00 +0000  Initial pipeline context: <IDEDistributionProcessingPipelineContext: 0x7fd8d3f4e820; archive(resolved)='<IDEArchive: 0x7fd8ee9041d0>', distributionTask(resolved)='0', distributionMethod(resolved)='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team(resolved)='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	Chain (11, self inclusive):
+	<IDEDistributionProcessingPipelineContext: 0x7fd8d3f4e820; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionProcessingPipelineContext: 0x7fd8d3e54cc0; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8d483a180; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8eec9bba0; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8eb1b2cc0; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8d4c58ee0; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8d50a5e50; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8d4a92eb0; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8d4a913a0; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8eb481a30; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='<IDEDistributionMethodiOSAppStoreValidation: 0x7fd8d2af1de0>', team='<IDEProvisioningBasicTeam: 0x7fd8d4bc1320; teamID='A9PHH27GH3', teamName='ASOCIATIA PLATFORMA INITIATIVA ROMANIA'>'>
+	<IDEDistributionContext: 0x7fd8ea0cddd0; archive = '<IDEArchive: 0x7fd8ee9041d0>', distributionMethod='(null)', team='(null)'>
+</IDEDistributionProcessingPipelineContext: 0x7fd8d3f4e820>
+2018-06-07 16:05:00 +0000  Processing step: IDEDistributionCreateDestRootStep
+2018-06-07 16:05:00 +0000  Processing step: IDEDistributionCopyItemStep
+2018-06-07 16:05:00 +0000  Running /usr/bin/ditto '-V' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app'
+2018-06-07 16:05:00 +0000  >>> Copying /Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app 
+2018-06-07 16:05:00 +0000  copying file ./_CodeSignature/CodeResources ... 
+2018-06-07 16:05:00 +0000  65309 bytes for ./_CodeSignature/CodeResources
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/bubble_left@3x.png ... 
+2018-06-07 16:05:00 +0000  2386 bytes for ./GoogleMaps.bundle/bubble_left@3x.png
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/bubble_left.png ... 
+2018-06-07 16:05:00 +0000  451 bytes for ./GoogleMaps.bundle/bubble_left.png
+copying file ./GoogleMaps.bundle/bubble_left@2x.png ... 
+2018-06-07 16:05:00 +0000  1055 bytes for ./GoogleMaps.bundle/bubble_left@2x.png
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/bubble_right@3x.png ... 
+2018-06-07 16:05:00 +0000  2374 bytes for ./GoogleMaps.bundle/bubble_right@3x.png
+copying file ./GoogleMaps.bundle/bubble_right@2x.png ... 
+2018-06-07 16:05:00 +0000  1051 bytes for ./GoogleMaps.bundle/bubble_right@2x.png
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  849 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  930 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/en_AU.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  801 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/en_AU.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  992 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  996 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  776 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/iw.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  930 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/iw.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@2x.png ... 
+2018-06-07 16:05:00 +0000  663 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@2x.png
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  801 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  982 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation.png ... 
+2018-06-07 16:05:00 +0000  362 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation.png
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/es_419.lproj/GMSCore.strings ... 
+2018-06-07 16:05:00 +0000  1016 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/es_419.lproj/GMSCore.strings
+2018-06-07 16:05:00 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-1x.png ... 
+2018-06-07 16:05:00 +0000  10365 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-1x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@2x.png ... 
+2018-06-07 16:05:01 +0000  2446 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@3x.png ... 
+2018-06-07 16:05:01 +0000  3304 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@3x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/es_MX.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  1016 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/es_MX.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large.png ... 
+2018-06-07 16:05:01 +0000  1114 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  748 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@3x.png ... 
+2018-06-07 16:05:01 +0000  1240 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@3x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/DroidSansMerged-Regular.ttf ... 
+2018-06-07 16:05:01 +0000  392092 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/DroidSansMerged-Regular.ttf
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/nb.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  841 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/nb.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  1019 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_endcap.png ... 
+2018-06-07 16:05:01 +0000  210 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_endcap.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/pt_BR.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  948 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/pt_BR.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  924 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@3x.png ... 
+2018-06-07 16:05:01 +0000  1577 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@3x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  876 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  904 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-3x.png ... 
+2018-06-07 16:05:01 +0000  10683 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-3x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  992 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night.png ... 
+2018-06-07 16:05:01 +0000  720 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location.png ... 
+2018-06-07 16:05:01 +0000  492 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_16-4.png ... 
+2018-06-07 16:05:01 +0000  127 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_16-4.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  821 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_256-64.png ... 
+2018-06-07 16:05:01 +0000  1934 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_256-64.png
+copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png ... 
+2018-06-07 16:05:01 +0000  631 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  893 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_8-2.png ... 
+2018-06-07 16:05:01 +0000  93 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_8-2.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go.png ... 
+2018-06-07 16:05:01 +0000  513 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  940 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped.png ... 
+2018-06-07 16:05:01 +0000  467 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_background.png ... 
+2018-06-07 16:05:01 +0000  334 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_background.png
+copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-1x.png ... 
+2018-06-07 16:05:01 +0000  3393 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-1x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location@2x.png ... 
+2018-06-07 16:05:01 +0000  1229 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location@2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/en_IN.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  801 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/en_IN.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  814 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-2x.png ... 
+2018-06-07 16:05:01 +0000  7465 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow.png ... 
+2018-06-07 16:05:01 +0000  469 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@2x.png ... 
+2018-06-07 16:05:01 +0000  860 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-1x.png ... 
+2018-06-07 16:05:01 +0000  3246 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-1x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  841 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/Tharlon-Regular.ttf ... 
+2018-06-07 16:05:01 +0000  353228 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/Tharlon-Regular.ttf
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  996 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go_night.png ... 
+2018-06-07 16:05:01 +0000  421 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go_night.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/zh_HK.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  738 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/zh_HK.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_4-1.png ... 
+2018-06-07 16:05:01 +0000  74 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_4-1.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_background@2x.png ... 
+2018-06-07 16:05:01 +0000  433 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_background@2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle@2x.png ... 
+2018-06-07 16:05:01 +0000  992 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle@2x.png
+copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/Assets.car ... 
+2018-06-07 16:05:01 +0000  46179 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/Assets.car
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  944 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast_night.png ... 
+2018-06-07 16:05:01 +0000  325 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast_night.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  897 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  754 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-2x.png ... 
+2018-06-07 16:05:01 +0000  7660 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-3x.png ... 
+2018-06-07 16:05:01 +0000  12519 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-3x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  801 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/dav_one_way_16_256.png ... 
+2018-06-07 16:05:01 +0000  315 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/dav_one_way_16_256.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_2-1.png ... 
+2018-06-07 16:05:01 +0000  84 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_2-1.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  995 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_background@3x.png ... 
+2018-06-07 16:05:01 +0000  515 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_background@3x.png
+copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_32-8.png ... 
+2018-06-07 16:05:01 +0000  223 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_32-8.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/lv.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  801 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/lv.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/lt.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  801 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/lt.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  1066 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture_dim.png ... 
+2018-06-07 16:05:01 +0000  7026 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture_dim.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped_night.png ... 
+2018-06-07 16:05:01 +0000  411 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped_night.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/fr_CA.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  908 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/fr_CA.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_128-32.png ... 
+2018-06-07 16:05:01 +0000  1029 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_128-32.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  1038 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  881 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  816 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  865 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  896 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_64-16.png ... 
+2018-06-07 16:05:01 +0000  425 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_64-16.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-3x.png ... 
+2018-06-07 16:05:01 +0000  42326 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-3x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png ... 
+2018-06-07 16:05:01 +0000  6982 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle.png ... 
+2018-06-07 16:05:01 +0000  483 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  948 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast.png ... 
+2018-06-07 16:05:01 +0000  416 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow_night.png ... 
+2018-06-07 16:05:01 +0000  451 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow_night.png
+copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/road_1-1.png ... 
+2018-06-07 16:05:01 +0000  95 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/road_1-1.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off.png ... 
+2018-06-07 16:05:01 +0000  498 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  985 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_startcap.png ... 
+2018-06-07 16:05:01 +0000  243 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/traffic_startcap.png
+copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist ... 
+2018-06-07 16:05:01 +0000  382 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-2x.png ... 
+2018-06-07 16:05:01 +0000  25169 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night@2x.png ... 
+2018-06-07 16:05:01 +0000  2221 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night@2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png ... 
+2018-06-07 16:05:01 +0000  2560 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  909 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/hi.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  994 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/hi.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings ... 
+2018-06-07 16:05:01 +0000  1014 bytes for ./GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/default_marker.png ... 
+2018-06-07 16:05:01 +0000  1379 bytes for ./GoogleMaps.bundle/default_marker.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/oss_licenses_maps.txt.gz ... 
+2018-06-07 16:05:01 +0000  38389 bytes for ./GoogleMaps.bundle/oss_licenses_maps.txt.gz
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/bubble_right.png ... 
+2018-06-07 16:05:01 +0000  455 bytes for ./GoogleMaps.bundle/bubble_right.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/default_marker@3x.png ... 
+2018-06-07 16:05:01 +0000  4275 bytes for ./GoogleMaps.bundle/default_marker@3x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/default_marker@2x.png ... 
+2018-06-07 16:05:01 +0000  2815 bytes for ./GoogleMaps.bundle/default_marker@2x.png
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom ... 
+2018-06-07 16:05:01 +0000  4576 bytes for ./GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCacheStorage.momd/VersionInfo.plist ... 
+2018-06-07 16:05:01 +0000  1197 bytes for ./GoogleMaps.bundle/GMSCacheStorage.momd/VersionInfo.plist
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.mom ... 
+2018-06-07 16:05:01 +0000  5172 bytes for ./GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.mom
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileVersionID.mom ... 
+2018-06-07 16:05:01 +0000  4682 bytes for ./GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileVersionID.mom
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.omo ... 
+2018-06-07 16:05:01 +0000  11832 bytes for ./GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.omo
+2018-06-07 16:05:01 +0000  copying file ./GoogleMaps.bundle/Info.plist ... 
+2018-06-07 16:05:01 +0000  376 bytes for ./GoogleMaps.bundle/Info.plist
+2018-06-07 16:05:01 +0000  copying file ./mapstyle.json ... 
+2018-06-07 16:05:01 +0000  2926 bytes for ./mapstyle.json
+2018-06-07 16:05:01 +0000  copying file ./AppIcon60x60@2x.png ... 
+2018-06-07 16:05:01 +0000  6766 bytes for ./AppIcon60x60@2x.png
+copying file ./institutii_publice_pins_v0.csv ... 
+2018-06-07 16:05:01 +0000  388642 bytes for ./institutii_publice_pins_v0.csv
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/LicitatieViewController.nib ... 
+2018-06-07 16:05:01 +0000  1495 bytes for ./Base.lproj/Main.storyboardc/LicitatieViewController.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/BBv-7C-nqp-view-qpj-K0-Jq2.nib ... 
+2018-06-07 16:05:01 +0000  1486 bytes for ./Base.lproj/Main.storyboardc/BBv-7C-nqp-view-qpj-K0-Jq2.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/ContractViewController.nib ... 
+2018-06-07 16:05:01 +0000  1489 bytes for ./Base.lproj/Main.storyboardc/ContractViewController.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/mwM-rY-90A-view-SXf-MG-dRU.nib ... 
+2018-06-07 16:05:01 +0000  10260 bytes for ./Base.lproj/Main.storyboardc/mwM-rY-90A-view-SXf-MG-dRU.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/TabBar.nib ... 
+2018-06-07 16:05:01 +0000  6981 bytes for ./Base.lproj/Main.storyboardc/TabBar.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/wEb-5u-5kv-view-mYA-P7-VIH.nib ... 
+2018-06-07 16:05:01 +0000  1149 bytes for ./Base.lproj/Main.storyboardc/wEb-5u-5kv-view-mYA-P7-VIH.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/WlT-YZ-J7J-view-1z5-Di-0UM.nib ... 
+2018-06-07 16:05:01 +0000  1149 bytes for ./Base.lproj/Main.storyboardc/WlT-YZ-J7J-view-1z5-Di-0UM.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/UNO-tS-fE3-view-uKl-p4-4nx.nib ... 
+2018-06-07 16:05:01 +0000  22332 bytes for ./Base.lproj/Main.storyboardc/UNO-tS-fE3-view-uKl-p4-4nx.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/y7W-47-BTu-view-uqe-Fc-3N4.nib ... 
+2018-06-07 16:05:01 +0000  10463 bytes for ./Base.lproj/Main.storyboardc/y7W-47-BTu-view-uqe-Fc-3N4.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/UIViewController-WlT-YZ-J7J.nib ... 
+2018-06-07 16:05:01 +0000  1381 bytes for ./Base.lproj/Main.storyboardc/UIViewController-WlT-YZ-J7J.nib
+copying file ./Base.lproj/Main.storyboardc/Iwr-51-Xaf-view-bDt-bn-Osv.nib ... 
+2018-06-07 16:05:01 +0000  8695 bytes for ./Base.lproj/Main.storyboardc/Iwr-51-Xaf-view-bDt-bn-Osv.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/d2c-hC-6PK-view-sBi-F7-2Qx.nib ... 
+2018-06-07 16:05:01 +0000  9063 bytes for ./Base.lproj/Main.storyboardc/d2c-hC-6PK-view-sBi-F7-2Qx.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/Info.plist ... 
+2018-06-07 16:05:01 +0000  565 bytes for ./Base.lproj/Main.storyboardc/Info.plist
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/InstitutionViewController.nib ... 
+2018-06-07 16:05:01 +0000  2044 bytes for ./Base.lproj/Main.storyboardc/InstitutionViewController.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/CompanieViewController.nib ... 
+2018-06-07 16:05:01 +0000  1395 bytes for ./Base.lproj/Main.storyboardc/CompanieViewController.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/SXr-eX-9GQ-view-Ga1-vx-PhA.nib ... 
+2018-06-07 16:05:01 +0000  6330 bytes for ./Base.lproj/Main.storyboardc/SXr-eX-9GQ-view-Ga1-vx-PhA.nib
+2018-06-07 16:05:01 +0000  copying file ./Base.lproj/Main.storyboardc/MapViewController.nib ... 
+2018-06-07 16:05:01 +0000  1699 bytes for ./Base.lproj/Main.storyboardc/MapViewController.nib
+2018-06-07 16:05:01 +0000  copying file ./Assets.car ... 
+2018-06-07 16:05:01 +0000  198888 bytes for ./Assets.car
+2018-06-07 16:05:01 +0000  copying file ./LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+2018-06-07 16:05:01 +0000  1136 bytes for ./LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+copying file ./LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+2018-06-07 16:05:01 +0000  832 bytes for ./LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+copying file ./LaunchScreen.storyboardc/Info.plist ... 
+2018-06-07 16:05:01 +0000  258 bytes for ./LaunchScreen.storyboardc/Info.plist
+2018-06-07 16:05:01 +0000  copying file ./Frameworks/libswiftCoreImage.dylib ... 
+2018-06-07 16:05:01 +0000  307632 bytes for ./Frameworks/libswiftCoreImage.dylib
+2018-06-07 16:05:01 +0000  copying file ./Frameworks/libswiftObjectiveC.dylib ... 
+2018-06-07 16:05:01 +0000  554096 bytes for ./Frameworks/libswiftObjectiveC.dylib
+2018-06-07 16:05:01 +0000  copying file ./Frameworks/libswiftCore.dylib ... 
+2018-06-07 16:05:01 +0000  66662544 bytes for ./Frameworks/libswiftCore.dylib
+2018-06-07 16:05:01 +0000  copying file ./Frameworks/libswiftCoreGraphics.dylib ... 
+1628544 bytes for ./Frameworks/libswiftCoreGraphics.dylib
+copying file ./Frameworks/libswiftUIKit.dylib ... 
+1043024 bytes for ./Frameworks/libswiftUIKit.dylib
+copying file ./Frameworks/libswiftMetal.dylib ... 
+2018-06-07 16:05:01 +0000  448880 bytes for ./Frameworks/libswiftMetal.dylib
+copying file ./Frameworks/libswiftDispatch.dylib ... 
+2018-06-07 16:05:01 +0000  2722288 bytes for ./Frameworks/libswiftDispatch.dylib
+2018-06-07 16:05:01 +0000  copying file ./Frameworks/libswiftos.dylib ... 
+497152 bytes for ./Frameworks/libswiftos.dylib
+copying file ./Frameworks/libswiftCoreFoundation.dylib ... 
+2018-06-07 16:05:01 +0000  257728 bytes for ./Frameworks/libswiftCoreFoundation.dylib
+copying file ./Frameworks/libswiftDarwin.dylib ... 
+2018-06-07 16:05:01 +0000  838720 bytes for ./Frameworks/libswiftDarwin.dylib
+copying file ./Frameworks/libswiftQuartzCore.dylib ... 
+2018-06-07 16:05:01 +0000  310608 bytes for ./Frameworks/libswiftQuartzCore.dylib
+2018-06-07 16:05:01 +0000  copying file ./Frameworks/libswiftFoundation.dylib ... 
+2018-06-07 16:05:01 +0000  30165232 bytes for ./Frameworks/libswiftFoundation.dylib
+copying file ./Frameworks/libswiftCoreLocation.dylib ... 
+2018-06-07 16:05:01 +0000  401824 bytes for ./Frameworks/libswiftCoreLocation.dylib
+copying file ./CustomInfoWindow.nib ... 
+2018-06-07 16:05:01 +0000  3846 bytes for ./CustomInfoWindow.nib
+2018-06-07 16:05:01 +0000  copying file ./embedded.mobileprovision ... 
+7607 bytes for ./embedded.mobileprovision
+2018-06-07 16:05:01 +0000  copying file ./Info.plist ... 
+1586 bytes for ./Info.plist
+copying file ./harta-banilor-publici ... 
+2018-06-07 16:05:01 +0000  46358192 bytes for ./harta-banilor-publici
+2018-06-07 16:05:01 +0000  
+2018-06-07 16:05:01 +0000  copying file ./PkgInfo ... 
+8 bytes for ./PkgInfo
+2018-06-07 16:05:01 +0000  
+2018-06-07 16:05:01 +0000  2018-06-07 16:05:01 +0000  /usr/bin/ditto exited with 0
+
+2018-06-07 16:05:01 +0000  
+2018-06-07 16:05:01 +0000  Processing step: IDEDistributionEmbedProfileStep
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d48079d0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fd8d0ec9090:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCore.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d4a24c50 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fd8d3ce3d00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d4b06ca0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fd8d4bd83b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d2da7640 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fd8cf5d24b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d4bc7e40 'com.apple.dt.runtime.swiftCoreLocation' '<DVTFilePath:0x7fd8d3f21a40:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8ee82a3e0 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fd8d480ddd0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d3f33a40 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fd8d49bdc30:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d3d466b0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fd8d0d80410:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d3e73770 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fd8d49014f0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d2d7da30 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fd8d3ff4180:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8cfcf2920 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fd8cfa6ca00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d4b6a640 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7fd8cf5e6460:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib'>'>
+2018-06-07 16:05:01 +0000  Skipping profile for item: <IDEDistributionItem: 0x7fd8d2d74390 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fd8d2bf7f10:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftos.dylib'>'>
+2018-06-07 16:05:01 +0000  Processing step: IDEDistributionItemRemovalStep
+2018-06-07 16:05:01 +0000  Processing step: IDEDistributionAppThinningPlistStep
+2018-06-07 16:05:01 +0000  Skipping step: IDEDistributionAppThinningPlistStep because it said so
+2018-06-07 16:05:01 +0000  Processing step: IDEDistributionCompileBitcodeStep
+2018-06-07 16:05:01 +0000  Skipping step: IDEDistributionCompileBitcodeStep because it said so
+2018-06-07 16:05:01 +0000  Processing step: IDEDistributionCodeSlimmingStep
+2018-06-07 16:05:01 +0000  Processing step: IDEDistributionCopyBCSymbolMapsStep
+2018-06-07 16:05:02 +0000  Running /usr/bin/ditto '-V' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/BCSymbolMaps/C07D1B28-5374-3CB2-BF35-D7C5DB9972B5.bcsymbolmap' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/BCSymbolMaps/C07D1B28-5374-3CB2-BF35-D7C5DB9972B5.bcsymbolmap'
+2018-06-07 16:05:02 +0000  >>> Copying /Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/BCSymbolMaps/C07D1B28-5374-3CB2-BF35-D7C5DB9972B5.bcsymbolmap 
+2018-06-07 16:05:02 +0000  copying file ./C07D1B28-5374-3CB2-BF35-D7C5DB9972B5.bcsymbolmap ... 
+2018-06-07 16:05:02 +0000  2547334 bytes for ./C07D1B28-5374-3CB2-BF35-D7C5DB9972B5.bcsymbolmap
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  /usr/bin/ditto exited with 0
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Processing step: IDEDistributionSymbolsStep
+2018-06-07 16:05:02 +0000  Processing symbols for libswiftCore.dylib
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCore.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  1 file to consider
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  sent 93 bytes  received 20 bytes  226.00 bytes/sec
+total size is 63.57M  speedup is 589934.02
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  7 files to consider
+2018-06-07 16:05:02 +0000  ./
+2018-06-07 16:05:02 +0000  harta-banilor-publici.app.dSYM/
+2018-06-07 16:05:02 +0000  harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  sent 265 bytes  received 50 bytes  630.00 bytes/sec
+total size is 3.95M  speedup is 13136.41
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCore.dylib'
+2018-06-07 16:05:02 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCore.dylib [armv7, 0.324431 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCore.dylib [armv7s, 0.324431 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCore.dylib [arm64, 0.324431 seconds]:
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Processing symbols for libswiftCoreFoundation.dylib
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  1 file to consider
+2018-06-07 16:05:02 +0000  
+sent 103 bytes  received 20 bytes  246.00 bytes/sec
+2018-06-07 16:05:02 +0000  total size is 251.69K  speedup is 2095.35
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  7 files to consider
+2018-06-07 16:05:02 +0000  ./
+2018-06-07 16:05:02 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:02 +0000  
+sent 277 bytes  received 62 bytes  678.00 bytes/sec
+2018-06-07 16:05:02 +0000  total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreFoundation.dylib'
+2018-06-07 16:05:02 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreFoundation.dylib [armv7, 0.001601 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreFoundation.dylib [armv7s, 0.001601 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreFoundation.dylib [arm64, 0.001601 seconds]:
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Processing symbols for libswiftCoreGraphics.dylib
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  1 file to consider
+2018-06-07 16:05:02 +0000  
+sent 101 bytes  received 20 bytes  242.00 bytes/sec
+total size is 1.55M  speedup is 13459.04
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  7 files to consider
+2018-06-07 16:05:02 +0000  ./
+2018-06-07 16:05:02 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreGraphics.dylib'
+2018-06-07 16:05:02 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreGraphics.dylib [armv7, 0.010325 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreGraphics.dylib [armv7s, 0.010325 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreGraphics.dylib [arm64, 0.010325 seconds]:
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Processing symbols for libswiftCoreImage.dylib
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  1 file to consider
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  sent 98 bytes  received 20 bytes  236.00 bytes/sec
+total size is 300.42K  speedup is 2607.05
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  7 files to consider
+2018-06-07 16:05:02 +0000  ./
+2018-06-07 16:05:02 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:02 +0000  
+sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 02018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreImage.dylib'
+2018-06-07 16:05:02 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreImage.dylib [armv7, 0.001411 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreImage.dylib [armv7s, 0.001411 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreImage.dylib [arm64, 0.001411 seconds]:
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 02018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Processing symbols for libswiftCoreLocation.dylib
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  1 file to consider
+2018-06-07 16:05:02 +0000  
+sent 101 bytes  received 20 bytes  242.00 bytes/sec
+2018-06-07 16:05:02 +0000  total size is 392.41K  speedup is 3320.86
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  7 files to consider
+2018-06-07 16:05:02 +0000  ./
+2018-06-07 16:05:02 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreLocation.dylib'
+2018-06-07 16:05:02 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreLocation.dylib [armv7, 0.002726 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreLocation.dylib [armv7s, 0.002726 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftCoreLocation.dylib [arm64, 0.002726 seconds]:
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  Processing symbols for libswiftDarwin.dylib
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  1 file to consider
+2018-06-07 16:05:02 +0000  
+sent 95 bytes  received 20 bytes  230.00 bytes/sec
+2018-06-07 16:05:02 +0000  total size is 819.06K  speedup is 7293.22
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:02 +0000  2018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:02 +0000  building file list ... 
+2018-06-07 16:05:02 +0000   0 files...2018-06-07 16:05:02 +0000  7 files to consider
+2018-06-07 16:05:02 +0000  ./
+2018-06-07 16:05:02 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:02 +0000  
+sent 277 bytes  received 62 bytes  678.00 bytes/sec
+2018-06-07 16:05:02 +0000  total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  /usr/bin/rsync exited with 02018-06-07 16:05:02 +0000  
+
+2018-06-07 16:05:02 +0000  
+2018-06-07 16:05:02 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDarwin.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDarwin.dylib [armv7, 0.005534 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDarwin.dylib [armv7s, 0.005534 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDarwin.dylib [arm64, 0.005534 seconds]:
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing symbols for libswiftDispatch.dylib
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  1 file to consider
+2018-06-07 16:05:03 +0000  
+sent 97 bytes  received 20 bytes  234.00 bytes/sec
+2018-06-07 16:05:03 +0000  total size is 2.60M  speedup is 23267.42
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  7 files to consider
+2018-06-07 16:05:03 +0000  ./
+2018-06-07 16:05:03 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:03 +0000  
+sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDispatch.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDispatch.dylib [armv7, 0.019270 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDispatch.dylib [armv7s, 0.019270 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftDispatch.dylib [arm64, 0.019270 seconds]:
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing symbols for libswiftFoundation.dylib
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  1 file to consider
+2018-06-07 16:05:03 +0000  
+sent 99 bytes  received 20 bytes  238.00 bytes/sec
+total size is 28.77M  speedup is 253489.34
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  7 files to consider
+2018-06-07 16:05:03 +0000  ./
+2018-06-07 16:05:03 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftFoundation.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftFoundation.dylib [armv7, 0.119630 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftFoundation.dylib [armv7s, 0.119630 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftFoundation.dylib [arm64, 0.119630 seconds]:
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 02018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing symbols for libswiftMetal.dylib
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  1 file to consider
+2018-06-07 16:05:03 +0000  
+sent 94 bytes  received 20 bytes  228.00 bytes/sec
+2018-06-07 16:05:03 +0000  total size is 438.36K  speedup is 3937.54
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 02018-06-07 16:05:03 +0000  
+
+
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  7 files to consider
+2018-06-07 16:05:03 +0000  ./
+2018-06-07 16:05:03 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftMetal.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftMetal.dylib [armv7, 0.002452 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftMetal.dylib [armv7s, 0.002452 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftMetal.dylib [arm64, 0.002452 seconds]:
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing symbols for libswiftObjectiveC.dylib
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  1 file to consider
+2018-06-07 16:05:03 +0000  
+sent 99 bytes  received 20 bytes  238.00 bytes/sec
+total size is 541.11K  speedup is 4656.27
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  7 files to consider
+2018-06-07 16:05:03 +0000  ./
+2018-06-07 16:05:03 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftObjectiveC.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftObjectiveC.dylib [armv7, 0.003144 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftObjectiveC.dylib [armv7s, 0.003144 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftObjectiveC.dylib [arm64, 0.003144 seconds]:
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing symbols for libswiftQuartzCore.dylib
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  1 file to consider
+2018-06-07 16:05:03 +0000  
+sent 99 bytes  received 20 bytes  238.00 bytes/sec
+2018-06-07 16:05:03 +0000  total size is 303.33K  speedup is 2610.15
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  7 files to consider
+2018-06-07 16:05:03 +0000  ./
+2018-06-07 16:05:03 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftQuartzCore.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftQuartzCore.dylib [armv7, 0.001872 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftQuartzCore.dylib [armv7s, 0.001872 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftQuartzCore.dylib [arm64, 0.001872 seconds]:
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing symbols for libswiftUIKit.dylib
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  1 file to consider
+2018-06-07 16:05:03 +0000  
+sent 94 bytes  received 20 bytes  228.00 bytes/sec
+2018-06-07 16:05:03 +0000  total size is 1018.58K  speedup is 9149.33
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  7 files to consider
+2018-06-07 16:05:03 +0000  ./
+2018-06-07 16:05:03 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:03 +0000  
+sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftUIKit.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftUIKit.dylib [armv7, 0.006182 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftUIKit.dylib [armv7s, 0.006182 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftUIKit.dylib [arm64, 0.006182 seconds]:
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing symbols for libswiftos.dylib
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftos.dylib' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  1 file to consider
+2018-06-07 16:05:03 +0000  
+sent 91 bytes  received 20 bytes  222.00 bytes/sec
+2018-06-07 16:05:03 +0000  total size is 485.50K  speedup is 4478.85
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 0
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  Running /usr/bin/rsync '-8aPhhE' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '--link-dest' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/dSYMs/' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3'
+2018-06-07 16:05:03 +0000  building file list ... 
+2018-06-07 16:05:03 +0000   0 files...2018-06-07 16:05:03 +0000  7 files to consider
+2018-06-07 16:05:03 +0000  ./
+2018-06-07 16:05:03 +0000  harta-banilor-publici.app.dSYM/
+harta-banilor-publici.app.dSYM/Contents/
+harta-banilor-publici.app.dSYM/Contents/Resources/
+harta-banilor-publici.app.dSYM/Contents/Resources/DWARF/
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  sent 277 bytes  received 62 bytes  678.00 bytes/sec
+total size is 3.95M  speedup is 12206.40
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /usr/bin/rsync exited with 02018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Running /Applications/Xcode.app/Contents/Developer/usr/bin/symbols '-noTextInSOD' '-noDaemon' '-arch' 'all' '-symbolsPackageDir' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftos.dylib'
+2018-06-07 16:05:03 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftos.dylib [armv7, 0.002488 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftos.dylib [armv7s, 0.002488 seconds]:
+/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/libswiftos.dylib [arm64, 0.002488 seconds]:
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  
+
+2018-06-07 16:05:03 +0000  /Applications/Xcode.app/Contents/Developer/usr/bin/symbols exited with 0
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Excluding symbols for harta-banilor-publici.app
+2018-06-07 16:05:03 +0000  Processing step: IDEDistributionCopyAppleProvidedContentStep
+2018-06-07 16:05:03 +0000  Running /usr/bin/ditto '-V' '/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/SwiftSupport' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/SwiftSupport'
+2018-06-07 16:05:03 +0000  >>> Copying /Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/SwiftSupport 
+2018-06-07 16:05:03 +0000  copying file ./iphoneos/libswiftCoreImage.dylib ... 
+2018-06-07 16:05:03 +0000  351635 bytes for ./iphoneos/libswiftCoreImage.dylib
+copying file ./iphoneos/libswiftObjectiveC.dylib ... 
+2018-06-07 16:05:03 +0000  737148 bytes for ./iphoneos/libswiftObjectiveC.dylib
+copying file ./iphoneos/libswiftCore.dylib ... 
+2018-06-07 16:05:03 +0000  96746864 bytes for ./iphoneos/libswiftCore.dylib
+copying file ./iphoneos/libswiftCoreGraphics.dylib ... 
+2018-06-07 16:05:03 +0000  2199628 bytes for ./iphoneos/libswiftCoreGraphics.dylib
+copying file ./iphoneos/libswiftUIKit.dylib ... 
+2018-06-07 16:05:03 +0000  1410736 bytes for ./iphoneos/libswiftUIKit.dylib
+2018-06-07 16:05:03 +0000  copying file ./iphoneos/libswiftMetal.dylib ... 
+2018-06-07 16:05:03 +0000  558460 bytes for ./iphoneos/libswiftMetal.dylib
+copying file ./iphoneos/libswiftDispatch.dylib ... 
+2018-06-07 16:05:03 +0000  3698083 bytes for ./iphoneos/libswiftDispatch.dylib
+2018-06-07 16:05:03 +0000  copying file ./iphoneos/libswiftos.dylib ... 
+2018-06-07 16:05:03 +0000  656418 bytes for ./iphoneos/libswiftos.dylib
+2018-06-07 16:05:03 +0000  copying file ./iphoneos/libswiftCoreFoundation.dylib ... 
+2018-06-07 16:05:03 +0000  288241 bytes for ./iphoneos/libswiftCoreFoundation.dylib
+copying file ./iphoneos/libswiftDarwin.dylib ... 
+2018-06-07 16:05:03 +0000  1091343 bytes for ./iphoneos/libswiftDarwin.dylib
+copying file ./iphoneos/libswiftQuartzCore.dylib ... 
+2018-06-07 16:05:03 +0000  369807 bytes for ./iphoneos/libswiftQuartzCore.dylib
+copying file ./iphoneos/libswiftFoundation.dylib ... 
+2018-06-07 16:05:03 +0000  43134853 bytes for ./iphoneos/libswiftFoundation.dylib
+copying file ./iphoneos/libswiftCoreLocation.dylib ... 
+2018-06-07 16:05:03 +0000  505010 bytes for ./iphoneos/libswiftCoreLocation.dylib
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  2018-06-07 16:05:03 +0000  /usr/bin/ditto exited with 0
+
+2018-06-07 16:05:03 +0000  
+2018-06-07 16:05:03 +0000  Processing step: IDEDistributionAppThinningStep
+2018-06-07 16:05:03 +0000  Skipping step: IDEDistributionAppThinningStep because it said so
+2018-06-07 16:05:03 +0000  Processing step: IDEDistributionODRStep
+2018-06-07 16:05:03 +0000  Processing step: IDEDistributionStripXattrsStep
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d48079d0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fd8d0ec9090:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCore.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d4a24c50 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fd8d3ce3d00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d4b06ca0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fd8d4bd83b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d2da7640 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fd8cf5d24b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d4bc7e40 'com.apple.dt.runtime.swiftCoreLocation' '<DVTFilePath:0x7fd8d3f21a40:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8ee82a3e0 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fd8d480ddd0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d3f33a40 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fd8d49bdc30:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d3d466b0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fd8d0d80410:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d3e73770 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fd8d49014f0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d2d7da30 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fd8d3ff4180:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8cfcf2920 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fd8cfa6ca00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d4b6a640 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7fd8cf5e6460:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib'>'>
+2018-06-07 16:05:03 +0000  Skipping stripping extended attributes of item: <IDEDistributionItem: 0x7fd8d2d74390 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fd8d2bf7f10:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftos.dylib'>'>
+2018-06-07 16:05:03 +0000  Running /usr/bin/xattr '-crs' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app'
+2018-06-07 16:05:04 +0000  2018-06-07 16:05:04 +0000  
+
+2018-06-07 16:05:04 +0000  /usr/bin/xattr exited with 02018-06-07 16:05:04 +0000  
+
+2018-06-07 16:05:04 +0000  
+2018-06-07 16:05:04 +0000  2018-06-07 16:05:04 +0000  Processing step: IDEDistributionCodesignStep
+
+2018-06-07 16:05:04 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d48079d0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fd8d0ec9090:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCore.dylib'>'>: {
+}
+2018-06-07 16:05:04 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d48079d0 'com.apple.dt.runtime.swiftCore' '<DVTFilePath:0x7fd8d0ec9090:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCore.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementskaFBqD
+2018-06-07 16:05:04 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementskaFBqD' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCore.dylib'
+2018-06-07 16:05:04 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCore.dylib: replacing existing signature
+2018-06-07 16:05:11 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCore.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCore]
+2018-06-07 16:05:11 +0000  
+2018-06-07 16:05:11 +0000  2018-06-07 16:05:11 +0000  /usr/bin/codesign exited with 0
+
+2018-06-07 16:05:11 +0000  
+2018-06-07 16:05:11 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d4a24c50 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fd8d3ce3d00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib'>'>: {
+}
+2018-06-07 16:05:11 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d4a24c50 'com.apple.dt.runtime.swiftCoreFoundation' '<DVTFilePath:0x7fd8d3ce3d00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsjqglgw
+2018-06-07 16:05:11 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsjqglgw' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib'
+2018-06-07 16:05:11 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib: replacing existing signature
+2018-06-07 16:05:11 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreFoundation]
+2018-06-07 16:05:11 +0000  
+2018-06-07 16:05:11 +0000  
+2018-06-07 16:05:11 +0000  /usr/bin/codesign exited with 02018-06-07 16:05:11 +0000  
+
+2018-06-07 16:05:11 +0000  
+2018-06-07 16:05:11 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d4b06ca0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fd8d4bd83b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib'>'>: {
+}
+2018-06-07 16:05:11 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d4b06ca0 'com.apple.dt.runtime.swiftCoreGraphics' '<DVTFilePath:0x7fd8d4bd83b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsqjFxb2
+2018-06-07 16:05:11 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsqjFxb2' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib'
+2018-06-07 16:05:11 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib: replacing existing signature
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreGraphics]
+2018-06-07 16:05:12 +0000  
+2018-06-07 16:05:12 +0000  2018-06-07 16:05:12 +0000  /usr/bin/codesign exited with 0
+
+2018-06-07 16:05:12 +0000  
+2018-06-07 16:05:12 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d2da7640 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fd8cf5d24b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib'>'>: {
+}
+2018-06-07 16:05:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d2da7640 'com.apple.dt.runtime.swiftCoreImage' '<DVTFilePath:0x7fd8cf5d24b0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsrbHmPZ
+2018-06-07 16:05:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsrbHmPZ' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib'
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib: replacing existing signature
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreImage]
+2018-06-07 16:05:12 +0000  2018-06-07 16:05:12 +0000  
+
+2018-06-07 16:05:12 +0000  /usr/bin/codesign exited with 02018-06-07 16:05:12 +0000  
+2018-06-07 16:05:12 +0000  
+
+2018-06-07 16:05:12 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d4bc7e40 'com.apple.dt.runtime.swiftCoreLocation' '<DVTFilePath:0x7fd8d3f21a40:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib'>'>: {
+}
+2018-06-07 16:05:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d4bc7e40 'com.apple.dt.runtime.swiftCoreLocation' '<DVTFilePath:0x7fd8d3f21a40:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsm6MAsI
+2018-06-07 16:05:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsm6MAsI' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib'
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib: replacing existing signature
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftCoreLocation]
+2018-06-07 16:05:12 +0000  2018-06-07 16:05:12 +0000  
+
+2018-06-07 16:05:12 +0000  /usr/bin/codesign exited with 02018-06-07 16:05:12 +0000  
+
+2018-06-07 16:05:12 +0000  
+2018-06-07 16:05:12 +0000  Entitlements for <IDEDistributionItem: 0x7fd8ee82a3e0 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fd8d480ddd0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib'>'>: {
+}
+2018-06-07 16:05:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8ee82a3e0 'com.apple.dt.runtime.swiftDarwin' '<DVTFilePath:0x7fd8d480ddd0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlements7KtLv4
+2018-06-07 16:05:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlements7KtLv4' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib'
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib: replacing existing signature
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftDarwin]
+2018-06-07 16:05:12 +0000  2018-06-07 16:05:12 +0000  
+
+2018-06-07 16:05:12 +0000  /usr/bin/codesign exited with 02018-06-07 16:05:12 +0000  
+
+2018-06-07 16:05:12 +0000  
+2018-06-07 16:05:12 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d3f33a40 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fd8d49bdc30:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib'>'>: {
+}
+2018-06-07 16:05:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d3f33a40 'com.apple.dt.runtime.swiftDispatch' '<DVTFilePath:0x7fd8d49bdc30:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsqMDJDF
+2018-06-07 16:05:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsqMDJDF' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib'
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib: replacing existing signature
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftDispatch]
+2018-06-07 16:05:12 +0000  
+2018-06-07 16:05:12 +0000  2018-06-07 16:05:12 +0000  /usr/bin/codesign exited with 0
+
+2018-06-07 16:05:12 +0000  
+2018-06-07 16:05:12 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d3d466b0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fd8d0d80410:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib'>'>: {
+}
+2018-06-07 16:05:12 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d3d466b0 'com.apple.dt.runtime.swiftFoundation' '<DVTFilePath:0x7fd8d0d80410:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsIb2zM7
+2018-06-07 16:05:12 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsIb2zM7' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib'
+2018-06-07 16:05:12 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib: replacing existing signature
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftFoundation]
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  /usr/bin/codesign exited with 02018-06-07 16:05:13 +0000  
+
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d3e73770 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fd8d49014f0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib'>'>: {
+}
+2018-06-07 16:05:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d3e73770 'com.apple.dt.runtime.swiftMetal' '<DVTFilePath:0x7fd8d49014f0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsvxT1Ox
+2018-06-07 16:05:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsvxT1Ox' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib'
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib: replacing existing signature
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftMetal]
+2018-06-07 16:05:13 +0000  2018-06-07 16:05:13 +0000  
+
+2018-06-07 16:05:13 +0000  /usr/bin/codesign exited with 0
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d2d7da30 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fd8d3ff4180:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib'>'>: {
+}
+2018-06-07 16:05:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d2d7da30 'com.apple.dt.runtime.swiftObjectiveC' '<DVTFilePath:0x7fd8d3ff4180:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsiUHiyn
+2018-06-07 16:05:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsiUHiyn' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib'
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib: replacing existing signature
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftObjectiveC]
+2018-06-07 16:05:13 +0000  2018-06-07 16:05:13 +0000  
+
+2018-06-07 16:05:13 +0000  /usr/bin/codesign exited with 0
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  Entitlements for <IDEDistributionItem: 0x7fd8cfcf2920 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fd8cfa6ca00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib'>'>: {
+}
+2018-06-07 16:05:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8cfcf2920 'com.apple.dt.runtime.swiftQuartzCore' '<DVTFilePath:0x7fd8cfa6ca00:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsGqbZ03
+2018-06-07 16:05:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsGqbZ03' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib'
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib: replacing existing signature
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftQuartzCore]
+2018-06-07 16:05:13 +0000  2018-06-07 16:05:13 +0000  
+
+2018-06-07 16:05:13 +0000  /usr/bin/codesign exited with 0
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d4b6a640 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7fd8cf5e6460:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib'>'>: {
+}
+2018-06-07 16:05:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d4b6a640 'com.apple.dt.runtime.swiftUIKit' '<DVTFilePath:0x7fd8cf5e6460:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsoK7odv
+2018-06-07 16:05:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsoK7odv' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib'
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib: replacing existing signature
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftUIKit]
+2018-06-07 16:05:13 +0000  2018-06-07 16:05:13 +0000  
+
+2018-06-07 16:05:13 +0000  /usr/bin/codesign exited with 0
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d2d74390 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fd8d2bf7f10:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftos.dylib'>'>: {
+}
+2018-06-07 16:05:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d2d74390 'com.apple.dt.runtime.swiftos' '<DVTFilePath:0x7fd8d2bf7f10:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app/Frameworks/libswiftos.dylib'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsE0ZhaG
+2018-06-07 16:05:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsE0ZhaG' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftos.dylib'
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftos.dylib: replacing existing signature
+2018-06-07 16:05:13 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app/Frameworks/libswiftos.dylib: signed Mach-O universal (armv7 armv7s arm64) [com.apple.dt.runtime.swiftos]
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  2018-06-07 16:05:13 +0000  /usr/bin/codesign exited with 0
+
+2018-06-07 16:05:13 +0000  
+2018-06-07 16:05:13 +0000  Entitlements for <IDEDistributionItem: 0x7fd8d4942750 'ro.initiativaromania.hartabanilorpublici' '<DVTFilePath:0x7fd8df747fc0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app'>'>: {
+    "application-identifier" = "A9PHH27GH3.ro.initiativaromania.hartabanilorpublici";
+    "beta-reports-active" = 1;
+    "com.apple.developer.team-identifier" = A9PHH27GH3;
+    "get-task-allow" = 0;
+    "keychain-access-groups" =     (
+        "A9PHH27GH3.ro.initiativaromania.hartabanilorpublici"
+    );
+}
+2018-06-07 16:05:13 +0000  Writing entitlements for <IDEDistributionItem: 0x7fd8d4942750 'ro.initiativaromania.hartabanilorpublici' '<DVTFilePath:0x7fd8df747fc0:'/Users/grijincu/Library/Developer/Xcode/Archives/2018-06-07/harta-banilor-publici 07-06-2018, 19.04.xcarchive/Products/Applications/harta-banilor-publici.app'>'> to: /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsNho7UB
+2018-06-07 16:05:13 +0000  Running /usr/bin/codesign '-vvv' '--force' '--sign' '2836BCBEA6F1458CE6ED9685C0CA8039E46DF44E' '--preserve-metadata=identifier,flags' '--entitlements' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/entitlementsNho7UB' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app'
+2018-06-07 16:05:14 +0000  /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root/Payload/harta-banilor-publici.app: signed app bundle with Mach-O thin (arm64) [ro.initiativaromania.hartabanilorpublici]
+2018-06-07 16:05:14 +0000  2018-06-07 16:05:14 +0000  
+
+2018-06-07 16:05:14 +0000  /usr/bin/codesign exited with 0
+2018-06-07 16:05:14 +0000  2018-06-07 16:05:14 +0000  
+
+2018-06-07 16:05:14 +0000  Processing step: IDEDistributionStreamingZipItemStep
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Skipping step: IDEDistributionStreamingZipItemStep because it said so
+2018-06-07 16:05:14 +0000  Processing step: IDEDistributionCreateIPAStep
+2018-06-07 16:05:14 +0000  Running /usr/bin/rsync '-8aPhhE' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Symbols' '--link-dest' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root'
+2018-06-07 16:05:14 +0000  building file list ... 
+2018-06-07 16:05:14 +0000   0 files...2018-06-07 16:05:14 +0000  40 files to consider
+2018-06-07 16:05:14 +0000  Symbols/
+2018-06-07 16:05:14 +0000  
+sent 2.13K bytes  received 26 bytes  4.32K bytes/sec
+total size is 15.33M  speedup is 7274.87
+2018-06-07 16:05:14 +0000  2018-06-07 16:05:14 +0000  
+
+2018-06-07 16:05:14 +0000  /usr/bin/rsync exited with 02018-06-07 16:05:14 +0000  2018-06-07 16:05:14 +0000  
+
+
+2018-06-07 16:05:14 +0000  Running /usr/bin/ditto '-V' '-c' '-k' '--norsrc' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root' '/var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Packages/harta-banilor-publici.ipa'
+2018-06-07 16:05:14 +0000  >>> Copying /var/folders/99/vfctv5413dq2xxkz24b8y5pm0000gn/T/XcodeDistPipeline.0u3/Root 
+2018-06-07 16:05:14 +0000  copying file ./BCSymbolMaps/C07D1B28-5374-3CB2-BF35-D7C5DB9972B5.bcsymbolmap ... 
+2018-06-07 16:05:14 +0000  2547334 bytes for ./BCSymbolMaps/C07D1B28-5374-3CB2-BF35-D7C5DB9972B5.bcsymbolmap
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/_CodeSignature/CodeResources ... 
+2018-06-07 16:05:14 +0000  65309 bytes for ./Payload/harta-banilor-publici.app/_CodeSignature/CodeResources
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_left@3x.png ... 
+2386 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_left@3x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_left.png ... 
+2018-06-07 16:05:14 +0000  451 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_left.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_left@2x.png ... 
+1055 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_left@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_right@3x.png ... 
+2018-06-07 16:05:14 +0000  2374 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_right@3x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_right@2x.png ... 
+2018-06-07 16:05:14 +0000  1051 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_right@2x.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings ... 
+849 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/de.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings ... 
+930 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/he.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en_AU.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  801 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en_AU.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings ... 
+992 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ar.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings ... 
+996 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/el.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  776 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ja.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/iw.lproj/GMSCore.strings ... 
+930 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/iw.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@2x.png ... 
+2018-06-07 16:05:14 +0000  663 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings ... 
+801 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings ... 
+982 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/uk.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation.png ... 
+2018-06-07 16:05:14 +0000  362 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/es_419.lproj/GMSCore.strings ... 
+1016 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/es_419.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-1x.png ... 
+2018-06-07 16:05:14 +0000  10365 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-1x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@2x.png ... 
+2446 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@3x.png ... 
+2018-06-07 16:05:14 +0000  3304 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large@3x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/es_MX.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  1016 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/es_MX.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large.png ... 
+1114 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle_large.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  748 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/zh_CN.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@3x.png ... 
+1240 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_qu_direction_mylocation@3x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/DroidSansMerged-Regular.ttf ... 
+2018-06-07 16:05:14 +0000  392092 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/DroidSansMerged-Regular.ttf
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/nb.lproj/GMSCore.strings ... 
+841 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/nb.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  1019 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/es.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_endcap.png ... 
+210 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_endcap.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pt_BR.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  948 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pt_BR.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings ... 
+924 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/da.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@3x.png ... 
+2018-06-07 16:05:14 +0000  1577 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@3x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  876 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/it.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings ... 
+904 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/sk.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-3x.png ... 
+2018-06-07 16:05:14 +0000  10683 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-3x.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings ... 
+992 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pt_PT.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night.png ... 
+2018-06-07 16:05:14 +0000  720 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location.png ... 
+492 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_16-4.png ... 
+2018-06-07 16:05:14 +0000  127 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_16-4.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  821 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ms.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_256-64.png ... 
+2018-06-07 16:05:14 +0000  1934 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_256-64.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png ... 
+631 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings ... 
+893 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/sv.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_8-2.png ... 
+2018-06-07 16:05:14 +0000  93 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_8-2.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go.png ... 
+513 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  940 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/cs.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped.png ... 
+467 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_background.png ... 
+2018-06-07 16:05:14 +0000  334 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_background.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-1x.png ... 
+3393 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-1x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location@2x.png ... 
+2018-06-07 16:05:14 +0000  1229 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_my_location@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en_IN.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  801 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en_IN.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings ... 
+814 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ko.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-2x.png ... 
+2018-06-07 16:05:14 +0000  7465 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-2x.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow.png ... 
+469 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@2x.png ... 
+2018-06-07 16:05:14 +0000  860 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-1x.png ... 
+3246 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavSprites-0-1x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  841 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/no.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/Tharlon-Regular.ttf ... 
+2018-06-07 16:05:14 +0000  353228 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/Tharlon-Regular.ttf
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings ... 
+996 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/hu.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go_night.png ... 
+2018-06-07 16:05:14 +0000  421 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stop_and_go_night.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/zh_HK.lproj/GMSCore.strings ... 
+738 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/zh_HK.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_4-1.png ... 
+2018-06-07 16:05:14 +0000  74 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_4-1.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_background@2x.png ... 
+433 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_background@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle@2x.png ... 
+992 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle@2x.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/Assets.car ... 
+2018-06-07 16:05:14 +0000  46179 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/Assets.car
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings ... 
+944 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/tr.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast_night.png ... 
+325 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast_night.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings ... 
+897 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pl.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  754 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/zh_TW.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-2x.png ... 
+7660 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-3x.png ... 
+2018-06-07 16:05:14 +0000  12519 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSNavNightModeSprites-0-3x.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings ... 
+801 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/en_GB.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/dav_one_way_16_256.png ... 
+315 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/dav_one_way_16_256.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_2-1.png ... 
+2018-06-07 16:05:14 +0000  84 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_2-1.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings ... 
+995 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/vi.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_background@3x.png ... 
+2018-06-07 16:05:14 +0000  515 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_background@3x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_32-8.png ... 
+223 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_32-8.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/lv.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  801 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/lv.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/lt.lproj/GMSCore.strings ... 
+801 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/lt.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings ... 
+1066 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ru.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture_dim.png ... 
+2018-06-07 16:05:14 +0000  7026 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture_dim.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped_night.png ... 
+411 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_stopped_night.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/fr_CA.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  908 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/fr_CA.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_128-32.png ... 
+1029 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_128-32.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings ... 
+1038 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/fr.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  881 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/fi.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings ... 
+816 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/id.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings ... 
+865 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/nl.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings ... 
+896 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/th.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_64-16.png ... 
+425 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_64-16.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-3x.png ... 
+2018-06-07 16:05:14 +0000  42326 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-3x.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png ... 
+2018-06-07 16:05:14 +0000  6982 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/polyline_colors_texture.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle.png ... 
+483 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_compass_needle.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  948 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/pt.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast.png ... 
+2018-06-07 16:05:14 +0000  416 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_fast.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow_night.png ... 
+451 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_slow_night.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_1-1.png ... 
+2018-06-07 16:05:14 +0000  95 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/road_1-1.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off.png ... 
+498 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ic_location_off.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  985 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ro.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_startcap.png ... 
+243 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/traffic_startcap.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist ... 
+2018-06-07 16:05:14 +0000  382 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/Info.plist
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-2x.png ... 
+2018-06-07 16:05:14 +0000  25169 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/GMSSprites-0-2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night@2x.png ... 
+2018-06-07 16:05:14 +0000  2221 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass_night@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png ... 
+2560 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/button_compass@2x.png
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings ... 
+909 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/hr.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/hi.lproj/GMSCore.strings ... 
+2018-06-07 16:05:14 +0000  994 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/hi.lproj/GMSCore.strings
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings ... 
+1014 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCoreResources.bundle/ca.lproj/GMSCore.strings
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/default_marker.png ... 
+1379 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/default_marker.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/oss_licenses_maps.txt.gz ... 
+2018-06-07 16:05:14 +0000  38389 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/oss_licenses_maps.txt.gz
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_right.png ... 
+2018-06-07 16:05:14 +0000  455 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/bubble_right.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/default_marker@3x.png ... 
+2018-06-07 16:05:14 +0000  4275 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/default_marker@3x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/default_marker@2x.png ... 
+2815 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/default_marker@2x.png
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom ... 
+2018-06-07 16:05:14 +0000  4576 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/Storage.mom
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/VersionInfo.plist ... 
+2018-06-07 16:05:14 +0000  1197 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/VersionInfo.plist
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.mom ... 
+2018-06-07 16:05:14 +0000  5172 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.mom
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileVersionID.mom ... 
+2018-06-07 16:05:14 +0000  4682 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileVersionID.mom
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.omo ... 
+2018-06-07 16:05:14 +0000  11832 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/GMSCacheStorage.momd/StorageWithTileProto.omo
+copying file ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/Info.plist ... 
+2018-06-07 16:05:14 +0000  376 bytes for ./Payload/harta-banilor-publici.app/GoogleMaps.bundle/Info.plist
+copying file ./Payload/harta-banilor-publici.app/mapstyle.json ... 
+2926 bytes for ./Payload/harta-banilor-publici.app/mapstyle.json
+copying file ./Payload/harta-banilor-publici.app/AppIcon60x60@2x.png ... 
+2018-06-07 16:05:14 +0000  6766 bytes for ./Payload/harta-banilor-publici.app/AppIcon60x60@2x.png
+copying file ./Payload/harta-banilor-publici.app/institutii_publice_pins_v0.csv ... 
+2018-06-07 16:05:14 +0000  388642 bytes for ./Payload/harta-banilor-publici.app/institutii_publice_pins_v0.csv
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/LicitatieViewController.nib ... 
+1495 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/LicitatieViewController.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/BBv-7C-nqp-view-qpj-K0-Jq2.nib ... 
+2018-06-07 16:05:14 +0000  1486 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/BBv-7C-nqp-view-qpj-K0-Jq2.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/ContractViewController.nib ... 
+2018-06-07 16:05:14 +0000  1489 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/ContractViewController.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/mwM-rY-90A-view-SXf-MG-dRU.nib ... 
+2018-06-07 16:05:14 +0000  10260 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/mwM-rY-90A-view-SXf-MG-dRU.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/TabBar.nib ... 
+2018-06-07 16:05:14 +0000  6981 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/TabBar.nib
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/wEb-5u-5kv-view-mYA-P7-VIH.nib ... 
+1149 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/wEb-5u-5kv-view-mYA-P7-VIH.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/WlT-YZ-J7J-view-1z5-Di-0UM.nib ... 
+2018-06-07 16:05:14 +0000  1149 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/WlT-YZ-J7J-view-1z5-Di-0UM.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/UNO-tS-fE3-view-uKl-p4-4nx.nib ... 
+2018-06-07 16:05:14 +0000  22332 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/UNO-tS-fE3-view-uKl-p4-4nx.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/y7W-47-BTu-view-uqe-Fc-3N4.nib ... 
+2018-06-07 16:05:14 +0000  10463 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/y7W-47-BTu-view-uqe-Fc-3N4.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/UIViewController-WlT-YZ-J7J.nib ... 
+2018-06-07 16:05:14 +0000  1381 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/UIViewController-WlT-YZ-J7J.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/Iwr-51-Xaf-view-bDt-bn-Osv.nib ... 
+2018-06-07 16:05:14 +0000  8695 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/Iwr-51-Xaf-view-bDt-bn-Osv.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/d2c-hC-6PK-view-sBi-F7-2Qx.nib ... 
+2018-06-07 16:05:14 +0000  9063 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/d2c-hC-6PK-view-sBi-F7-2Qx.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/Info.plist ... 
+2018-06-07 16:05:14 +0000  565 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/Info.plist
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/InstitutionViewController.nib ... 
+2044 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/InstitutionViewController.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/CompanieViewController.nib ... 
+2018-06-07 16:05:14 +0000  1395 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/CompanieViewController.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/SXr-eX-9GQ-view-Ga1-vx-PhA.nib ... 
+2018-06-07 16:05:14 +0000  6330 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/SXr-eX-9GQ-view-Ga1-vx-PhA.nib
+copying file ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/MapViewController.nib ... 
+2018-06-07 16:05:14 +0000  1699 bytes for ./Payload/harta-banilor-publici.app/Base.lproj/Main.storyboardc/MapViewController.nib
+copying file ./Payload/harta-banilor-publici.app/Assets.car ... 
+2018-06-07 16:05:14 +0000  198888 bytes for ./Payload/harta-banilor-publici.app/Assets.car
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib ... 
+1136 bytes for ./Payload/harta-banilor-publici.app/LaunchScreen.storyboardc/01J-lp-oVM-view-Ze5-6b-2t3.nib
+copying file ./Payload/harta-banilor-publici.app/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib ... 
+832 bytes for ./Payload/harta-banilor-publici.app/LaunchScreen.storyboardc/UIViewController-01J-lp-oVM.nib
+2018-06-07 16:05:14 +0000  copying file ./Payload/harta-banilor-publici.app/LaunchScreen.storyboardc/Info.plist ... 
+258 bytes for ./Payload/harta-banilor-publici.app/LaunchScreen.storyboardc/Info.plist
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib ... 
+2018-06-07 16:05:14 +0000  308000 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreImage.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib ... 
+2018-06-07 16:05:14 +0000  554480 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftObjectiveC.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftCore.dylib ... 
+2018-06-07 16:05:17 +0000  66662928 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftCore.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib ... 
+2018-06-07 16:05:17 +0000  1628928 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreGraphics.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib ... 
+2018-06-07 16:05:17 +0000  1043392 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftUIKit.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib ... 
+2018-06-07 16:05:17 +0000  449264 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftMetal.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib ... 
+2018-06-07 16:05:17 +0000  2722672 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftDispatch.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftos.dylib ... 
+2018-06-07 16:05:17 +0000  497536 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftos.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib ... 
+2018-06-07 16:05:17 +0000  258112 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreFoundation.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib ... 
+2018-06-07 16:05:17 +0000  839104 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftDarwin.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib ... 
+2018-06-07 16:05:17 +0000  310992 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftQuartzCore.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib ... 
+2018-06-07 16:05:18 +0000  30165616 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftFoundation.dylib
+copying file ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib ... 
+2018-06-07 16:05:18 +0000  402208 bytes for ./Payload/harta-banilor-publici.app/Frameworks/libswiftCoreLocation.dylib
+copying file ./Payload/harta-banilor-publici.app/CustomInfoWindow.nib ... 
+2018-06-07 16:05:18 +0000  3846 bytes for ./Payload/harta-banilor-publici.app/CustomInfoWindow.nib
+copying file ./Payload/harta-banilor-publici.app/embedded.mobileprovision ... 
+2018-06-07 16:05:18 +0000  7694 bytes for ./Payload/harta-banilor-publici.app/embedded.mobileprovision
+copying file ./Payload/harta-banilor-publici.app/Info.plist ... 
+2018-06-07 16:05:18 +0000  1586 bytes for ./Payload/harta-banilor-publici.app/Info.plist
+copying file ./Payload/harta-banilor-publici.app/harta-banilor-publici ... 
+2018-06-07 16:05:19 +0000  38980512 bytes for ./Payload/harta-banilor-publici.app/harta-banilor-publici
+copying file ./Payload/harta-banilor-publici.app/PkgInfo ... 
+2018-06-07 16:05:19 +0000  8 bytes for ./Payload/harta-banilor-publici.app/PkgInfo
+copying file ./SwiftSupport/iphoneos/libswiftCoreImage.dylib ... 
+307520 bytes for ./SwiftSupport/iphoneos/libswiftCoreImage.dylib
+copying file ./SwiftSupport/iphoneos/libswiftObjectiveC.dylib ... 
+2018-06-07 16:05:19 +0000  553984 bytes for ./SwiftSupport/iphoneos/libswiftObjectiveC.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCore.dylib ... 
+2018-06-07 16:05:22 +0000  66662432 bytes for ./SwiftSupport/iphoneos/libswiftCore.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCoreGraphics.dylib ... 
+2018-06-07 16:05:22 +0000  1628432 bytes for ./SwiftSupport/iphoneos/libswiftCoreGraphics.dylib
+copying file ./SwiftSupport/iphoneos/libswiftUIKit.dylib ... 
+2018-06-07 16:05:22 +0000  1042912 bytes for ./SwiftSupport/iphoneos/libswiftUIKit.dylib
+copying file ./SwiftSupport/iphoneos/libswiftMetal.dylib ... 
+2018-06-07 16:05:22 +0000  448768 bytes for ./SwiftSupport/iphoneos/libswiftMetal.dylib
+copying file ./SwiftSupport/iphoneos/libswiftDispatch.dylib ... 
+2018-06-07 16:05:23 +0000  2722176 bytes for ./SwiftSupport/iphoneos/libswiftDispatch.dylib
+2018-06-07 16:05:23 +0000  copying file ./SwiftSupport/iphoneos/libswiftos.dylib ... 
+2018-06-07 16:05:23 +0000  497040 bytes for ./SwiftSupport/iphoneos/libswiftos.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCoreFoundation.dylib ... 
+2018-06-07 16:05:23 +0000  257616 bytes for ./SwiftSupport/iphoneos/libswiftCoreFoundation.dylib
+copying file ./SwiftSupport/iphoneos/libswiftDarwin.dylib ... 
+2018-06-07 16:05:23 +0000  838608 bytes for ./SwiftSupport/iphoneos/libswiftDarwin.dylib
+copying file ./SwiftSupport/iphoneos/libswiftQuartzCore.dylib ... 
+2018-06-07 16:05:23 +0000  310496 bytes for ./SwiftSupport/iphoneos/libswiftQuartzCore.dylib
+copying file ./SwiftSupport/iphoneos/libswiftFoundation.dylib ... 
+2018-06-07 16:05:24 +0000  30165120 bytes for ./SwiftSupport/iphoneos/libswiftFoundation.dylib
+copying file ./SwiftSupport/iphoneos/libswiftCoreLocation.dylib ... 
+2018-06-07 16:05:24 +0000  401712 bytes for ./SwiftSupport/iphoneos/libswiftCoreLocation.dylib
+2018-06-07 16:05:24 +0000  copying file ./Symbols/FB5160D0-DC38-32E1-97CA-A2EEE72A8D80.symbols ... 
+2018-06-07 16:05:24 +0000  21552 bytes for ./Symbols/FB5160D0-DC38-32E1-97CA-A2EEE72A8D80.symbols
+copying file ./Symbols/599F2CCE-4E8B-3255-9DDF-69DB9AA48764.symbols ... 
+2018-06-07 16:05:24 +0000  2368 bytes for ./Symbols/599F2CCE-4E8B-3255-9DDF-69DB9AA48764.symbols
+copying file ./Symbols/0E333FDA-7200-3860-A53D-7604CEC3DC48.symbols ... 
+2018-06-07 16:05:24 +0000  2728 bytes for ./Symbols/0E333FDA-7200-3860-A53D-7604CEC3DC48.symbols
+copying file ./Symbols/AFC3DE45-AD58-3589-A978-26E2E97352C6.symbols ... 
+2018-06-07 16:05:24 +0000  12760 bytes for ./Symbols/AFC3DE45-AD58-3589-A978-26E2E97352C6.symbols
+copying file ./Symbols/C5221413-9E18-342D-856E-F235DAA6A43A.symbols ... 
+2018-06-07 16:05:24 +0000  44536 bytes for ./Symbols/C5221413-9E18-342D-856E-F235DAA6A43A.symbols
+copying file ./Symbols/D164CEE7-BC83-303F-8C3C-CC58F19C60DC.symbols ... 
+2018-06-07 16:05:24 +0000  221720 bytes for ./Symbols/D164CEE7-BC83-303F-8C3C-CC58F19C60DC.symbols
+copying file ./Symbols/F27E68E1-3DF3-3593-A742-E2BB8A2B27D1.symbols ... 
+2018-06-07 16:05:24 +0000  103104 bytes for ./Symbols/F27E68E1-3DF3-3593-A742-E2BB8A2B27D1.symbols
+copying file ./Symbols/2DDBE489-5355-3F49-B5EB-3E402BF3EEED.symbols ... 
+2018-06-07 16:05:24 +0000  12952 bytes for ./Symbols/2DDBE489-5355-3F49-B5EB-3E402BF3EEED.symbols
+copying file ./Symbols/FB3B98BE-29F3-3323-B1B8-62C00C4E1241.symbols ... 
+2018-06-07 16:05:24 +0000  21552 bytes for ./Symbols/FB3B98BE-29F3-3323-B1B8-62C00C4E1241.symbols
+copying file ./Symbols/5DF1CCA7-DA49-3AE6-BC61-AAF18034779E.symbols ... 
+2018-06-07 16:05:24 +0000  6928 bytes for ./Symbols/5DF1CCA7-DA49-3AE6-BC61-AAF18034779E.symbols
+2018-06-07 16:05:24 +0000  copying file ./Symbols/D40DEF73-60A6-339D-843D-88F258576F65.symbols ... 
+2472 bytes for ./Symbols/D40DEF73-60A6-339D-843D-88F258576F65.symbols
+copying file ./Symbols/52C534E7-F10B-3B31-AF3E-312445095B81.symbols ... 
+2018-06-07 16:05:24 +0000  13208 bytes for ./Symbols/52C534E7-F10B-3B31-AF3E-312445095B81.symbols
+copying file ./Symbols/2B26CD93-BBA3-35EE-B4C5-E77BE2729AAE.symbols ... 
+2018-06-07 16:05:24 +0000  17224 bytes for ./Symbols/2B26CD93-BBA3-35EE-B4C5-E77BE2729AAE.symbols
+copying file ./Symbols/8887AE77-E0E6-33F5-BC91-47F1C42DF36C.symbols ... 
+2018-06-07 16:05:24 +0000  6592 bytes for ./Symbols/8887AE77-E0E6-33F5-BC91-47F1C42DF36C.symbols
+copying file ./Symbols/81A30183-A8CF-3108-B15E-065E35312712.symbols ... 
+2018-06-07 16:05:24 +0000  223640 bytes for ./Symbols/81A30183-A8CF-3108-B15E-065E35312712.symbols
+copying file ./Symbols/60527F18-9766-3316-9C14-39EC7AEE013E.symbols ... 
+2018-06-07 16:05:24 +0000  3347936 bytes for ./Symbols/60527F18-9766-3316-9C14-39EC7AEE013E.symbols
+copying file ./Symbols/181EE94A-59DC-3A9A-8A6A-064E95EBC254.symbols ... 
+2018-06-07 16:05:24 +0000  1511904 bytes for ./Symbols/181EE94A-59DC-3A9A-8A6A-064E95EBC254.symbols
+copying file ./Symbols/10661BC7-FFFF-3B2A-A7FC-E06526F6C1A0.symbols ... 
+2018-06-07 16:05:24 +0000  17224 bytes for ./Symbols/10661BC7-FFFF-3B2A-A7FC-E06526F6C1A0.symbols
+copying file ./Symbols/4FE54383-0B38-3378-B946-C669DD45FDD0.symbols ... 
+2018-06-07 16:05:24 +0000  3329416 bytes for ./Symbols/4FE54383-0B38-3378-B946-C669DD45FDD0.symbols
+2018-06-07 16:05:24 +0000  copying file ./Symbols/AA29266D-D3A3-3D30-A668-A358052E1AAA.symbols ... 
+2018-06-07 16:05:24 +0000  103176 bytes for ./Symbols/AA29266D-D3A3-3D30-A668-A358052E1AAA.symbols
+copying file ./Symbols/8C36E2E2-5504-31E9-BFBA-2D7B3C1B929B.symbols ... 
+2018-06-07 16:05:24 +0000  102384 bytes for ./Symbols/8C36E2E2-5504-31E9-BFBA-2D7B3C1B929B.symbols
+copying file ./Symbols/062BD1C4-0293-3010-B791-EB1A4D4DC93B.symbols ... 
+2018-06-07 16:05:24 +0000  21592 bytes for ./Symbols/062BD1C4-0293-3010-B791-EB1A4D4DC93B.symbols
+copying file ./Symbols/527DFD5B-F74E-35EC-AE84-2436FC6763FF.symbols ... 
+2018-06-07 16:05:24 +0000  12952 bytes for ./Symbols/527DFD5B-F74E-35EC-AE84-2436FC6763FF.symbols
+copying file ./Symbols/412B48C6-07FB-3096-A8F4-2FA3C159B67A.symbols ... 
+2018-06-07 16:05:24 +0000  60000 bytes for ./Symbols/412B48C6-07FB-3096-A8F4-2FA3C159B67A.symbols
+copying file ./Symbols/CDD1E457-083C-3DA5-9500-DCAC844406CE.symbols ... 
+2018-06-07 16:05:24 +0000  13208 bytes for ./Symbols/CDD1E457-083C-3DA5-9500-DCAC844406CE.symbols
+copying file ./Symbols/BC58E020-DAF4-3E8C-B605-9F213E5AEEDC.symbols ... 
+2018-06-07 16:05:24 +0000  43960 bytes for ./Symbols/BC58E020-DAF4-3E8C-B605-9F213E5AEEDC.symbols
+2018-06-07 16:05:24 +0000  copying file ./Symbols/5148ACA6-CD45-3355-81A1-B6C9274FA4ED.symbols ... 
+2018-06-07 16:05:24 +0000  60328 bytes for ./Symbols/5148ACA6-CD45-3355-81A1-B6C9274FA4ED.symbols
+copying file ./Symbols/53726A84-1516-36DA-A562-7ACBD8725367.symbols ... 
+2018-06-07 16:05:24 +0000  13120 bytes for ./Symbols/53726A84-1516-36DA-A562-7ACBD8725367.symbols
+2018-06-07 16:05:24 +0000  copying file ./Symbols/C589B88B-F3EA-3544-8B25-4AA48143606C.symbols ... 
+2018-06-07 16:05:24 +0000  223712 bytes for ./Symbols/C589B88B-F3EA-3544-8B25-4AA48143606C.symbols
+copying file ./Symbols/E825EC9B-B58D-3A10-8398-70039E63709A.symbols ... 
+2018-06-07 16:05:24 +0000  2368 bytes for ./Symbols/E825EC9B-B58D-3A10-8398-70039E63709A.symbols
+copying file ./Symbols/D0DE7B83-C6A5-3D19-AC61-12FBA3B84309.symbols ... 
+2018-06-07 16:05:24 +0000  1506160 bytes for ./Symbols/D0DE7B83-C6A5-3D19-AC61-12FBA3B84309.symbols
+2018-06-07 16:05:24 +0000  copying file ./Symbols/1AA29864-29CA-3B04-BD33-F29D87C3D6BF.symbols ... 
+2018-06-07 16:05:24 +0000  17112 bytes for ./Symbols/1AA29864-29CA-3B04-BD33-F29D87C3D6BF.symbols
+copying file ./Symbols/0A1F05C0-B97E-3A2D-9641-94E42172B5F6.symbols ... 
+2018-06-07 16:05:24 +0000  2816 bytes for ./Symbols/0A1F05C0-B97E-3A2D-9641-94E42172B5F6.symbols
+copying file ./Symbols/00E1AB28-6A0D-308A-8401-7CA1137C57B6.symbols ... 
+2018-06-07 16:05:24 +0000  60328 bytes for ./Symbols/00E1AB28-6A0D-308A-8401-7CA1137C57B6.symbols
+copying file ./Symbols/49FCED25-5BAB-3B4B-8806-7054BCEDF6C0.symbols ... 
+2018-06-07 16:05:24 +0000  6592 bytes for ./Symbols/49FCED25-5BAB-3B4B-8806-7054BCEDF6C0.symbols
+copying file ./Symbols/58A03362-38CB-3412-A3C9-5348EACE6943.symbols ... 
+2018-06-07 16:05:24 +0000  1512048 bytes for ./Symbols/58A03362-38CB-3412-A3C9-5348EACE6943.symbols
+copying file ./Symbols/5D37943C-EAED-3B1B-9CB3-4738BE6F2561.symbols ... 
+2018-06-07 16:05:24 +0000  44536 bytes for ./Symbols/5D37943C-EAED-3B1B-9CB3-4738BE6F2561.symbols
+copying file ./Symbols/E8EF3E0F-39CF-3791-A8CC-AEB2C3CEBB1D.symbols ... 
+2018-06-07 16:05:24 +0000  2728 bytes for ./Symbols/E8EF3E0F-39CF-3791-A8CC-AEB2C3CEBB1D.symbols
+copying file ./Symbols/09D4FF65-6FD5-3605-AAE3-0AB98E9C1472.symbols ... 
+2018-06-07 16:05:24 +0000  3348520 bytes for ./Symbols/09D4FF65-6FD5-3605-AAE3-0AB98E9C1472.symbols
+2018-06-07 16:05:24 +0000  2018-06-07 16:05:24 +0000  /usr/bin/ditto exited with 0
+
+2018-06-07 16:05:24 +0000  2018-06-07 16:05:24 +0000  Processing step: IDEDistributionCreateManifestStep
+
+2018-06-07 16:05:24 +0000  Skipping step: IDEDistributionCreateManifestStep because it said so

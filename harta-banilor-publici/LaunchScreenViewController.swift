@@ -6,7 +6,7 @@ class LaunchScreenViewController: UIViewController {
         super.viewDidLoad()
     }
 override func viewDidAppear(_ animated: Bool) {
-    sleep(1)
+    //sleep(1)
     let tabBar = self.storyboard!.instantiateViewController(withIdentifier: "TabBar") as! UITabBarController
     present(tabBar, animated: false, completion: nil)
     }
